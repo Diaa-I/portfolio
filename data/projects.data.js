@@ -37,7 +37,7 @@ const ProjectsData = [
     title: "My-Home-Library",
     description:
       "A Virtual Library, keep track of all the books available at your home library.",
-    indepth_description: "I Developed the website, developed the authentication system from scratch using json tokens and refresh tokens to keep the user logged in, I used NodeJS, React, ThreeJS, PostgresSQL",
+    indepth_description: "I Developed the website, and developed the authentication system from scratch using json tokens and refresh tokens to keep the user logged in, I used NodeJS, React, ThreeJS, PostgresSQL",
     role: "Full Stack Developer",
     link: "",
     vidSrc: LibraryVideo,
