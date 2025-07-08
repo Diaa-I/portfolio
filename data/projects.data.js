@@ -46,7 +46,7 @@ const ProjectsData = [
   {
     title: "Portfolio",
     description: "My page (This one).",
-    indepth_description: "My personal page, I used React and tailwindcss",
+    indepth_description: "My personal page, I used React and tailwindcss. An interactive version is in the works.",
     role: "Full Stack Developer",
     link: "",
     vidSrc: "",
