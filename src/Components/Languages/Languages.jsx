@@ -4,10 +4,10 @@ import LanguagesData, {
 
 export default function Languages() {
   return (
-    <div className="lg:grid lg:grid-cols-3 lg:p-10 lg:m-10 text-center ">
+    <div className="grid grid-cols-3 text-center  p-10 m-10">
       {LanguagesCategories.map((category) => {
         return (
-          <div className={"lg:w-[30rem] "}>
+          <div className={"w-[30rem] "}>
             <h2 className="mb-5 text-4xl font-bold">{category.categoryText}</h2>
             <div
               id={category.categoryText}
@@ -18,18 +18,18 @@ export default function Languages() {
               {LanguagesData.map((data) => {
                 if (data.categoryID == category.categoryID) {
                   return (
-                    <div className="lg:w-[12rem] lg:h-[10rem] lg:text-2xl border-2 border-[#333]/[0.5] m-0.5  w-[10rem] h-[8rem] text-xl place-content-center">
+                    <div className="border-2 border-[#333]/[0.5] m-0.5  w-[12rem] h-[10rem] text-2xl place-content-center ">
                       <i className={data.logo + " text-5xl"}></i>
                       <p>{data.title}</p>
                     </div>
-                  )
+                  );
                 }
               })}
             </div>
           </div>
-        )
+        );
       })}
-      
+      ;
     </div>
   );
 }

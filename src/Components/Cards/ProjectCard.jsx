@@ -11,7 +11,7 @@ export default function ProjectCard({
   const description = prj_details["description"];
   const role = prj_details["role"];
 
-  let classes = "flex rounded-xl w-[25rem] h-[15rem] content-center flex-col items-center justify-center m-3 text-center  shadow-xl border-2 border-[#333]/[0.1] cursor-pointer md:hover:scale-110"
+  let classes = "flex rounded-xl w-[25rem] h-[15rem] content-center flex-col items-center justify-center m-3 text-center  shadow-xl border-2 border-[#333]/[0.1] cursor-pointer hover:scale-110"
   let divSettings = { className: classes }
 
 

@@ -84,30 +84,29 @@ const LanguagesData = [
     id: 15,
   },
 
-  // {
-  //   title: "Raspberry PI",
-  //   categoryID: 3, // Tool
-  //   logo: "devicon-raspberrypi-plain",
-  //   id: 16,
-  // },
-  // {
-  //   title: "Arduino",
-  //   categoryID: 3, // Tool
-  //   logo: "devicon-arduino-plain",
-  //   id: 17,
-  // },
-  // {
-  //   title: "Wireshark",
-  //   categoryID: 3, // Tool
-  //   logo: "devicon-wireshark-original",
-  //   id: 18,
-  // },
+  {
+    title: "Raspberry PI",
+    categoryID: 3, // Tool
+    logo: "devicon-raspberrypi-plain",
+    id: 16,
+  },
+  {
+    title: "Arduino",
+    categoryID: 3, // Tool
+    logo: "devicon-arduino-plain",
+    id: 17,
+  },
+  {
+    title: "Wireshark",
+    categoryID: 3, // Tool
+    logo: "devicon-wireshark-original",
+    id: 18,
+  },
   {
     title: "Linux",
     categoryID: 3, // Tool
     logo: "devicon-linux-plain",
-    // id: 19,
-    id: 16,
+    id: 19,
   },
 ];
 export const LanguagesCategories = [
