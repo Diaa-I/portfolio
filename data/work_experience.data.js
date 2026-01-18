@@ -2,13 +2,12 @@ const WorkExperienceData = [
   {
     title: "Trainee Backend Developer",
     company: "Technologies LLC",
-    date: "April 2025 - July 2025",
+    date: "April 2025 - Now",
     "contents": [
-      "Developed 2 APIs for 2 e-commerce websites.",
-      "Developed a notification microservice using RabbitMQ.",
-      "Tested the APIs automatically using Pest.",
+      "Developed RESTful APIs for e-commerce platforms and a notification microservice using RabbitMQ.",
+      "Performed automated API testing with PestPHP.",
       "Used Laravel, Pest, PHP, SQL, RabbitMQ."],
-    class: "m-5 bg-[#EFEFF2] h-[20rem] w-[55vw] ",
+    class: "m-5 bg-[#EFEFF2] lg:h-[20rem] lg:w-[55vw] ",
     id: 1,
   },
   {
@@ -16,11 +15,10 @@ const WorkExperienceData = [
     company: "CKR IT Consulting",
     date: "June - July 2023",
     "contents": [
-      "Optimized a process that reduced the speed to finish the task and eliminate the human-error.",
-      "Demoed the application to the department.",
+      "Developed and demoed software that optimizes a workflow, reducing task completion time by 91% and eliminating human error.",
       "Used Python."
     ],
-    class: "my-5 bg-[#EFEFF2] h-[20rem] w-[55vw] ",
+    class: "my-5 bg-[#EFEFF2] lg:h-[20rem] lg:w-[55vw] ",
     id: 2,
   },
   {
@@ -28,12 +26,11 @@ const WorkExperienceData = [
     company: "Research Outreach Department, Office of Vice Chancellor for Research & Graduate Studies",
     date: "November 2022 - September 2023",
     "contents": [
-      "Transferred files storage into database and used the websites to manage and manipulate the data.",
-      "Built a website for 100k+ data, with functionalities including: mass mailing, filtering, import and export data.",
-      "Increased the efficiency of the work by a margin and reduced the budget spent on some services.",
+      "Developed a website that imports Excel files into a database and enables data management and manipulation through a web interface.",
+      "Built a website to handle 100,000+ records, featuring mass mailing, dynamic filtering, and data import/export for centralized database management.",
       "Used HTML, CSS, JavaScript, MongoDB, NodeJS."
     ],
-    class: "m-5 bg-[#EFEFF2] h-[20rem] w-[55vw] ",
+    class: "my-5 bg-[#EFEFF2] lg:h-[20rem] lg:w-[55vw] ",
     id: 3,
   },
 

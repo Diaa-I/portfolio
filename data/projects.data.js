@@ -4,10 +4,10 @@ import LibraryVideo from "/src/assets/LibraryProject.mp4";
 import GameDemo from "/src/assets/GameDemo.mp4";
 const ProjectsData = [
   {
-    title: "HRF home",
+    title: "HRFhome",
     description:
-      "A E-commerce website for handmade crafts.",
-    indepth_description: "I was in a team of 2 members, I was responsible for developing the backend for the supplier and admin dashboards and designing and improving the database schemas for this project, I used Laravel, MySQL, and pest.",
+      "A E-commerce website for buying/selling handmade crafts",
+    indepth_description: "I was in a team of 2 members, developed a RESTful backend APIs for admin and supplier dashboards using PHP Laravel and redesigned and optimized MySQL database schemas. I used Laravel, MySQL, and pest.",
     role: "Backend Developer",
     link: "https://hrfhome.app/",
     vidSrc: "",
@@ -17,7 +17,7 @@ const ProjectsData = [
     title: "SMN food",
     description:
       "A E-commerce website for homemade foods.",
-    indepth_description: "I was in a team of 2 members, I was responsible for developing the backend for the supplier and admin dashboards and designing and improving the database schemas for this project, I used Laravel, and MySQL.",
+    indepth_description: "I was in a team of 2 members, developed a RESTful backend APIs for admin and supplier dashboards using PHP Laravel and redesigned and optimized MySQL database schemas. I used Laravel, MySQL, and pest.",
     role: "Backend Developer",
     link: "https://smnfood.app/",
     vidSrc: "",
@@ -36,8 +36,8 @@ const ProjectsData = [
   {
     title: "My-Home-Library",
     description:
-      "A Virtual Library that keeps track of all the books available at your home.",
-    indepth_description: "I Developed the website, and developed the authentication system from scratch using json tokens and refresh tokens to keep the user logged in, I used NodeJS, React, ThreeJS, PostgresSQL. I am currently working on this project.",
+      "A Virtual Library, keep track of all the books available at your home library.",
+    indepth_description: "Developing a 3D home library application that maps real-world book collections to virtual bookshelves using JavaScript, React, React Three Fiber, PostgresSQL ,and Node.js.",
     role: "Full Stack Developer",
     link: "",
     vidSrc: LibraryVideo,
@@ -46,7 +46,7 @@ const ProjectsData = [
   {
     title: "Portfolio",
     description: "My page (This one).",
-    indepth_description: "My personal page, I used React and tailwindcss. An interactive version is in the works.",
+    indepth_description: "My personal page, I used React and tailwindcss",
     role: "Full Stack Developer",
     link: "",
     vidSrc: "",
@@ -66,7 +66,7 @@ const ProjectsData = [
     title: "Trash Classifer",
     description:
       "Built a trash classifier with a team of 5 members that had a camera and AI model.",
-    indepth_description: "I was a member in a team of 5 that developed a trash classifier, implemented on a raspberry pi with an AI model and a camera to detect what type of trash the photo you took is, I configured and coded the Raspberry pi and camera, this project was for our Software engineering course. ",
+    indepth_description: "I was a member in a team of 5 that developed a trash classifier, we built a computer vision-based trash classifier to identify and categorize waste types from captured images and I configured and programmed a Raspberry Pi with a camera module for image capture and processing. ",
     role: "Software Developer",
     link: "https://github.com/YaserAlOsh/trash_classifier",
     vidSrc: "",

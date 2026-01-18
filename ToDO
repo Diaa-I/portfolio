@@ -1,0 +1,118 @@
+- Transition between pages
+
+
+
+-Check the logic for opening and close a modal.
+-Inside each project modal have the logos of what you used to build this website with.
+-Viewable on other screens (Responsive Design)
+-Show the website to other people and get feedback.
+-Maybe make a parent component called Card, and then children compoents for projectsCard and Courses maybe or find a way to have one card instead of one for each type if possible
+-To insert description of projects, we can use screenshot of text.
+-For titles of books, we can also use screenshot of texts with no background.
+-Instead of the video being inside the book, clicking on it will give u the ability to view it properly (in modal) so you can have stop and play capabilities.
+- Make a rollarcoaster as the animation.
+- Wheres waldo but in a library and its goal to find books that are about the section for example find me and education sections between a large number of books.
+- maybe for the 3d learn blender or find a way to have background and the stuff u need
+- Think of SEO because this is react, or maybe not as this is a personal website.
+
+------------me-----------------
+- Changed Interested in, in the me section (Done Except for 3D maybe a better way to write it)
+    - Previously: Ethical hacking , IOT , Software Development
+    - Now : Ethical hacking , IOT , 3D
+- Delete Image from assets.
+- It needs to be more pulling (Attention grabbing) the first one.
+- Maybe add a paper and write your interests as it goes. A writting animation.
+
+------------Education-----------------
+- I Replaced this section with a paragraph in the me section.
+- Thinking about how to show Education, keep it as it is now or change. Maybe just have it like the one we wore in ceremony diagonal line and the information be on there
+- Combine Me & Education maybe. and have the degree to right and your info to the right
+
+------------Projects-----------------
+- Record playing the game. (Done could be improved maybe)
+- Change Mentor in the confidential project to team lead even in cv.
+- Nice Color text-blue-300
+
+
+------------Courses-----------------
+- Add clickable links that will send you to the course certificates if avaliable, or reuse the modal.
+- Add tryhackme courses
+
+------------Languages-----------------
+- Design the languages and frameworks part. (Kinda done)
+
+------------Achievements------------------
+- Add that it is club (Done)
+- The name is wrong change it to Achievements, only the navbar, Changed to Memberships (Done)
+- Design information of Tech Lead, Lead of GDSC. Boxes that open is left as well as the text inside it
+    - You can say for tech lead at the end hosted and participated in other events.
+
+
+------------Work Experience-----------------
+- Add Work Experiences so far. Add Technologies (Done)
+- Animate when you scroll down it will start like a piano up and down, or how stairs appear in game coming up and down ,
+    - They will jump up one by one, starting from the top one and till the last one.
+
+------------Work Experience-----------------
+
+
+------------Animation-----------------
+- The videos are not always for the project, so the title doesn't match the video.
+    - The video that already exists is being left without making a new one. Hence keep the old video even if it wrong altough the index changes
+- Maybe push back on the videos for animation instead only make it text
+    - For video, they can visit the static page 
+- Add All the data (Done)
+
+
+-------------------------------------Done-------------------------------------------------------
+
+
+////////////////////////////////////
+27/6/25:
+- Fix the CV use the right one
+- Modified the texts in work experience
+////////////////////////////////////
+
+
+////////////////////////////////////
+26/6/25:
+- Click on projects taht have no link will cause it to open but there is nothing
+- Add extra description for when u open the modal
+- Fix text in me section
+////////////////////////////////////
+25/6/25:
+-Design the whole application.
+////////////////////////////////////
+
+////////////////////////////////////
+14/6/25:
+- Me
+    - Remove Image from me section (Done)
+- Projects
+    - Record the my-home-library. (Done)
+    - Changed Click on the project to learn more about it and my role in it to Click to learn more  (Done)
+    - Rearrange the order of the projects, like HRF needs to be first then dora then my home library. (Done)
+    - If you click on the link it shouldn't open the modal, Removed the pointer cursor and onclick from div and placed it on click to learn more. (Done)
+
+////////////////////////////////////
+
+////////////////////////////////////
+1/8/24:
+-Fixes courses bug (When you click on web dev and then back to all, it will add new courses). (Done, error was that it was multiplying some courses due to them having same ids in data.js file)
+-Creating New Components for Courses Buttons and cards (Done, also add array for course cateogries)
+-Create a folder for each Section (e.h Courses add all the related course components)                 
+-Add languages you know and technologies. 
+////////////////////////////////////
+
+////////////////////////////////////
+29/8/24:
+-Fix the projects modal , add a cursor pointer for projects with videos.
+-Add information of Tech Lead, Lead of GDSC.
+-Unselect the Lead and Tech Lead H2 to reset the dropdown to nothing, and the jump design stays.
+
+////////////////////////////////////
+
+
+
+
+
