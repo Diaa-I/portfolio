@@ -33,7 +33,7 @@ export default function Projects() {
           onCloseModal={handleModalClose}
         ></Modal>
       )}
-      <div className="flex flex-row flex-wrap justify-center w-[90vw]">
+      <div className="flex flex-row flex-wrap justify-center lg:w-[90vw] w-auto h-auto">
         {ProjectsData.map((project) => {
           return (
             <Card

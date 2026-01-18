@@ -7,11 +7,21 @@ const ProjectsData = [
     title: "HRFhome",
     description:
       "A E-commerce website for buying/selling handmade crafts",
-    indepth_description: "I was in a team of 2 members, I was responsible for developing the backend for the supplier and admin dashboards and designing and improving the database schemas for this project, I used Laravel, MySQL, and pest.",
+    indepth_description: "I was in a team of 2 members, developed a RESTful backend APIs for admin and supplier dashboards using PHP Laravel and redesigned and optimized MySQL database schemas. I used Laravel, MySQL, and pest.",
     role: "Backend Developer",
     link: "https://hrfhome.app/",
     vidSrc: "",
     id: 1,
+  },
+  {
+    title: "SMNFood",
+    description:
+      "A E-commerce website for buying/selling handmade food items",
+    indepth_description: "I was in a team of 2 members, developed a RESTful backend APIs for admin and supplier dashboards using PHP Laravel and redesigned and optimized MySQL database schemas. I used Laravel, MySQL, and pest.",
+    role: "Backend Developer",
+    link: "https://smnfood.app/",
+    vidSrc: "",
+    id: 2,
   },
   {
     title: "D.O.R.A",
@@ -21,17 +31,17 @@ const ProjectsData = [
     role: "Full Stack Developer",
     link: "https://github.com/Diaa-I/D.O.R.A-Senior-Project",
     vidSrc: seniorDemo,
-    id: 2,
+    id: 3,
   },
   {
     title: "My-Home-Library",
     description:
       "A Virtual Library, keep track of all the books available at your home library.",
-    indepth_description: "I Developed the website, developed the authentication system from scratch using json tokens and refresh tokens to keep the user logged in, I used NodeJS, React, ThreeJS, PostgresSQL",
+    indepth_description: "Developing a 3D home library application that maps real-world book collections to virtual bookshelves using JavaScript, React, React Three Fiber, PostgresSQL ,and Node.js.",
     role: "Full Stack Developer",
     link: "",
     vidSrc: LibraryVideo,
-    id: 3,
+    id: 4,
   },
   {
     title: "Portfolio",
@@ -40,7 +50,7 @@ const ProjectsData = [
     role: "Full Stack Developer",
     link: "",
     vidSrc: "",
-    id: 4,
+    id: 5,
   },
   {
     title: "Confidential",
@@ -50,17 +60,17 @@ const ProjectsData = [
     role: "Software Developer / Mentor",
     link: "",
     vidSrc: "",
-    id: 5,
+    id: 6,
   },
   {
     title: "Trash Classifer",
     description:
       "Built a trash classifier with a team of 5 members that had a camera and AI model.",
-    indepth_description: "I was a member in a team of 5 that developed a trash classifier, implemented on a raspberry pi with an AI model and a camera to detect what type of trash the photo you took is, I configured and coded the Raspberry pi and camera, this project was for our Software engineering course. ",
+    indepth_description: "I was a member in a team of 5 that developed a trash classifier, we built a computer vision-based trash classifier to identify and categorize waste types from captured images and I configured and programmed a Raspberry Pi with a camera module for image capture and processing. ",
     role: "Software Developer",
     link: "https://github.com/YaserAlOsh/trash_classifier",
     vidSrc: "",
-    id: 6,
+    id: 7,
   },
   {
     title: "The Unexpected",
@@ -70,7 +80,7 @@ const ProjectsData = [
     role: "Software Developer",
     link: "https://github.com/Diaa-I/The-Unexpected",
     vidSrc: GameDemo,
-    id: 7,
+    id: 8,
   },
 
 
