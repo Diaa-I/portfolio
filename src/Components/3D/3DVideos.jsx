@@ -6,8 +6,8 @@ export default function ThreeDimensionalVideos({
   videoSrcs,
   videoSubtitleArray,
 }) {
-  const pauseTexture = useTexture("../../assets/pause.jpg");
-  const playTexture = useTexture("../../assets/play.jpg");
+  const pauseTexture = useTexture("assets/pause.jpg");
+  const playTexture = useTexture("assets/play.jpg");
   const [subtitleText, setSubtitleText] = useState("A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.");
   const videoRef = useRef();
   const [oldVideoSrcCounter, setOldVideoSrcCounter] = useState(videoSrcCounter);
