@@ -19,9 +19,9 @@ import {
   useHelper,
 } from "@react-three/drei";
 
-import PentesterTHM from "/src/assets/Pentester.png";
-import Bachelors from "/src/assets/download.png";
-import Lead from "/src/assets/Diaa_nasr_lead.jpg";
+import PentesterTHM from "../../assets/Pentester.png";
+import Bachelors from "../../assets/download.png";
+import Lead from "../../assets/Diaa_nasr_lead.jpg";
 import {
   CameraHelper,
   DirectionalLightHelper,
@@ -54,9 +54,9 @@ export default function ThreeDimensional() {
   );
   const [videoSrcCounter, setVideoSrcCounter] = useState(0);
   const videoSrcs = [
-    "/src/assets/This is the demo.mp4",
-    "/src/assets/LibraryProject.mp4",
-    "/src/assets/GameDemo.mp4",
+    "src/assets/This is the demo.mp4",
+    "src/assets/LibraryProject.mp4",
+    "src/assets/GameDemo.mp4",
   ];
   const videoSubtitleArray = [
   "A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.",
@@ -81,17 +81,17 @@ export default function ThreeDimensional() {
   const [floorColorMap, floorRoughnessMap, floorNormalMap] = useLoader(
     TextureLoader,
     [
-      "/src/assets/028_basecolor_2k.png",
-      "/src/assets/028_smoothness_2k.png",
-      "/src/assets/028_normal_2k.png",
+      "src/assets/028_basecolor_2k.png",
+      "src/assets/028_smoothness_2k.png",
+      "src/assets/028_normal_2k.png",
     ],
   );
   const [wall2ColorMap, wall2RoughnessMap, wall2NormalMap] = useLoader(
     TextureLoader,
     [
-      "/src/assets/T_WornRock_D.png",
-      "/src/assets/T_WornRock_N.png",
-      "/src/assets/T_WornRock_R.png",
+      "src/assets/T_WornRock_D.png",
+      "src/assets/T_WornRock_N.png",
+      "src/assets/T_WornRock_R.png",
     ],
   );
   useEffect(() => {
