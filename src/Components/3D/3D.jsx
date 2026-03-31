@@ -54,9 +54,9 @@ export default function ThreeDimensional() {
   );
   const [videoSrcCounter, setVideoSrcCounter] = useState(0);
   const videoSrcs = [
-    "src/assets/This is the demo.mp4",
-    "src/assets/LibraryProject.mp4",
-    "src/assets/GameDemo.mp4",
+    "../../assets/This is the demo.mp4",
+    "../../assets/LibraryProject.mp4",
+    "../../assets/GameDemo.mp4",
   ];
   const videoSubtitleArray = [
   "A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.",
