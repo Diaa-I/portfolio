@@ -70,14 +70,14 @@ export default function ThreeDimensional() {
   const PentesterTHMImg = useLoader(TextureLoader, PentesterTHM);
   const BachelorsImg = useLoader(TextureLoader, Bachelors);
   const LeadImg = useLoader(TextureLoader, Lead);
-  const [wallColorMap, wallRoughnessMap, wallNormalMap] = useLoader(
-    TextureLoader,
-    [
-      "src/assets/020_basecolor_2048.png",
-      "src/assets/020_smoothness_2048.png",
-      "src/assets/020_normal_2048.png",
-    ],
-  );
+  // const [wallColorMap, wallRoughnessMap, wallNormalMap] = useLoader(
+  //   TextureLoader,
+  //   [
+  //     "src/assets/020_basecolor_2048.png",
+  //     "src/assets/020_smoothness_2048.png",
+  //     "src/assets/020_normal_2048.png",
+  //   ],
+  // );
   const [floorColorMap, floorRoughnessMap, floorNormalMap] = useLoader(
     TextureLoader,
     [
