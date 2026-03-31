@@ -81,17 +81,17 @@ export default function ThreeDimensional() {
   const [floorColorMap, floorRoughnessMap, floorNormalMap] = useLoader(
     TextureLoader,
     [
-      "src/assets/028_basecolor_2k.png",
-      "src/assets/028_smoothness_2k.png",
-      "src/assets/028_normal_2k.png",
+      "../../assets/028_basecolor_2k.png",
+      "../../assets/028_smoothness_2k.png",
+      "../../assets/028_normal_2k.png",
     ],
   );
   const [wall2ColorMap, wall2RoughnessMap, wall2NormalMap] = useLoader(
     TextureLoader,
     [
-      "src/assets/T_WornRock_D.png",
-      "src/assets/T_WornRock_N.png",
-      "src/assets/T_WornRock_R.png",
+      "../../assets/T_WornRock_D.png",
+      "../../assets/T_WornRock_N.png",
+      "../../assets/T_WornRock_R.png",
     ],
   );
   useEffect(() => {
