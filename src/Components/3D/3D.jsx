@@ -127,13 +127,13 @@ export default function ThreeDimensional() {
               case "projects":
               case "project":
                 setResultText(
-                  "Projects:\nOn the screen:\n• D.O.R.A\n• My-Home-Library\n• The Unexpected\nProjects avaliable that can be viewed on the static page, but not here: \n• HRFhome\n• SMNfood\n• Portfolio\n• Confidential\n• Trash Classifer",
+                  "Projects:\nOn the screen:\n• D.O.R.A\n• My-Home-Library\n• The Unexpected\nProjects avaliable that can be viewed on the static page, but not here: \n• HRFhome\n• SMNfood\n• Portfolio\n• Confidential\n• Trash Classifer"
                 );
                 break;
               case "frameworks":
               case "framework":
                 setResultText(
-                  "Tools & Frameworks:\n• Three.Js\n• Express.js\n• React\n• Laravel\n• Flask\n• NodeJS\n• PestPHP",
+                  "Tools & Frameworks:\n• Three.Js\n• Express.js\n• React\n• Laravel\n• Flask\n• NodeJS\n• PestPHP"
                 );
                 break;
               case "databases":
@@ -148,7 +148,7 @@ export default function ThreeDimensional() {
                 break;
               default:
                 setResultText(
-                  "Invalid Input! Type 'help' command to know more, to exit the computer enter: 'quit', 'q', 'exit' ",
+                  "Invalid Input! Type 'help' command to know more, to exit the computer enter: 'quit', 'q', 'exit' "
                 );
                 break;
             }
