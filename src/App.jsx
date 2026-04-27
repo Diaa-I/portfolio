@@ -3,6 +3,7 @@ import Projects from "./Components/Projects/Projects";
 import Languages from "./Components/Languages/Languages";
 import WorkExperience from "./Components/WorkExperience/WorkExperience";
 import ThreeDimensional from "./Components/3D/3D";
+import ThreeDimensionalCredits from "./Components/3D/3DCredits";
 
 function App() {
   const meGoTo = () => document.getElementById(`Me`).scrollIntoView();
@@ -84,10 +85,16 @@ function App() {
       </div>
       <hr></hr>
       {viewportWidth > 1300 && (
+        <>
         <div className={defaultCssClasses} id="3D">
           <ThreeDimensional />
         </div>
+        <div className={defaultCssClasses + " flex-col flex-wrap bg-[#ECF7F8] lg:h-[15rem]"} id="3D-Credits">
+          <ThreeDimensionalCredits />
+        </div>
+        </>
       )}
+
       <hr></hr>
       <div className={defaultCssClasses} id="contactMe">
         <p className="p-10 m-5 lg:text-2xl text-xl">

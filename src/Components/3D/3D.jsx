@@ -75,9 +75,9 @@ export default function ThreeDimensional() {
     TextureLoader,
     ["028_basecolor_2k.png", "028_smoothness_2k.png", "028_normal_2k.png"],
   );
-  const [wall2ColorMap, wall2RoughnessMap, wall2NormalMap] = useLoader(
+  const [wallColorMap, wallRoughnessMap, wallNormalMap,wallAoMap] = useLoader(
     TextureLoader,
-    ["T_WornRock_D.png", "T_WornRock_N.png", "T_WornRock_R.png"],
+    ["Stucco_Wall_vigrejf_2K_BaseColor.jpg", "Stucco_Wall_vigrejf_2K_Normal.jpg", "Stucco_Wall_vigrejf_2K_Roughness.jpg","Stucco_Wall_vigrejf_2K_AO.jpg"],
   );
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -225,18 +225,20 @@ export default function ThreeDimensional() {
         >
           <boxGeometry args={[10, 8, 0.5]} />
           <meshStandardMaterial
-            map={wall2ColorMap}
-            roughnessMap={wall2RoughnessMap}
-            normalMap={wall2NormalMap}
+            map={wallColorMap}
+            roughnessMap={wallRoughnessMap}
+            normalMap={wallNormalMap}
+            aoMap={wallAoMap}
           />
         </mesh>
         {/* Left wall */}
         <mesh position={[0.18, 1, -5.2]} name="left_wall">
           <boxGeometry args={[10, 8, 0.5]} />
           <meshStandardMaterial
-            map={wall2ColorMap}
-            roughnessMap={wall2RoughnessMap}
-            normalMap={wall2NormalMap}
+            map={wallColorMap}
+            roughnessMap={wallRoughnessMap}
+            normalMap={wallNormalMap}
+            aoMap={wallAoMap}
           />
         </mesh>
         {/* Floor */}
@@ -357,6 +359,7 @@ export default function ThreeDimensional() {
           {bottomDescriptionJob.current}
         </Text>
         {/* Computer Screen */}
+        
         <mesh
           position={[4.6, -0.5, 1]}
           onClick={handleComputerScreenClick}
