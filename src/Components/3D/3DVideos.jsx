@@ -6,8 +6,8 @@ export default function ThreeDimensionalVideos({
   videoSrcs,
   videoSubtitleArray,
 }) {
-  const pauseTexture = useTexture("src/assets/pause.jpg");
-  const playTexture = useTexture("src/assets/play.jpg");
+  const pauseTexture = useTexture("pause.jpg");
+  const playTexture = useTexture("play.jpg");
   const [subtitleText, setSubtitleText] = useState("A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.");
   const videoRef = useRef();
   const [oldVideoSrcCounter, setOldVideoSrcCounter] = useState(videoSrcCounter);
@@ -68,13 +68,13 @@ export default function ThreeDimensionalVideos({
       </mesh>
       <Text
         name="video_subtitle"
-        position={[4.76, 3.2, 3.44]} // X, Y, Z coordinates
-        anchorX="center" // Center the text horizontally
-        anchorY="middle" // Center the text vertically
-        fontSize={0.15} // Set the font size in 3D units
-        color="red" // Set the text color
-        maxWidth={1.5} // Optional: wrap text if it exceeds a certain width
-        lineHeight={1} // Optional: set line spacing
+        position={[4.76, 3.2, 3.44]} 
+        anchorX="center" 
+        anchorY="middle" 
+        fontSize={0.15} 
+        color="red" 
+        maxWidth={1.5} 
+        lineHeight={1} 
         rotation={[0, -(Math.PI * 0.5), 0]}
       >
         {subtitleText}

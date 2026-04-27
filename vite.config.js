@@ -5,5 +5,5 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   base: "/portfolio/",
-  assetsInclude: ["**/**.pdf"],
+  assetsInclude: ["**/**.pdf","**/**.hdr","**/**.png","**/**.jpg","**/**.mp4","**/**.glb"],
 });

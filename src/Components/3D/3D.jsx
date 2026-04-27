@@ -54,9 +54,9 @@ export default function ThreeDimensional() {
   );
   const [videoSrcCounter, setVideoSrcCounter] = useState(0);
   const videoSrcs = [
-    "src/assets/This is the demo.mp4",
-    "src/assets/LibraryProject.mp4",
-    "src/assets/GameDemo.mp4",
+    "This is the demo.mp4",
+    "LibraryProject.mp4",
+    "GameDemo.mp4",
   ];
   const videoSubtitleArray = [
   "A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.",
@@ -70,28 +70,20 @@ export default function ThreeDimensional() {
   const PentesterTHMImg = useLoader(TextureLoader, PentesterTHM);
   const BachelorsImg = useLoader(TextureLoader, Bachelors);
   const LeadImg = useLoader(TextureLoader, Lead);
-  // const [wallColorMap, wallRoughnessMap, wallNormalMap] = useLoader(
-  //   TextureLoader,
-  //   [
-  //     "src/assets/020_basecolor_2048.png",
-  //     "src/assets/020_smoothness_2048.png",
-  //     "src/assets/020_normal_2048.png",
-  //   ],
-  // );
   const [floorColorMap, floorRoughnessMap, floorNormalMap] = useLoader(
     TextureLoader,
     [
-      "src/assets/028_basecolor_2k.png",
-      "src/assets/028_smoothness_2k.png",
-      "src/assets/028_normal_2k.png",
+      "028_basecolor_2k.png",
+      "028_smoothness_2k.png",
+      "028_normal_2k.png",
     ],
   );
   const [wall2ColorMap, wall2RoughnessMap, wall2NormalMap] = useLoader(
     TextureLoader,
     [
-      "src/assets/T_WornRock_D.png",
-      "src/assets/T_WornRock_N.png",
-      "src/assets/T_WornRock_R.png",
+      "T_WornRock_D.png",
+      "T_WornRock_N.png",
+      "T_WornRock_R.png",
     ],
   );
   useEffect(() => {
@@ -168,26 +160,13 @@ export default function ThreeDimensional() {
             setVideoSrcCounter((index) => index - 1);
           }
         }
-        // if (oldIndex != videoSrcCounter) {
-        //   console.log(videoSrcs[videoSrcCounter]);
-        //   // video.src = videoSrcs[videoSrcCounter];
-        //   // SubtitleText.text = videoSubtitleArray[videoSrcIndex];
-        //   // Not needed
-        //   // videoMaterial.needsUpdate = true;
-        //   // videoTexture.needsUpdate = true;
-        //   // video.load();
-        //   // video.play();
-        // }
+
       }
   
     };
-    // const handleOnClick = (e) => {
-    //   console.log(e);
-    // };
-    // window.addEventListener("mousedown", handleOnClick);
+
     window.addEventListener("keydown", handleKeyDown);
     return () => {
-      // window.removeEventListener("onclick", handleOnClick);
       window.removeEventListener("keydown", handleKeyDown);
     };
   });
@@ -211,19 +190,10 @@ export default function ThreeDimensional() {
           isOnComputer={isOnComputer}
         />
         <Environment preset="city" />
-        {/* <Environment files="src/assets/kloofendal_48d_partly_cloudy_puresky_2k.hdr" background /> */}
-        {/* <Environment files="src/assets/studio_small_09_2k.hdr" background  /> */}
-        {/* <Environment files="src/assets/fireplace_2k.hdr" background  /> */}
-        {/* <ambientLight intensity={50} color={"green"}></ambientLight> */}
-        {/* <directionalLight
-          position={[10, 1, 20]}
-          color={"green"}
-          intensity={10}
-          // rotation={[0, -45 * DEG2RAD, 0]}
-        /> */}
+
         <ThreeDimensionalModel
           url={
-            "src/assets/3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
+            "3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
           }
           position={[-3.4, 2.7, -4.8]}
           rotation={[0, 0, 90 * DEG2RAD]}
@@ -231,7 +201,7 @@ export default function ThreeDimensional() {
         />
         <ThreeDimensionalModel
           url={
-            "src/assets/3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
+            "3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
           }
           position={[-0.1, 2.7, -4.8]}
           rotation={[0, 0, 90 * DEG2RAD]}
@@ -239,38 +209,34 @@ export default function ThreeDimensional() {
         />
         <ThreeDimensionalModel
           url={
-            "src/assets/3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
+            "3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
           }
           position={[3, 2.7, -4.8]}
           rotation={[0, 0, 90 * DEG2RAD]}
           scale={[2, 2.5, 1]}
         />
         <ThreeDimensionalModel
-          url={"src/assets/3D_assets/tv_low_poly.glb"}
+          url={"3D_assets/tv_low_poly.glb"}
           
           position={[5.0, 1.4, -0.01]}
           rotation={[0, -87.5 * DEG2RAD, 0]}
           scale={[2.7, 2.8, 1]}
         />
         <ThreeDimensionalModel
-          url={"src/assets/3D_assets/pc.fbx"}
+          url={"3D_assets/pc.fbx"}
           fbx={true}
           name="computer"
           position={[4, -3.6, 1]}
           rotation={[0, 90 * DEG2RAD, 0]}
           scale={[0.01, 0.01, 0.01]}
         />
-        {/* <OrbitControls></OrbitControls> */}
-        {/* <CameraControls ref={controlsRef} /> */}
-        {/* <OrbitControls></OrbitControls> */}
+
         <PerspectiveCamera
           makeDefault
           position={[-7.8, 0.5, 8]}
           rotation={[0, -45 * DEG2RAD, 0]}
         >
-          {/* <Helper type={CameraHelper}></Helper> */}
         </PerspectiveCamera>
-        {/* <color attach="background" args={["#213C51"]} /> */}
         {/* Right wall */}
         <mesh
           position={[5.2, 0.96, 0.2]}
@@ -278,7 +244,6 @@ export default function ThreeDimensional() {
           name="right_wall"
         >
           <boxGeometry args={[10, 8,0.5]} />
-          {/* <meshBasicMaterial color={"#DDAED3"}  /> */}
           <meshStandardMaterial
             map={wall2ColorMap}
             roughnessMap={wall2RoughnessMap}
@@ -288,7 +253,6 @@ export default function ThreeDimensional() {
         {/* Left wall */}
         <mesh position={[0.18, 1, -5.2]} name="left_wall">
           <boxGeometry args={[10, 8,0.5]} />
-          {/* <meshBasicMaterial color={"#6594B1"} map={wallMaterial} /> */}
           <meshStandardMaterial
             map={wall2ColorMap}
             roughnessMap={wall2RoughnessMap}
@@ -302,7 +266,6 @@ export default function ThreeDimensional() {
           name="floor"
         >
           <planeGeometry args={[10.3, 10.8, 1]} />
-          {/* <meshBasicMaterial color={"#EEEEEE"} /> */}
           <meshStandardMaterial
             map={floorColorMap}
             roughnessMap={floorRoughnessMap}
@@ -331,25 +294,25 @@ export default function ThreeDimensional() {
         </mesh>
         <Text
           name="triangle"
-          position={[2.0, 1.6, -4.84]} // X, Y, Z coordinates
-          anchorX="center" // Center the text horizontally
-          anchorY="middle" // Center the text vertically
-          fontSize={0.1} // Set the font size in 3D units
-          color="black" // Set the text color
-          maxWidth={3.8} // Optional: wrap text if it exceeds a certain width
-          lineHeight={1} // Optional: set line spacing
+          position={[2.0, 1.6, -4.84]} 
+          anchorX="center" 
+          anchorY="middle" 
+          fontSize={0.1} 
+          color="black" 
+          maxWidth={3.8} 
+          lineHeight={1} 
         >
           {topTitleJob.current}
         </Text>
         <Text
           name="triangle"
-          position={[2.0, 1.1, -4.84]} // X, Y, Z coordinates
-          anchorX="center" // Center the text horizontally
-          anchorY="middle" // Center the text vertically
-          fontSize={0.1} // Set the font size in 3D units
-          color="black" // Set the text color
-          maxWidth={2.9} // Optional: wrap text if it exceeds a certain width
-          lineHeight={1.2} // Optional: set line spacing
+          position={[2.0, 1.1, -4.84]} 
+          anchorX="center" 
+          anchorY="middle" 
+          fontSize={0.1} 
+          color="black"
+          maxWidth={2.9} 
+          lineHeight={1.2} 
         >
           {topDescriptionJob.current}
         </Text>
@@ -361,25 +324,25 @@ export default function ThreeDimensional() {
         </mesh>
         <Text
           name="triangle"
-          position={[-0.5, 0.8, -4.84]} // X, Y, Z coordinates
-          anchorX="center" // Center the text horizontally
-          anchorY="middle" // Center the text vertically
-          fontSize={0.1} // Set the font size in 3D units
-          color="black" // Set the text color
-          maxWidth={3.8} // Optional: wrap text if it exceeds a certain width
-          lineHeight={1} // Optional: set line spacing
+          position={[-0.5, 0.8, -4.84]} 
+          anchorX="center" 
+          anchorY="middle" 
+          fontSize={0.1} 
+          color="black" 
+          maxWidth={3.8} 
+          lineHeight={1} 
         >
           {midTitleJob.current}
         </Text>
         <Text
           name="triangle"
-          position={[-0.5, 0.35, -4.84]} // X, Y, Z coordinates
-          anchorX="center" // Center the text horizontally
-          anchorY="middle" // Center the text vertically
-          fontSize={0.1} // Set the font size in 3D units
-          color="black" // Set the text color
-          maxWidth={2.25} // Optional: wrap text if it exceeds a certain width
-          lineHeight={1} // Optional: set line spacing
+          position={[-0.5, 0.35, -4.84]} 
+          anchorX="center" 
+          anchorY="middle" 
+          fontSize={0.1} 
+          color="black" 
+          maxWidth={2.25}
+          lineHeight={1} 
         >
           {midDescriptionJob.current}
         </Text>
@@ -391,25 +354,25 @@ export default function ThreeDimensional() {
         </mesh>
         <Text
           name="triangle"
-          position={[-3, -0.2, -4.74]} // X, Y, Z coordinates
-          anchorX="center" // Center the text horizontally
-          anchorY="middle" // Center the text vertically
-          fontSize={0.1} // Set the font size in 3D units
-          color="black" // Set the text color
-          maxWidth={1} // Optional: wrap text if it exceeds a certain width
-          lineHeight={1} // Optional: set line spacing
+          position={[-3, -0.2, -4.74]} 
+          anchorX="center" 
+          anchorY="middle" 
+          fontSize={0.1} 
+          color="black" 
+          maxWidth={1} 
+          lineHeight={1} 
         >
           {bottomTitleJob.current}
         </Text>
         <Text
           name="triangle"
-          position={[-3, -0.8, -4.74]} // X, Y, Z coordinates
-          anchorX="center" // Center the text horizontally
-          anchorY="middle" // Center the text vertically
-          fontSize={0.1} // Set the font size in 3D units
-          color="black" // Set the text color
-          maxWidth={2.9} // Optional: wrap text if it exceeds a certain width
-          lineHeight={1.1} // Optional: set line spacing
+          position={[-3, -0.8, -4.74]} 
+          anchorX="center" 
+          anchorY="middle" 
+          fontSize={0.1} 
+          color="black" 
+          maxWidth={2.9} 
+          lineHeight={1.1}
         >
           {bottomDescriptionJob.current}
         </Text>
@@ -427,13 +390,13 @@ export default function ThreeDimensional() {
         {/* Input Text */}
         <Text
           name="computer"
-          position={[4.55, -0.2, 1]} // X, Y, Z coordinates
-          anchorX="center" // Center the text horizontally
-          anchorY="middle" // Center the text vertically
-          fontSize={0.07} // Set the font size in 3D units
-          color="green" // Set the text color
-          maxWidth={1.7} // Optional: wrap text if it exceeds a certain width
-          lineHeight={1} // Optional: set line spacing
+          position={[4.55, -0.2, 1]} 
+          anchorX="center" 
+          anchorY="middle" 
+          fontSize={0.07}
+          color="green" 
+          maxWidth={1.7} 
+          lineHeight={1} 
           rotation={[0, -(Math.PI * 0.5), 0]}
         >
           {inputText}
@@ -441,13 +404,13 @@ export default function ThreeDimensional() {
         {/* Result Text */}
         <Text
           name="computer"
-          position={[4.55, -0.55, 1]} // X, Y, Z coordinates
-          anchorX="center" // Center the text horizontally
-          anchorY="middle" // Center the text vertically
-          fontSize={0.055} // Set the font size in 3D units
-          color="red" // Set the text color
-          maxWidth={1.7} // Optional: wrap text if it exceeds a certain width
-          lineHeight={1} // Optional: set line spacing
+          position={[4.55, -0.55, 1]} 
+          anchorX="center" 
+          anchorY="middle" 
+          fontSize={0.055}
+          color="red"
+          maxWidth={1.7} 
+          lineHeight={1} 
           rotation={[0, -(Math.PI * 0.5), 0]}
         >
           {resultText}
