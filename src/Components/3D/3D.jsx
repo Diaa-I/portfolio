@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import {
   Canvas,
   extend,
@@ -17,6 +17,7 @@ import {
   useGLTF,
   useTexture,
   useHelper,
+  Loader,
 } from "@react-three/drei";
 
 import PentesterTHM from "../../assets/Pentester.png";
@@ -59,10 +60,10 @@ export default function ThreeDimensional() {
     "GameDemo.mp4",
   ];
   const videoSubtitleArray = [
-  "A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.",
-  "I Developed the website, and developed the authentication system from scratch using json tokens and refresh tokens to keep the user logged in, I used NodeJS, React, ThreeJS, PostgresSQL. I am currently working on this project.",
-  "I was part of a team of 2 developers, we worked on the game which had two levels, the level you are watching is the level I developed, we used Unity, C#.",
-];
+    "A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.",
+    "I Developed the website, and developed the authentication system from scratch using json tokens and refresh tokens to keep the user logged in, I used NodeJS, React, ThreeJS, PostgresSQL. I am currently working on this project.",
+    "I was part of a team of 2 developers, we worked on the game which had two levels, the level you are watching is the level I developed, we used Unity, C#.",
+  ];
   const controlsRef = useRef();
   const [isOnComputer, setIsOnComputer] = useState(false);
   const [firstTimeInput, setFirstTimeInput] = useState(true);
@@ -72,23 +73,14 @@ export default function ThreeDimensional() {
   const LeadImg = useLoader(TextureLoader, Lead);
   const [floorColorMap, floorRoughnessMap, floorNormalMap] = useLoader(
     TextureLoader,
-    [
-      "028_basecolor_2k.png",
-      "028_smoothness_2k.png",
-      "028_normal_2k.png",
-    ],
+    ["028_basecolor_2k.png", "028_smoothness_2k.png", "028_normal_2k.png"],
   );
   const [wall2ColorMap, wall2RoughnessMap, wall2NormalMap] = useLoader(
     TextureLoader,
-    [
-      "T_WornRock_D.png",
-      "T_WornRock_N.png",
-      "T_WornRock_R.png",
-    ],
+    ["T_WornRock_D.png", "T_WornRock_N.png", "T_WornRock_R.png"],
   );
   useEffect(() => {
     const handleKeyDown = (e) => {
-      
       if (isOnComputer) {
         if (firstTimeInput) {
           if (e.which >= 65 && e.which <= 90) {
@@ -119,13 +111,13 @@ export default function ThreeDimensional() {
               case "projects":
               case "project":
                 setResultText(
-                  "Projects:\nOn the screen:\n• D.O.R.A\n• My-Home-Library\n• The Unexpected\nProjects avaliable that can be viewed on the static page, but not here: \n• HRFhome\n• SMNfood\n• Portfolio\n• Confidential\n• Trash Classifer"
+                  "Projects:\nOn the screen:\n• D.O.R.A\n• My-Home-Library\n• The Unexpected\nProjects avaliable that can be viewed on the static page, but not here: \n• HRFhome\n• SMNfood\n• Portfolio\n• Confidential\n• Trash Classifer",
                 );
                 break;
               case "frameworks":
               case "framework":
                 setResultText(
-                  "Tools & Frameworks:\n• Three.Js\n• Express.js\n• React\n• Laravel\n• Flask\n• NodeJS\n• PestPHP"
+                  "Tools & Frameworks:\n• Three.Js\n• Express.js\n• React\n• Laravel\n• Flask\n• NodeJS\n• PestPHP",
                 );
                 break;
               case "databases":
@@ -140,7 +132,7 @@ export default function ThreeDimensional() {
                 break;
               default:
                 setResultText(
-                  "Invalid Input! Type 'help' command to know more, to exit the computer enter: 'quit', 'q', 'exit' "
+                  "Invalid Input! Type 'help' command to know more, to exit the computer enter: 'quit', 'q', 'exit' ",
                 );
                 break;
             }
@@ -160,9 +152,7 @@ export default function ThreeDimensional() {
             setVideoSrcCounter((index) => index - 1);
           }
         }
-
       }
-  
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -174,8 +164,6 @@ export default function ThreeDimensional() {
   const handleComputerScreenClick = (e) => {
     setIsOnComputer(true);
   };
-  
-
 
   return (
     <div style={{ width: "100vw", height: "90vh" }}>
@@ -192,32 +180,25 @@ export default function ThreeDimensional() {
         <Environment preset="city" />
 
         <ThreeDimensionalModel
-          url={
-            "3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
-          }
+          url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
           position={[-3.4, 2.7, -4.8]}
           rotation={[0, 0, 90 * DEG2RAD]}
           scale={[2, 2.5, 1]}
         />
         <ThreeDimensionalModel
-          url={
-            "3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
-          }
+          url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
           position={[-0.1, 2.7, -4.8]}
           rotation={[0, 0, 90 * DEG2RAD]}
           scale={[2, 2.5, 1]}
         />
         <ThreeDimensionalModel
-          url={
-            "3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"
-          }
+          url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
           position={[3, 2.7, -4.8]}
           rotation={[0, 0, 90 * DEG2RAD]}
           scale={[2, 2.5, 1]}
         />
         <ThreeDimensionalModel
           url={"3D_assets/tv_low_poly.glb"}
-          
           position={[5.0, 1.4, -0.01]}
           rotation={[0, -87.5 * DEG2RAD, 0]}
           scale={[2.7, 2.8, 1]}
@@ -235,15 +216,14 @@ export default function ThreeDimensional() {
           makeDefault
           position={[-7.8, 0.5, 8]}
           rotation={[0, -45 * DEG2RAD, 0]}
-        >
-        </PerspectiveCamera>
+        ></PerspectiveCamera>
         {/* Right wall */}
         <mesh
           position={[5.2, 0.96, 0.2]}
           rotation={[0, -(Math.PI * 0.5), 0]}
           name="right_wall"
         >
-          <boxGeometry args={[10, 8,0.5]} />
+          <boxGeometry args={[10, 8, 0.5]} />
           <meshStandardMaterial
             map={wall2ColorMap}
             roughnessMap={wall2RoughnessMap}
@@ -252,7 +232,7 @@ export default function ThreeDimensional() {
         </mesh>
         {/* Left wall */}
         <mesh position={[0.18, 1, -5.2]} name="left_wall">
-          <boxGeometry args={[10, 8,0.5]} />
+          <boxGeometry args={[10, 8, 0.5]} />
           <meshStandardMaterial
             map={wall2ColorMap}
             roughnessMap={wall2RoughnessMap}
@@ -294,25 +274,25 @@ export default function ThreeDimensional() {
         </mesh>
         <Text
           name="triangle"
-          position={[2.0, 1.6, -4.84]} 
-          anchorX="center" 
-          anchorY="middle" 
-          fontSize={0.1} 
-          color="black" 
-          maxWidth={3.8} 
-          lineHeight={1} 
+          position={[2.0, 1.6, -4.84]}
+          anchorX="center"
+          anchorY="middle"
+          fontSize={0.1}
+          color="black"
+          maxWidth={3.8}
+          lineHeight={1}
         >
           {topTitleJob.current}
         </Text>
         <Text
           name="triangle"
-          position={[2.0, 1.1, -4.84]} 
-          anchorX="center" 
-          anchorY="middle" 
-          fontSize={0.1} 
+          position={[2.0, 1.1, -4.84]}
+          anchorX="center"
+          anchorY="middle"
+          fontSize={0.1}
           color="black"
-          maxWidth={2.9} 
-          lineHeight={1.2} 
+          maxWidth={2.9}
+          lineHeight={1.2}
         >
           {topDescriptionJob.current}
         </Text>
@@ -324,25 +304,25 @@ export default function ThreeDimensional() {
         </mesh>
         <Text
           name="triangle"
-          position={[-0.5, 0.8, -4.84]} 
-          anchorX="center" 
-          anchorY="middle" 
-          fontSize={0.1} 
-          color="black" 
-          maxWidth={3.8} 
-          lineHeight={1} 
+          position={[-0.5, 0.8, -4.84]}
+          anchorX="center"
+          anchorY="middle"
+          fontSize={0.1}
+          color="black"
+          maxWidth={3.8}
+          lineHeight={1}
         >
           {midTitleJob.current}
         </Text>
         <Text
           name="triangle"
-          position={[-0.5, 0.35, -4.84]} 
-          anchorX="center" 
-          anchorY="middle" 
-          fontSize={0.1} 
-          color="black" 
+          position={[-0.5, 0.35, -4.84]}
+          anchorX="center"
+          anchorY="middle"
+          fontSize={0.1}
+          color="black"
           maxWidth={2.25}
-          lineHeight={1} 
+          lineHeight={1}
         >
           {midDescriptionJob.current}
         </Text>
@@ -354,24 +334,24 @@ export default function ThreeDimensional() {
         </mesh>
         <Text
           name="triangle"
-          position={[-3, -0.2, -4.74]} 
-          anchorX="center" 
-          anchorY="middle" 
-          fontSize={0.1} 
-          color="black" 
-          maxWidth={1} 
-          lineHeight={1} 
+          position={[-3, -0.2, -4.74]}
+          anchorX="center"
+          anchorY="middle"
+          fontSize={0.1}
+          color="black"
+          maxWidth={1}
+          lineHeight={1}
         >
           {bottomTitleJob.current}
         </Text>
         <Text
           name="triangle"
-          position={[-3, -0.8, -4.74]} 
-          anchorX="center" 
-          anchorY="middle" 
-          fontSize={0.1} 
-          color="black" 
-          maxWidth={2.9} 
+          position={[-3, -0.8, -4.74]}
+          anchorX="center"
+          anchorY="middle"
+          fontSize={0.1}
+          color="black"
+          maxWidth={2.9}
           lineHeight={1.1}
         >
           {bottomDescriptionJob.current}
@@ -390,13 +370,13 @@ export default function ThreeDimensional() {
         {/* Input Text */}
         <Text
           name="computer"
-          position={[4.55, -0.2, 1]} 
-          anchorX="center" 
-          anchorY="middle" 
+          position={[4.55, -0.2, 1]}
+          anchorX="center"
+          anchorY="middle"
           fontSize={0.07}
-          color="green" 
-          maxWidth={1.7} 
-          lineHeight={1} 
+          color="green"
+          maxWidth={1.7}
+          lineHeight={1}
           rotation={[0, -(Math.PI * 0.5), 0]}
         >
           {inputText}
@@ -404,13 +384,13 @@ export default function ThreeDimensional() {
         {/* Result Text */}
         <Text
           name="computer"
-          position={[4.55, -0.55, 1]} 
-          anchorX="center" 
-          anchorY="middle" 
+          position={[4.55, -0.55, 1]}
+          anchorX="center"
+          anchorY="middle"
           fontSize={0.055}
           color="red"
-          maxWidth={1.7} 
-          lineHeight={1} 
+          maxWidth={1.7}
+          lineHeight={1}
           rotation={[0, -(Math.PI * 0.5), 0]}
         >
           {resultText}
