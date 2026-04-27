@@ -2,7 +2,7 @@ const WorkExperienceData = [
   {
     title: "Trainee Backend Developer",
     company: "Technologies LLC",
-    date: "April 2025 - Now",
+    date: "April - July 2025",
     "contents": [
       "Developed RESTful APIs for e-commerce platforms and a notification microservice using RabbitMQ.",
       "Performed automated API testing with PestPHP.",
