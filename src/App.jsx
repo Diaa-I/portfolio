@@ -13,7 +13,7 @@ function App() {
   const contactMeGoTo = () =>
     document.getElementById(`contactMe`).scrollIntoView();
   const ThreeDMeGoTo = () => document.getElementById(`3D`).scrollIntoView();
-  const [wantsThreeDimensional, setWantsThreeDimensional] = useState("NOT_SET");
+  const [wantsThreeDimensional, setWantsThreeDimensional] = useState(viewportWidth> 1300 ?"NOT_SET" :false);
   if (wantsThreeDimensional == "NOT_SET")
     return (
       <div className="grid grid-cols-2 bg-black h-[100vh] w-[100vw]">
