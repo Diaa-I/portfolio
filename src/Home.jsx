@@ -41,13 +41,14 @@ export default function Home({ wantsThreeDimensional }) {
       {viewportWidth > 1300 && wantsThreeDimensional == true && (
         <>
           <div className={defaultCssClasses + ' w-[100vw] h-[90vh]'} id="3D">
+              <Suspense fallback={<div>3D Loading, please wait...</div>}>
             <Canvas
               tabIndex={-1}
               onClick={() => controlsRef.current.handleCanvasClick()}
             >
-              
                 <ThreeDimensional controlsRef={controlsRef} />
             </Canvas>
+                </Suspense>
           </div>
           <div
             className={
