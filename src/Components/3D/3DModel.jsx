@@ -7,7 +7,6 @@ export default function ThreeDimensionalModel({ url, position, rotation, scale, 
     model = useFBX(url)
   else
     model = useGLTF(url);
-  console.log(name)
   return (
     <mesh position={position} rotation={rotation} scale={scale} name={name}>
       <primitive object={fbx?model:model.scene.clone()} name={name}  />

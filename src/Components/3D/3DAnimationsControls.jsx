@@ -48,7 +48,6 @@ const controls = forwardRef(
       if (toMove) {
         // Get the distance of the camera from the end poistion which the position of what was clicked
         let distance = Math.round(camera.position.distanceTo(movePosition));
-        console.log(distance);
         // Stop the animation if the distance is less than 0.1
         if (distance < 0.001) {
           setToMove(false);
@@ -58,7 +57,6 @@ const controls = forwardRef(
         } else {
           // Keep moving towards if distance is not less than 0.1
           camera.position.lerp(movePosition, 0.03);
-          console.log(cameraRotation);
           if (cameraRotation) {
             state.camera.quaternion.slerp(cameraRotation, 0.03);
             //   camera.rotation.x = MathUtils.lerp(-7.8, cameraRotation.x, 0.02);
