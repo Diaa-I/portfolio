@@ -17,3 +17,15 @@ Link: https://www.fab.com/listings/42d05d58-3131-4afc-9f60-4920b5a86536
 ## Walls
 - Walls by Quixel Megascans
 Link: https://www.fab.com/listings/e2f69285-c695-4aa8-851c-1b6492b79b74
+## Play
+- Video icons created by Freepik - Flaticon
+Link: https://www.flaticon.com/free-icons/video
+## Pause
+- Pause icons created by Freepik - Flaticon
+Link: https://www.flaticon.com/free-icons/pause
+## Back
+- Left arrow icons created by Freepik - Flaticon
+Link: https://www.flaticon.com/free-icons/left-arrow
+## Next
+- Next icons created by Riconsly - Flaticon
+Link: https://www.flaticon.com/free-icons/next
