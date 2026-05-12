@@ -77,7 +77,6 @@ Walls: https://www.fab.com/listings/e2f69285-c695-4aa8-851c-1b6492b79b74
           <a
             href="https://www.flaticon.com/free-icons/pause"
             title="pause icons"
-            title="video icons"
             className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200"
           >
             Pause icons created by Freepik - Flaticon
@@ -87,7 +86,6 @@ Walls: https://www.fab.com/listings/e2f69285-c695-4aa8-851c-1b6492b79b74
           <a
             href="https://www.flaticon.com/free-icons/left-arrow"
             title="left arrow icons"
-            title="video icons"
             className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200"
           >
             Left arrow icons created by Freepik - Flaticon
@@ -97,7 +95,6 @@ Walls: https://www.fab.com/listings/e2f69285-c695-4aa8-851c-1b6492b79b74
           <a
             href="https://www.flaticon.com/free-icons/next"
             title="next icons"
-            title="video icons"
             className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200"
           >
             Next icons created by Riconsly - Flaticon
