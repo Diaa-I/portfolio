@@ -86,6 +86,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
     const handleKeyDown = (e) => {
       if (isOnComputer) {
         inputRef.current.focus();
+        inputRef.current.click()
         if (firstTimeInput) {
           if (e.which >= 65 && e.which <= 90) {
             setInputText(() => e.key);
