@@ -13,7 +13,7 @@ Walls: https://www.fab.com/listings/e2f69285-c695-4aa8-851c-1b6492b79b74
 
   return (
     <>
-      <h2 className="lg:text-3xl font-extrabold text-center">
+      <h2 className="lg:text-3xl font-extrabold text-center my-1">
         Credits & Resources for the 3D section
       </h2>
       <ul className="text-center space-y-2">

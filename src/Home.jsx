@@ -50,8 +50,6 @@ export default function Home({ wantsThreeDimensional }) {
               left: 0,
               fontSize: "16px",
               opacity: 0,
-              width: "100vw",
-              height: "100vh",
               overflow: "hidden",
             }}
           />
@@ -75,7 +73,7 @@ export default function Home({ wantsThreeDimensional }) {
           <div
             className={
               defaultCssClasses +
-              " flex-col flex-wrap bg-[#ECF7F8] lg:h-[15rem]"
+              " flex-col bg-[#ECF7F8]"
             }
             id="3D-Credits"
           >
