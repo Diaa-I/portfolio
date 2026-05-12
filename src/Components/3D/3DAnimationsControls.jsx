@@ -64,7 +64,7 @@ const controls = forwardRef(
             //   camera.rotation.z = MathUtils.lerp(8, cameraRotation.z, 0.02);
           }
         }
-        console.log(1);
+        
       }
     });
     //   const handleCanvasClick = ;

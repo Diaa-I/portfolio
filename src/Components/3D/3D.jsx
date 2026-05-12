@@ -40,7 +40,7 @@ import ThreeDimensionalModel from "./3DModel.jsx";
 import Modal from "../Projects/ProjectModal.jsx";
 extend({ TextGeometry });
 
-export default function ThreeDimensional({controlsRef}) {
+export default function ThreeDimensional({ controlsRef, inputRef }) {
   const [inputText, setInputText] = useState(
     "Enter one of the following commands to see something: 'Frameworks', 'Languages', 'Projects', or 'Databases'.\nPress Enter after inputting the command of your choice\nPress any key to start",
   );
@@ -85,6 +85,7 @@ export default function ThreeDimensional({controlsRef}) {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (isOnComputer) {
+        inputRef.current.focus();
         if (firstTimeInput) {
           if (e.which >= 65 && e.which <= 90) {
             setInputText(() => e.key);
@@ -145,6 +146,7 @@ export default function ThreeDimensional({controlsRef}) {
           }
         }
       } else {
+        inputRef.current.blur();
         if (e.key.toLocaleLowerCase() == "arrowright") {
           if (!(videoSrcs.length - 2 < videoSrcCounter)) {
             setVideoSrcCounter((index) => index + 1);
@@ -169,240 +171,240 @@ export default function ThreeDimensional({controlsRef}) {
 
   return (
     <>
-  
-          <ThreeDimensionalControls
-            ref={controlsRef}
-            setIsOnComputer={setIsOnComputer}
-            setResultText={setResultText}
-            isOnComputer={isOnComputer}
-          />
-          <Environment preset="city" />
+      <ThreeDimensionalControls
+        ref={controlsRef}
+        setIsOnComputer={setIsOnComputer}
+        setResultText={setResultText}
+        isOnComputer={isOnComputer}
+      />
+      <Environment preset="city" />
 
-          <ThreeDimensionalModel
-            url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
-            position={[-3.4, 2.7, -4.8]}
-            rotation={[0, 0, 90 * DEG2RAD]}
-            scale={[2, 2.5, 1]}
-          />
-          <ThreeDimensionalModel
-            url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
-            position={[-0.1, 2.7, -4.8]}
-            rotation={[0, 0, 90 * DEG2RAD]}
-            scale={[2, 2.5, 1]}
-          />
-          <ThreeDimensionalModel
-            url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
-            position={[3, 2.7, -4.8]}
-            rotation={[0, 0, 90 * DEG2RAD]}
-            scale={[2, 2.5, 1]}
-          />
-          <ThreeDimensionalModel
-            url={"3D_assets/tv_low_poly.glb"}
-            position={[5.0, 1.4, -0.01]}
-            rotation={[0, -87.5 * DEG2RAD, 0]}
-            scale={[2.7, 2.8, 1]}
-          />
-          <ThreeDimensionalModel
-            url={"3D_assets/pc.fbx"}
-            fbx={true}
-            name="computer"
-            position={[4, -3.6, 1]}
-            rotation={[0, 90 * DEG2RAD, 0]}
-            scale={[0.01, 0.01, 0.01]}
-          />
+      <ThreeDimensionalModel
+        url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
+        position={[-3.4, 2.7, -4.8]}
+        rotation={[0, 0, 90 * DEG2RAD]}
+        scale={[2, 2.5, 1]}
+      />
+      <ThreeDimensionalModel
+        url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
+        position={[-0.1, 2.7, -4.8]}
+        rotation={[0, 0, 90 * DEG2RAD]}
+        scale={[2, 2.5, 1]}
+      />
+      <ThreeDimensionalModel
+        url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
+        position={[3, 2.7, -4.8]}
+        rotation={[0, 0, 90 * DEG2RAD]}
+        scale={[2, 2.5, 1]}
+      />
+      <ThreeDimensionalModel
+        url={"3D_assets/tv_low_poly.glb"}
+        position={[5.0, 1.4, -0.01]}
+        rotation={[0, -87.5 * DEG2RAD, 0]}
+        scale={[2.7, 2.8, 1]}
+      />
+      <ThreeDimensionalModel
+        url={"3D_assets/pc.fbx"}
+        fbx={true}
+        name="computer"
+        position={[4, -3.6, 1]}
+        rotation={[0, 90 * DEG2RAD, 0]}
+        scale={[0.01, 0.01, 0.01]}
+      />
 
-          <PerspectiveCamera
-            makeDefault
-            position={[-7.8, 0.5, 8]}
-            rotation={[0, -45 * DEG2RAD, 0]}
-          ></PerspectiveCamera>
-          {/* Right wall */}
-          <mesh
-            position={[5.2, 0.96, 0.2]}
-            rotation={[0, -(Math.PI * 0.5), 0]}
-            name="right_wall"
-          >
-            <boxGeometry args={[10, 8, 0.5]} />
-            <meshStandardMaterial
-              map={wallColorMap}
-              roughnessMap={wallRoughnessMap}
-              normalMap={wallNormalMap}
-              aoMap={wallAoMap}
-            />
-          </mesh>
-          {/* Left wall */}
-          <mesh position={[0.18, 1, -5.2]} name="left_wall">
-            <boxGeometry args={[10, 8, 0.5]} />
-            <meshStandardMaterial
-              map={wallColorMap}
-              roughnessMap={wallRoughnessMap}
-              normalMap={wallNormalMap}
-              aoMap={wallAoMap}
-            />
-          </mesh>
-          {/* Floor */}
-          <mesh
-            position={[0.3, -3, -0.16]}
-            rotation={[-(Math.PI * 0.5), 0, 0]}
-            name="floor"
-          >
-            <planeGeometry args={[10.3, 10.8, 1]} />
-            <meshStandardMaterial
-              map={floorColorMap}
-              roughnessMap={floorRoughnessMap}
-              normalMap={floorNormalMap}
-            />
-          </mesh>
-          {/* Pentester THM Certificate */}
-          <mesh position={[-3.4, 2.7, -4.8]} name="thm">
-            <planeGeometry args={[2, 1, 1]} />
-            <meshBasicMaterial map={PentesterTHMImg} />
-          </mesh>
-          {/* GDSC Lead Certificate */}
-          <mesh position={[-0.1, 2.7, -4.8]} name="gdsc">
-            <planeGeometry args={[2, 1, 1]} />
-            <meshBasicMaterial map={LeadImg} />
-          </mesh>
-          {/* Bachelors Certificate */}
-          <mesh position={[3, 2.7, -4.8]} name="bachelors">
-            <planeGeometry args={[2, 1, 1]} />
-            <meshBasicMaterial map={BachelorsImg} />
-          </mesh>
-          {/* Top step */}
-          <mesh position={[2.0, 1, -4.9]} name="triangle">
-            <boxGeometry args={[3, 1.5, 0.1]} />
-            <meshBasicMaterial color={"yellow"} />
-          </mesh>
-          <Text
-            name="triangle"
-            position={[2.0, 1.6, -4.84]}
-            anchorX="center"
-            anchorY="middle"
-            fontSize={0.1}
-            color="black"
-            maxWidth={3.8}
-            lineHeight={1}
-          >
-            {topTitleJob.current}
-          </Text>
-          <Text
-            name="triangle"
-            position={[2.0, 1.1, -4.84]}
-            anchorX="center"
-            anchorY="middle"
-            fontSize={0.1}
-            color="black"
-            maxWidth={2.9}
-            lineHeight={1.2}
-          >
-            {topDescriptionJob.current}
-          </Text>
+      <PerspectiveCamera
+        makeDefault
+        position={[-7.8, 0.5, 8]}
+        rotation={[0, -45 * DEG2RAD, 0]}
+      ></PerspectiveCamera>
+      {/* Right wall */}
+      <mesh
+        position={[5.2, 0.96, 0.2]}
+        rotation={[0, -(Math.PI * 0.5), 0]}
+        name="right_wall"
+      >
+        <boxGeometry args={[10, 8, 0.5]} />
+        <meshStandardMaterial
+          map={wallColorMap}
+          roughnessMap={wallRoughnessMap}
+          normalMap={wallNormalMap}
+          aoMap={wallAoMap}
+        />
+      </mesh>
+      {/* Left wall */}
+      <mesh position={[0.18, 1, -5.2]} name="left_wall">
+        <boxGeometry args={[10, 8, 0.5]} />
+        <meshStandardMaterial
+          map={wallColorMap}
+          roughnessMap={wallRoughnessMap}
+          normalMap={wallNormalMap}
+          aoMap={wallAoMap}
+        />
+      </mesh>
+      {/* Floor */}
+      <mesh
+        position={[0.3, -3, -0.16]}
+        rotation={[-(Math.PI * 0.5), 0, 0]}
+        name="floor"
+      >
+        <planeGeometry args={[10.3, 10.8, 1]} />
+        <meshStandardMaterial
+          map={floorColorMap}
+          roughnessMap={floorRoughnessMap}
+          normalMap={floorNormalMap}
+        />
+      </mesh>
+      {/* Pentester THM Certificate */}
+      <mesh position={[-3.4, 2.7, -4.8]} name="thm">
+        <planeGeometry args={[2, 1, 1]} />
+        <meshBasicMaterial map={PentesterTHMImg} />
+      </mesh>
+      {/* GDSC Lead Certificate */}
+      <mesh position={[-0.1, 2.7, -4.8]} name="gdsc">
+        <planeGeometry args={[2, 1, 1]} />
+        <meshBasicMaterial map={LeadImg} />
+      </mesh>
+      {/* Bachelors Certificate */}
+      <mesh position={[3, 2.7, -4.8]} name="bachelors">
+        <planeGeometry args={[2, 1, 1]} />
+        <meshBasicMaterial map={BachelorsImg} />
+      </mesh>
+      {/* Top step */}
+      <mesh position={[2.0, 1, -4.9]} name="triangle">
+        <boxGeometry args={[3, 1.5, 0.1]} />
+        <meshBasicMaterial color={"yellow"} />
+      </mesh>
+      <Text
+        name="triangle"
+        position={[2.0, 1.6, -4.84]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.1}
+        color="black"
+        maxWidth={3.8}
+        lineHeight={1}
+      >
+        {topTitleJob.current}
+      </Text>
+      <Text
+        name="triangle"
+        position={[2.0, 1.1, -4.84]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.1}
+        color="black"
+        maxWidth={2.9}
+        lineHeight={1.2}
+      >
+        {topDescriptionJob.current}
+      </Text>
 
-          {/* Mid step */}
-          <mesh position={[-0.5, 0.2, -4.9]} name="triangle">
-            <boxGeometry args={[2.5, 1.5, 0.1]} />
-            <meshBasicMaterial color={"yellow"} />
-          </mesh>
-          <Text
-            name="triangle"
-            position={[-0.5, 0.8, -4.84]}
-            anchorX="center"
-            anchorY="middle"
-            fontSize={0.1}
-            color="black"
-            maxWidth={3.8}
-            lineHeight={1}
-          >
-            {midTitleJob.current}
-          </Text>
-          <Text
-            name="triangle"
-            position={[-0.5, 0.35, -4.84]}
-            anchorX="center"
-            anchorY="middle"
-            fontSize={0.1}
-            color="black"
-            maxWidth={2.25}
-            lineHeight={1}
-          >
-            {midDescriptionJob.current}
-          </Text>
+      {/* Mid step */}
+      <mesh position={[-0.5, 0.2, -4.9]} name="triangle">
+        <boxGeometry args={[2.5, 1.5, 0.1]} />
+        <meshBasicMaterial color={"yellow"} />
+      </mesh>
+      <Text
+        name="triangle"
+        position={[-0.5, 0.8, -4.84]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.1}
+        color="black"
+        maxWidth={3.8}
+        lineHeight={1}
+      >
+        {midTitleJob.current}
+      </Text>
+      <Text
+        name="triangle"
+        position={[-0.5, 0.35, -4.84]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.1}
+        color="black"
+        maxWidth={2.25}
+        lineHeight={1}
+      >
+        {midDescriptionJob.current}
+      </Text>
 
-          {/* Bottom step */}
-          <mesh position={[-3.0, -0.8, -4.8]} name="triangle">
-            <boxGeometry args={[3, 1.5, 0.1]} />
-            <meshBasicMaterial color={"yellow"} />
-          </mesh>
-          <Text
-            name="triangle"
-            position={[-3, -0.2, -4.74]}
-            anchorX="center"
-            anchorY="middle"
-            fontSize={0.1}
-            color="black"
-            maxWidth={1}
-            lineHeight={1}
-          >
-            {bottomTitleJob.current}
-          </Text>
-          <Text
-            name="triangle"
-            position={[-3, -0.8, -4.74]}
-            anchorX="center"
-            anchorY="middle"
-            fontSize={0.1}
-            color="black"
-            maxWidth={2.9}
-            lineHeight={1.1}
-          >
-            {bottomDescriptionJob.current}
-          </Text>
-          {/* Computer Screen */}
+      {/* Bottom step */}
+      <mesh position={[-3.0, -0.8, -4.8]} name="triangle">
+        <boxGeometry args={[3, 1.5, 0.1]} />
+        <meshBasicMaterial color={"yellow"} />
+      </mesh>
+      <Text
+        name="triangle"
+        position={[-3, -0.2, -4.74]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.1}
+        color="black"
+        maxWidth={1}
+        lineHeight={1}
+      >
+        {bottomTitleJob.current}
+      </Text>
+      <Text
+        name="triangle"
+        position={[-3, -0.8, -4.74]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.1}
+        color="black"
+        maxWidth={2.9}
+        lineHeight={1.1}
+      >
+        {bottomDescriptionJob.current}
+      </Text>
+      {/* Computer Screen */}
 
-          <mesh
-            position={[4.6, -0.5, 1]}
-            onClick={handleComputerScreenClick}
-            rotation={[0, -(Math.PI * 0.5), 0]}
-            name="computer"
-          >
-            <planeGeometry args={[1.9, 1.1]} />
-            <meshBasicMaterial color={"black"} />
-          </mesh>
+      <mesh
+        position={[4.6, -0.5, 1]}
+        onClick={handleComputerScreenClick}
+        rotation={[0, -(Math.PI * 0.5), 0]}
+        name="computer"
+      >
+        <planeGeometry args={[1.9, 1.1]} />
+        <meshBasicMaterial color={"black"} />
+      </mesh>
 
-          {/* Input Text */}
-          <Text
-            name="computer"
-            position={[4.55, -0.2, 1]}
-            anchorX="center"
-            anchorY="middle"
-            fontSize={0.07}
-            color="green"
-            maxWidth={1.7}
-            lineHeight={1}
-            rotation={[0, -(Math.PI * 0.5), 0]}
-          >
-            {inputText}
-          </Text>
-          {/* Result Text */}
-          <Text
-            name="computer"
-            position={[4.55, -0.55, 1]}
-            anchorX="center"
-            anchorY="middle"
-            fontSize={0.055}
-            color="red"
-            maxWidth={1.7}
-            lineHeight={1}
-            rotation={[0, -(Math.PI * 0.5), 0]}
-          >
-            {resultText}
-          </Text>
-          {/* Video */}
-          <ThreeDimensionalVideos
-            videoSrcCounter={videoSrcCounter}
-            videoSrcs={videoSrcs}
-            videoSubtitleArray={videoSubtitleArray}
-          />
+      {/* Input Text */}
+      <Text
+        name="computer"
+        position={[4.55, -0.2, 1]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.07}
+        color="green"
+        maxWidth={1.7}
+        lineHeight={1}
+        rotation={[0, -(Math.PI * 0.5), 0]}
+      >
+        {inputText}
+      </Text>
+      {/* Result Text */}
+      <Text
+        name="computer"
+        position={[4.55, -0.55, 1]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.055}
+        color="red"
+        maxWidth={1.7}
+        lineHeight={1}
+        rotation={[0, -(Math.PI * 0.5), 0]}
+      >
+        {resultText}
+      </Text>
+      {/* Video */}
+      <ThreeDimensionalVideos
+        videoSrcCounter={videoSrcCounter}
+        videoSrcs={videoSrcs}
+        videoSubtitleArray={videoSubtitleArray}
+        setVideoSrcCounter={setVideoSrcCounter}
+      />
     </>
   );
 }

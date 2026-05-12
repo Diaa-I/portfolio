@@ -5,10 +5,15 @@ export default function ThreeDimensionalVideos({
   videoSrcCounter,
   videoSrcs,
   videoSubtitleArray,
+  setVideoSrcCounter,
 }) {
-  const pauseTexture = useTexture("pause.jpg");
-  const playTexture = useTexture("play.jpg");
-  const [subtitleText, setSubtitleText] = useState("A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.");
+  const pauseTexture = useTexture("pause-button.png");
+  const backTexture = useTexture("back-button.png");
+  const nextTexture = useTexture("next-button.png");
+  const playTexture = useTexture("play-button.png");
+  const [subtitleText, setSubtitleText] = useState(
+    "A team of 3 members, we developed an image anontation tool that helps reduce the time needed to annotate images and videos, I was responsible of the developement of the website and database and the connection between the backend and the AI module, we used YoloV8, Flask, MongoDB, and React.",
+  );
   const videoRef = useRef();
   const [oldVideoSrcCounter, setOldVideoSrcCounter] = useState(videoSrcCounter);
   const [video] = useState(() =>
@@ -26,7 +31,7 @@ export default function ThreeDimensionalVideos({
     if (oldVideoSrcCounter != videoSrcCounter) {
       // change the video src
       video.src = videoSrcs[videoSrcCounter];
-      setSubtitleText(videoSubtitleArray[videoSrcCounter])
+      setSubtitleText(videoSubtitleArray[videoSrcCounter]);
       // Set the old counter to the current counter
       setOldVideoSrcCounter(videoSrcCounter);
       // Pause the video
@@ -36,6 +41,7 @@ export default function ThreeDimensionalVideos({
     if (pauseVideo) video.pause();
     else video.play();
   }, [pauseVideo, videoSrcCounter]);
+
   return (
     <>
       {/* Video */}
@@ -54,27 +60,72 @@ export default function ThreeDimensionalVideos({
         position={[4.8, 1.1, 0]}
         onClick={() => setPauseVideo((prevState) => !prevState)}
         rotation={[0, -(Math.PI * 0.5), 0]}
-        name='video_subtitle'
+        name="video_subtitle"
       >
         <meshBasicMaterial
-          color={"gray"}
+          transparent={true}
           map={pauseVideo ? playTexture : pauseTexture}
         />
         <boxGeometry args={[0.5, 0.5, 0]}></boxGeometry>
       </mesh>
-      <mesh position={[4.8, 2.9, 3.44]} rotation={[0, -(Math.PI * 0.5), 0]} name="video_subtitle" >
+      {/* <a href="https://www.flaticon.com/free-icons/video" title="video icons">Video icons created by Freepik - Flaticon</a> */}
+      {/* <a href="https://www.flaticon.com/free-icons/pause" title="pause icons">Pause icons created by Freepik - Flaticon</a */}
+      {/* <a href="https://www.flaticon.com/free-icons/left-arrow" title="left arrow icons">Left arrow icons created by Freepik - Flaticon</a> */}
+      {/* <a href="https://www.flaticon.com/free-icons/next" title="next icons">Next icons created by Riconsly - Flaticon</a> */}
+      {/* Next button */}
+      <mesh
+        position={[4.8, 1.1, 2]}
+        onClick={() => {
+          if (!(videoSrcs.length - 2 < videoSrcCounter)) {
+            setVideoSrcCounter((videoSrcCounter) => videoSrcCounter + 1);
+          }
+        }}
+        rotation={[0, -(Math.PI * 0.5), 0]}
+        name="video_subtitle"
+      >
+        <meshBasicMaterial
+          transparent={true}
+          map={nextTexture}
+        />
+        <boxGeometry args={[0.5, 0.5, 0]}></boxGeometry>
+      </mesh>
+
+       {/* Back Button */}
+       <mesh
+        position={[4.8, 1.1, -2]}
+        onClick={() => {
+          if (!(videoSrcCounter - 1 < 0)) {
+            setVideoSrcCounter((videoSrcCounter) => videoSrcCounter - 1);
+          }
+        }}
+        rotation={[0, -(Math.PI * 0.5), 0]}
+        name="video_subtitle"
+      >
+        <meshBasicMaterial
+          transparent={true}
+          map={backTexture}
+        />
+        <boxGeometry args={[0.5, 0.5, 0]}></boxGeometry>
+      </mesh>
+      {/* Subtitle Monitor */}
+      <mesh
+        position={[4.8, 2.9, 3.44]}
+        rotation={[0, -(Math.PI * 0.5), 0]}
+        name="video_subtitle"
+      >
         <planeGeometry args={[1.7, 3.5, 1]} />
         <meshBasicMaterial color={"black"} />
       </mesh>
+      {/* Subtitle Text */}
       <Text
         name="video_subtitle"
-        position={[4.76, 3.2, 3.44]} 
-        anchorX="center" 
-        anchorY="middle" 
-        fontSize={0.15} 
-        color="red" 
-        maxWidth={1.5} 
-        lineHeight={1} 
+        position={[4.76, 3.2, 3.44]}
+        anchorX="center"
+        anchorY="middle"
+        fontSize={0.15}
+        color="red"
+        maxWidth={1.5}
+        lineHeight={1}
         rotation={[0, -(Math.PI * 0.5), 0]}
       >
         {subtitleText}

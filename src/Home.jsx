@@ -10,6 +10,7 @@ import { Suspense, useRef } from "react";
 export default function Home({ wantsThreeDimensional }) {
   const viewportWidth = window.innerWidth;
   const controlsRef = useRef();
+  const inputRef = useRef(null);
   const defaultCssClasses =
     "flex md:items-center md:justify-center bg-[#FAF9F6] text-[#333333]";
   return (
@@ -38,15 +39,32 @@ export default function Home({ wantsThreeDimensional }) {
         <WorkExperience />
       </div>
       <hr></hr>
-      {viewportWidth > 1300 && wantsThreeDimensional == true && (
+      {wantsThreeDimensional == true && (
         <>
-          <div className={defaultCssClasses + ' w-[100vw] h-[90vh]'} id="3D">
+        <input
+        ref={inputRef}
+        type="text"
+        style={{
+          position: "absolute",
+          opacity: 0,
+          width: "1px",
+          height: "1px",
+          padding: 0,
+          margin: "-1px",
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          border: 0,
+          fontSize: "16px",
+        }}
+      />
+          <div className={defaultCssClasses + ' w-[100vw] h-[100vh] my-5'} id="3D">
               <Suspense fallback={<div>3D Loading, please wait...</div>}>
             <Canvas
+            className="w-[100vw] h-[100vh]"
               tabIndex={-1}
               onClick={() => controlsRef.current.handleCanvasClick()}
             >
-                <ThreeDimensional controlsRef={controlsRef} />
+                <ThreeDimensional controlsRef={controlsRef} inputRef={inputRef} />
             </Canvas>
                 </Suspense>
           </div>
