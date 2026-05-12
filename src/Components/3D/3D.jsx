@@ -363,7 +363,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
 
       <mesh
         position={[4.6, -0.5, 1]}
-        onPointerDown={handleComputerScreenClick}
+        onClick={handleComputerScreenClick}
         rotation={[0, -(Math.PI * 0.5), 0]}
         name="computer"
       >
