@@ -68,10 +68,7 @@ export default function ThreeDimensionalVideos({
         />
         <boxGeometry args={[0.5, 0.5, 0]}></boxGeometry>
       </mesh>
-      {/* <a href="https://www.flaticon.com/free-icons/video" title="video icons">Video icons created by Freepik - Flaticon</a> */}
-      {/* <a href="https://www.flaticon.com/free-icons/pause" title="pause icons">Pause icons created by Freepik - Flaticon</a */}
-      {/* <a href="https://www.flaticon.com/free-icons/left-arrow" title="left arrow icons">Left arrow icons created by Freepik - Flaticon</a> */}
-      {/* <a href="https://www.flaticon.com/free-icons/next" title="next icons">Next icons created by Riconsly - Flaticon</a> */}
+     
       {/* Next button */}
       <mesh
         position={[4.8, 1.1, 2]}

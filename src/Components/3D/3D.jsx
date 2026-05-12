@@ -85,8 +85,6 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (isOnComputer) {
-        inputRef.current.focus();
-        inputRef.current.click()
         if (firstTimeInput) {
           if (e.which >= 65 && e.which <= 90) {
             setInputText(() => e.key);
@@ -168,6 +166,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
 
   const handleComputerScreenClick = (e) => {
     setIsOnComputer(true);
+    inputRef.current.focus();
   };
 
   return (
@@ -363,7 +362,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
 
       <mesh
         position={[4.6, -0.5, 1]}
-        onClick={handleComputerScreenClick}
+        onPointerDown={handleComputerScreenClick}
         rotation={[0, -(Math.PI * 0.5), 0]}
         name="computer"
       >

@@ -79,7 +79,6 @@ const controls = forwardRef(
         if (intersects.length > 0) {
           const topTarget = intersects[0].object;
 
-          console.log("Hit target:", topTarget.name || topTarget.uuid);
           // Needs to be in animations or useFrame the movement the lerp, two states one telling it moving = true, where to move []
           //   Allow only one movement at a time, so the user cannot swap places until they reach the end of the animation
           if (!mouseClicked) {

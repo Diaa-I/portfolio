@@ -5,7 +5,12 @@ export default function ThreeDimensionalCredits({}) {
 Ground: https://www.fab.com/listings/1e4fb2a0-7cf7-424d-8751-54e62a5ed03a
 TV: https://www.fab.com/listings/42d05d58-3131-4afc-9f60-4920b5a86536
 Walls: https://www.fab.com/listings/e2f69285-c695-4aa8-851c-1b6492b79b74
-    */
+<a href="https://www.flaticon.com/free-icons/video" title="video icons">Video icons created by Freepik - Flaticon</a> 
+  <a href="https://www.flaticon.com/free-icons/pause" title="pause icons">Pause icons created by Freepik - Flaticon</a 
+  <a href="https://www.flaticon.com/free-icons/left-arrow" title="left arrow icons">Left arrow icons created by Freepik - Flaticon</a> 
+  <a href="https://www.flaticon.com/free-icons/next" title="next icons">Next icons created by Riconsly - Flaticon</a> 
+  */
+
   return (
     <>
       <h2 className="lg:text-3xl font-extrabold text-center">
@@ -56,6 +61,46 @@ Walls: https://www.fab.com/listings/e2f69285-c695-4aa8-851c-1b6492b79b74
             className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200"
           >
             Walls by Quixel Megascans
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.flaticon.com/free-icons/video"
+            target="_blank"
+            title="video icons"
+            className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200"
+          >
+            Video icons created by Freepik - Flaticon
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.flaticon.com/free-icons/pause"
+            title="pause icons"
+            title="video icons"
+            className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200"
+          >
+            Pause icons created by Freepik - Flaticon
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.flaticon.com/free-icons/left-arrow"
+            title="left arrow icons"
+            title="video icons"
+            className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200"
+          >
+            Left arrow icons created by Freepik - Flaticon
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.flaticon.com/free-icons/next"
+            title="next icons"
+            title="video icons"
+            className="text-blue-500 hover:text-blue-700 hover:underline transition-colors duration-200"
+          >
+            Next icons created by Riconsly - Flaticon
           </a>
         </li>
       </ul>
