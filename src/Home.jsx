@@ -54,7 +54,6 @@ export default function Home({ wantsThreeDimensional }) {
               height: "100vh",
               overflow: "hidden",
             }}
-            onBlur={() => inputRef.current.blur()}
           />
           <div
             className={defaultCssClasses + " w-[100vw] h-[100vh] my-5"}
