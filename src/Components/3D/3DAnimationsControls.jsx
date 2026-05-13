@@ -56,9 +56,9 @@ const controls = forwardRef(
           setMouseClicked(false);
         } else {
           // Keep moving towards if distance is not less than 0.1
-          camera.position.lerp(movePosition, 0.03);
+          camera.position.lerp(movePosition, 0.015);
           if (cameraRotation) {
-            state.camera.quaternion.slerp(cameraRotation, 0.03);
+            state.camera.quaternion.slerp(cameraRotation, 0.015);
             //   camera.rotation.x = MathUtils.lerp(-7.8, cameraRotation.x, 0.02);
             //   camera.rotation.y = MathUtils.lerp(1, cameraRotation.y, 0.02);
             //   camera.rotation.z = MathUtils.lerp(8, cameraRotation.z, 0.02);
