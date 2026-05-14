@@ -70,7 +70,6 @@ export default function Home({ wantsThreeDimensional }) {
               </Canvas>
             </Suspense>
           </div>
-          <hr></hr>
           <div
             className={
               defaultCssClasses +
@@ -78,7 +77,6 @@ export default function Home({ wantsThreeDimensional }) {
             }
             id="3D-Credits"
           >
-            
             <ThreeDimensionalCredits />
           </div>
         </>
