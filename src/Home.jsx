@@ -73,7 +73,7 @@ export default function Home({ wantsThreeDimensional }) {
           <div
             className={
               defaultCssClasses +
-              " flex-col bg-[#ECF7F8]"
+              " flex-col bg-[#ECF7F8] p-2"
             }
             id="3D-Credits"
           >
@@ -84,7 +84,7 @@ export default function Home({ wantsThreeDimensional }) {
 
       <hr></hr>
       <div className={defaultCssClasses} id="contactMe">
-        <p className="p-10 m-5 lg:text-2xl text-xl">
+        <p className="p-5 lg:text-2xl text-xl">
           You can contact me via{" "}
           <a href="https://www.linkedin.com/in/diaa-nasr/">
             <i className="devicon-linkedin-plain "></i>
