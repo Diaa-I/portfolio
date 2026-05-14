@@ -54,7 +54,7 @@ export default function Home({ wantsThreeDimensional }) {
             }}
           />
           <div
-            className={defaultCssClasses + " w-[100vw] h-[100vh] my-5"}
+            className={defaultCssClasses + " w-[100vw] h-[100vh]"}
             id="3D"
           >
             <Suspense fallback={<div>3D Loading, please wait...</div>}>
@@ -77,6 +77,7 @@ export default function Home({ wantsThreeDimensional }) {
             }
             id="3D-Credits"
           >
+            <hr></hr>
             <ThreeDimensionalCredits />
           </div>
         </>
