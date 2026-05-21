@@ -4,7 +4,7 @@ import LanguagesData, {
 
 export default function Languages() {
   return (
-    <div className="lg:grid lg:grid-cols-3 lg:p-10 lg:m-10 text-center ">
+    <div className="2xl:grid 2xl:grid-cols-3 2xl:p-10 2xl:m-10 text-center ">
       {LanguagesCategories.map((category) => {
         return (
           <div className={"lg:w-[30rem] "}>

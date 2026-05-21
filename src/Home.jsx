@@ -26,7 +26,7 @@ export default function Home({ wantsThreeDimensional }) {
       </div>
       <div
         className={
-          defaultCssClasses + " flex-col flex-wrap bg-[#ECF7F8] lg:h-[50rem]"
+          defaultCssClasses + " flex-col flex-wrap bg-[#ECF7F8]  lg:h-[65rem] 2xl:h-[45rem]"
         }
         id="Projects"
       >
@@ -84,8 +84,8 @@ export default function Home({ wantsThreeDimensional }) {
       )}
 
       <hr></hr>
-      <div className={defaultCssClasses} id="contactMe">
-        <p className="p-5 lg:text-2xl text-xl">
+      <div className={defaultCssClasses + " justify-center"} id="contactMe">
+        <p className="p-5 lg:text-2xl text-xl ">
           You can contact me via{" "}
           <a href="https://www.linkedin.com/in/diaa-nasr/">
             <i className="devicon-linkedin-plain "></i>
