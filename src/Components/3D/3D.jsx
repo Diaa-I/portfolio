@@ -179,7 +179,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
         isOnComputer={isOnComputer}
       />
       <Environment preset="city" />
-
+      {/* Frames */}
       <ThreeDimensionalModel
         url={"3D_assets/decorative_picture_frame_ukkpdhqbw_low.glb"}
         position={[-3.4, 2.7, -4.8]}
@@ -198,12 +198,14 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
         rotation={[0, 0, 90 * DEG2RAD]}
         scale={[2, 2.5, 1]}
       />
+      {/* Tv */}
       <ThreeDimensionalModel
         url={"3D_assets/tv_low_poly.glb"}
         position={[5.0, 1.4, -0.01]}
         rotation={[0, -87.5 * DEG2RAD, 0]}
         scale={[2.7, 2.8, 1]}
       />
+      {/* PC */}
       <ThreeDimensionalModel
         url={"3D_assets/pc.fbx"}
         fbx={true}
@@ -273,7 +275,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
       {/* Top step */}
       <mesh position={[2.0, 1, -4.9]} name="triangle">
         <boxGeometry args={[3, 1.5, 0.1]} />
-        <meshBasicMaterial color={"lightgreen"} />
+        <meshBasicMaterial color={"#E2E1D4"} />
       </mesh>
       <Text
         name="triangle"
@@ -303,7 +305,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
       {/* Mid step */}
       <mesh position={[-0.5, 0.2, -4.9]} name="triangle">
         <boxGeometry args={[2.5, 1.5, 0.1]} />
-        <meshBasicMaterial color={"lightgreen"} />
+        <meshBasicMaterial color={"#E2E1D4"} />
       </mesh>
       <Text
         name="triangle"
@@ -333,7 +335,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
       {/* Bottom step */}
       <mesh position={[-3.0, -0.8, -4.8]} name="triangle">
         <boxGeometry args={[3, 1.5, 0.1]} />
-        <meshBasicMaterial color={"lightgreen"} />
+        <meshBasicMaterial color={"#E2E1D4"} />
       </mesh>
       <Text
         name="triangle"
@@ -378,7 +380,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
         anchorX="center"
         anchorY="middle"
         fontSize={0.07}
-        color="green"
+        color="white"
         maxWidth={1.7}
         lineHeight={1}
         rotation={[0, -(Math.PI * 0.5), 0]}
