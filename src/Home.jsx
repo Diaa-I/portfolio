@@ -59,6 +59,8 @@ export default function Home({ wantsThreeDimensional }) {
           >
             <Suspense fallback={<div>3D Loading, please wait...</div>}>
               <Canvas
+              frameloop="demand"
+              dpr={[1,1.5]}
                 className="w-[100vw] h-[100vh]"
                 tabIndex={-1}
                 onClick={() => controlsRef.current.handleCanvasClick()}
