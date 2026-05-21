@@ -23,9 +23,9 @@ import {
 import PentesterTHM from "../../assets/Pentester.png";
 import Bachelors from "../../assets/download.png";
 import Lead from "../../assets/Diaa_nasr_lead.jpg";
-import SeniorDemo from "/This is the demo.webp";
-import LibraryDemo from "/LibraryProject.webp";
-import GameDemo from "/GameDemo.webp";
+import SeniorDemo from "/DORA_Demo.webm";
+import LibraryDemo from "/LibraryProject.webm";
+import GameDemo from "/GameDemo.webm";
 import {
   CameraHelper,
   DirectionalLightHelper,

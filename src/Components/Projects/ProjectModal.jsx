@@ -24,7 +24,7 @@ const Modal = forwardRef(function ({ prj_details, onCloseModal }, ref) {
       <div className="fixed inset-0 bg-black bg-opacity-80 z-40"> </div>
       <dialog ref={dialog} className={classes} onClose={onCloseModal}>
         <h2 className="text-[#333] text-2xl font-extrabold">{title}</h2>
-        {vidSrc != "" && <video controls className="lg:w-[45rem] lg:h-[25rem] w-[20.5rem] m-10 rounded-xl" autoPlay>
+        {vidSrc != "" && <video preload="metadata" controls className="lg:w-[45rem] lg:h-[25rem] w-[20.5rem] m-10 rounded-xl" autoPlay>
           <source src={vidSrc} type="video/mp4" />
         </video>}
         <p className="text-center lg:w-[52rem] m-2">{description}</p>

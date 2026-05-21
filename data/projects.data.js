@@ -1,6 +1,6 @@
-import seniorDemo from "/public/This is the demo.webp";
-import LibraryVideo from "/public/LibraryProject.webp";
-import GameDemo from "/public/GameDemo.webp";
+import seniorDemo from "/public/DORA_Demo.webm";
+import LibraryVideo from "/public/LibraryProject.webm";
+import GameDemo from "/public/GameDemo.webm";
 const ProjectsData = [
   {
     title: "HRFhome",
