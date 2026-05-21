@@ -120,7 +120,7 @@ export default function ThreeDimensionalVideos({
         anchorX="center"
         anchorY="middle"
         fontSize={0.15}
-        color="red"
+        color="lightgreen"
         maxWidth={1.5}
         lineHeight={1}
         rotation={[0, -(Math.PI * 0.5), 0]}
