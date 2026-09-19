@@ -1,10 +1,10 @@
 const MeData =
 {
   name: "Diaa Ibrahim Nasr",
-  title: "Backend-Focused Full-Stack Developer",
-  summary: "Backend Developer with experience building APIs, web applications, and backend systems using Node.js, Laravel, and Python.",
-  education: "Computer Science graduate from the University of Sharjah (2024). A Graduate Professional Diploma in Cybersecurity at the American University of Beirut (2026).",
-  interests: 'Worked on e-commerce platforms and data-driven systems using PostgreSQL, MySQL, and MongoDB. Experience includes building REST APIs, automation tools, and backend applications through university department and industry roles.',
+  title: "Backend-Focused Full-Stack Developer / Ethical Hacker",
+  summary: "Backend-Focused Full-Stack Developer and Ethical Hacker building secure applications in Python, Node.js, and PHP. Currently a Hardware Security Research Assistant at the University of Sharjah analyzing hardware-software vulnerabilities, while independently training in offensive web hacking labs.",
+  education: "Bachelor of Science in Computer Science from the University of Sharjah (2024), followed by a Graduate Professional Diploma in Cybersecurity from the American University of Beirut (2026)",
+  interests: 'Secure backend development, red teaming, web application hacking, and hardware exploitation.',
   id: 1,
 }
 

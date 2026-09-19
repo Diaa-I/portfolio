@@ -18,7 +18,7 @@ export default function Home({ wantsThreeDimensional }) {
       <div
         className={
           defaultCssClasses +
-          " lg:flex-row lg:h-[50rem] lg:text-left lg:my-0 flex-col"
+          " lg:flex-row lg:h-auto lg:text-left my-0 flex-col py-12 lg:py-20"
         }
         id="Me"
       >
@@ -26,7 +26,7 @@ export default function Home({ wantsThreeDimensional }) {
       </div>
       <div
         className={
-          defaultCssClasses + " flex-col flex-wrap bg-[#ECF7F8]  lg:h-[65rem] 2xl:h-[45rem]"
+          defaultCssClasses + " flex flex-col items-center bg-[#ECF7F8] w-full h-auto min-h-max py-20 gap-y-12"
         }
         id="Projects"
       >

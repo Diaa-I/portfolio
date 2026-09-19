@@ -1,5 +1,18 @@
 const WorkExperienceData = [
   {
+    title: "Hardware Security Research Assistant",
+    company: "University of Sharjah",
+    date: "July 2026 - Present",
+    "contents": [
+      "Identify and document hardware-level vulnerabilities and firmware exploit vectors to develop hardware mitigation strategies.",
+      "Conduct threat modeling to identify risks of physical tampering, side-channel leaks, and reverse-engineering.",
+      "Develop a security framework and deploy it onto hardware platforms to test its resilience against simulated real-world attacks.",
+      "Review academic and industry research to benchmark lab standards and methodologies.",
+      "Analyze experimental data and write technical research papers for academic publication."],
+    class: "m-5 bg-[#EFEFF2] w-[50vw] h-[50vh]",
+    id: 0,
+  },
+  {
     title: "Trainee Backend Developer",
     company: "Technologies LLC",
     date: "April - July 2025",
@@ -7,7 +20,7 @@ const WorkExperienceData = [
       "Developed RESTful APIs for e-commerce platforms and a notification microservice using RabbitMQ.",
       "Performed automated API testing with PestPHP.",
       "Used Laravel, Pest, PHP, SQL, RabbitMQ."],
-    class: "m-5 bg-[#EFEFF2] lg:h-[20rem] lg:w-[55vw] ",
+    class: "m-5 bg-[#EFEFF2] w-[50vw] h-[50vh] ",
     id: 1,
   },
   {
@@ -18,7 +31,7 @@ const WorkExperienceData = [
       "Developed and demoed software that optimizes a workflow, reducing task completion time by 91% and eliminating human error.",
       "Used Python."
     ],
-    class: "my-5 bg-[#EFEFF2] lg:h-[20rem] lg:w-[55vw] ",
+    class: "m-5 bg-[#EFEFF2]  w-[50vw] h-[50vh] ",
     id: 2,
   },
   {
@@ -30,7 +43,7 @@ const WorkExperienceData = [
       "Built a website to handle 100,000+ records, featuring mass mailing, dynamic filtering, and data import/export for centralized database management.",
       "Used HTML, CSS, JavaScript, MongoDB, NodeJS."
     ],
-    class: "my-5 bg-[#EFEFF2] lg:h-[20rem] lg:w-[55vw] ",
+    class: "m-5 bg-[#EFEFF2] w-[50vw] h-[50vh] ",
     id: 3,
   },
 

@@ -3,6 +3,17 @@ import LibraryVideo from "/public/LibraryProject.webm";
 import GameDemo from "/public/GameDemo.webm";
 const ProjectsData = [
   {
+    title: "Retail Inventory and Sales System",
+    description:
+      "I designed and built a complete full-stack retail web application from scratch, handling everything from the database schema and system architecture to the user interface.",
+    indepth_description: "I architected the entire application structure and designed a PostgreSQL schema to manage products, sales, and vendor data. I built a clean Django REST API to handle all backend CRUD workflows and developed the frontend using React to ensure a fast, intuitive interface for managing daily retail operations.",
+    role: "Full Stack Developer",
+    link: "",
+    vidSrc: "",
+    id: 0,
+    tech_stack:"Tech Stack: Django, PostgreSQL, Python, RESTful APIs, React, Javascript"
+  },
+  {
     title: "HRFhome",
     description:
       "I was the sole backend engineer in a two-person team, responsible for building the core engine of an e-commerce marketplace for buying and selling handmade crafts.",
@@ -36,7 +47,7 @@ const ProjectsData = [
     tech_stack:"Tech Stack: Python (Flask), MongoDB, React, JavaScript, YOLOv8, OpenCV (cv2)"
   },
   {
-    title: "Internal Data Management Platform (Confidential)",
+    title: "Internal Data Management Platform",
     description:
       "A centralized relational data platform built to replace fragmented, slow Excel workflows containing over 100,000+ rows of academic data with a high-performance database system.",
     indepth_description: "I served as the Team Lead for a three-developer team, working directly with a university professor to transition their research operations from Excel spreadsheets to a centralized relational database system. I architected the core database schema to establish a structured data layout and ensure long-term data integrity. On the backend, I built Node.js RESTful APIs to handle bulk data imports, advanced multi-attribute filtering, and efficient pagination to easily process and query datasets exceeding 100,000 records. Because of strict academic data privacy requirements, I engineered the system for a secure local deployment and personally led the final delivery demonstration to the client.",
@@ -68,9 +79,9 @@ const ProjectsData = [
     tech_stack:"Tech Stack: React, Tailwind CSS, JavaScript, HTML5"
   },
   {
-    title: "IoT Smart Trash Classifier (University  Course Project)",
+    title: "IoT Smart Trash Classifier",
     description:
-      "A computer vision-based hardware platform built by a five-member team that utilizes a camera module to instantly identify and categorize waste types for automated sorting.",
+      "A University Course Project. A computer vision-based hardware platform built by a five-member team that utilizes a camera module to instantly identify and categorize waste types for automated sorting.",
     indepth_description: "I worked in a five-member engineering team to build a physical, computer vision-based trash classifier designed to automate waste sorting. My core responsibility was configuring, programming, and deploying the Raspberry Pi engine. I wrote the scripts to interface with the hardware camera module, handled the real-time image capture pipeline, and optimized the local processing workflows to feed data cleanly into our computer vision sorting model. This project allowed me to gain strong practical experience in IoT device management, hardware-software integration, and resource-constrained programming.",
     role: "Software Developer",
     link: "https://github.com/YaserAlOsh/trash_classifier",
@@ -79,9 +90,9 @@ const ProjectsData = [
     tech_stack:"Tech Stack: Python, Raspberry Pi, Linux, Computer Vision"
   },
   {
-    title: "The Unexpected (University Course Project)",
+    title: "The Unexpected",
     description:
-      "A challenging, multi-level game built by a two-member team for a university course, featuring custom gameplay mechanics and enemy behavior patterns..",
+      "A University Course Project. A challenging, multi-level game built by a two-member team for a university course, featuring custom gameplay mechanics and enemy behavior patterns..",
     indepth_description: "I worked in a two-developer team for a university course to build an intense, multi-level game from scratch in Unity. I was responsible for designing, scripting, and programming the entire second level of the game. Using C#, I wrote the core gameplay scripts, managed the physics engines, and programmed the enemy tracking, movement paths, and obstacle logic to deliver a seamless, responsive player experience.",
     role: "Software Developer",
     link: "https://github.com/Diaa-I/The-Unexpected",

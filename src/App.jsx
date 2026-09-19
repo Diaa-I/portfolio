@@ -13,9 +13,10 @@ function App() {
   const contactMeGoTo = () =>
     document.getElementById(`contactMe`).scrollIntoView();
   const ThreeDMeGoTo = () => document.getElementById(`3D`).scrollIntoView();
-  const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
-    viewportWidth > 800 ? true : false,
-  );
+  // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
+  //   viewportWidth > 800 ? true : false,
+  // );
+  const [wantsThreeDimensional, setWantsThreeDimensional] = useState(false);
 
   return (
     <div className="overflow-hidden">
