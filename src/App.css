@@ -39,14 +39,16 @@
 
 
 .split-side.security {
-  background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
-                    url("https://unsplash.com");
+  background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75));
+  /* , 
+                    url("https://unsplash.com"); */
 }
 
 
 .split-side.development {
-  background-image: linear-gradient(rgba(6, 78, 59, 0.75), rgba(15, 23, 42, 0.75)), 
-                    url("https://unsplash.com");
+  background-image: linear-gradient(rgba(6, 78, 59, 0.75), rgba(15, 23, 42, 0.75));
+  /* , 
+                    url("https://unsplash.com"); */
 }
 
 
