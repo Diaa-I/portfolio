@@ -5,7 +5,7 @@ import WorkExperience from "./Components/WorkExperience/WorkExperience";
 import ThreeDimensional from "./Components/3D/3D";
 import ThreeDimensionalCredits from "./Components/3D/3DCredits";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 
 export default function Development({ setPagedWanted }) {
   // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
