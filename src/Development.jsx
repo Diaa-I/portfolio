@@ -7,7 +7,7 @@ import ThreeDimensionalCredits from "./Components/3D/3DCredits";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState, useEffect } from "react";
 import Nav from "./Components/Nav/Nav";
-
+import { LanguagesData,LanguagesCategories } from "../data/dev_languages.data";
 export default function Development({ setPagedWanted }) {
   // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
   //   viewportWidth > 800 ? true : false,
@@ -61,7 +61,11 @@ export default function Development({ setPagedWanted }) {
         <Projects />
       </div>
       <div className={defaultCssClasses} id="Languages">
-        <Languages />
+        <Languages
+          Data={LanguagesData}
+          Categories={LanguagesCategories} 
+          page="DEV"
+        />
       </div>
       <div className={defaultCssClasses} id="workExperience">
         <WorkExperience />

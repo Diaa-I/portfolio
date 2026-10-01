@@ -1,4 +1,4 @@
-const LanguagesData = [
+export const LanguagesData = [
   {
     title: "Javascript",
     categoryID: 1, // Langauge
@@ -116,4 +116,3 @@ export const LanguagesCategories = [
   { categoryID: 3, categoryText: "Tools", categoryClass: "bg-black " },
 ];
 
-export default LanguagesData;
