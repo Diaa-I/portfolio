@@ -32,12 +32,12 @@ export default function Security({ setPagedWanted }) {
     document.getElementById(`ContactMe`).scrollIntoView();
   const ResearchPMeGoTo = () => document.getElementById(`ResearchPapers`).scrollIntoView();
   const navList = [
-    { name: "Me", action: meGoTo },
-    { name: "Writeups", action: writeupsGoTo },
-    { name: "Vulnerability Disclosures", action: vulnGoTo },
-    { name: "Certificates", action: CertificatesGoTo },
-    { name: "Research Papers", action: ResearchPMeGoTo },
-    { name: "Languages", action: languagesGoTo },
+    // { name: "Me", action: meGoTo },
+    // { name: "Writeups", action: writeupsGoTo },
+    // { name: "Vulnerability Disclosures", action: vulnGoTo },
+    // { name: "Certificates", action: CertificatesGoTo },
+    // { name: "Research Papers", action: ResearchPMeGoTo },
+    // { name: "Languages", action: languagesGoTo },
   ];
   const controlsRef = useRef();
   const inputRef = useRef(null);
