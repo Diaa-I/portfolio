@@ -6,6 +6,7 @@ import ThreeDimensional from "./Components/3D/3D";
 import ThreeDimensionalCredits from "./Components/3D/3DCredits";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState, useEffect } from "react";
+import Nav from "./Components/Nav/Nav";
 
 export default function Development({ setPagedWanted }) {
   // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
@@ -23,114 +24,23 @@ export default function Development({ setPagedWanted }) {
   const contactMeGoTo = () =>
     document.getElementById(`contactMe`).scrollIntoView();
   const ThreeDMeGoTo = () => document.getElementById(`3D`).scrollIntoView();
-
+  const navList = [
+    { name: "Me", action: meGoTo },
+    { name: "Projects", action: projectsGoTo },
+    { name: "Languages", action: languagesGoTo },
+    { name: "Work Experience", action: WorkExperienceGoTo },
+    { name: "Contact Me", action: contactMeGoTo },
+    // { name: "3D", action: ThreeDMeGoTo },
+  ];
   const controlsRef = useRef();
   const inputRef = useRef(null);
   const defaultCssClasses =
     "flex md:items-center md:justify-center bg-[#FAF9F6] text-[#333333]";
-  const [isNavOpen, setIsNavOpen] = useState(true);
 
-  // Listen to the browser resizing and update the state variable
-  useEffect(() => {
-    const handleResize = () => setViewportWidth(window.innerWidth);
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Watch 'viewportWidth' and changes navigation state accordingly
-  useEffect(() => {
-    if (viewportWidth > 768) {
-      console.log("Switched to desktop layout");
-      setIsNavOpen(true);
-    }
-  }, [viewportWidth]);
   return (
     <>
       <div className="overflow-hidden">
-        <nav className=" flex flex-col justify-center items-center md:flex-row top-0 md:place-content-evenly py-5 w-screen  md:font-semibold md:text-xl bg-[#FAF9F2] text-center sticky font-semibold  lg:h-auto sm:justify-start">
-          <button
-            onClick={() => setIsNavOpen(!isNavOpen)}
-            className="md:hidden p-2 rounded bg-[#FAF9F2] text-[#333333]"
-          >
-            {isNavOpen ? "✕ Close" : "☰ Menu"}
-          </button>
-          <button
-            className={
-              "m-1 mt-2 flex h-[2rem] rounded " +
-              `${isNavOpen ? "show" : "hidden"}`
-            }
-            onClick={meGoTo}
-          >
-            Me
-          </button>
-          <button
-            className={
-              "m-1 mt-2 flex h-[2rem] rounded " +
-              `${isNavOpen ? "show" : "hidden"}`
-            }
-            onClick={projectsGoTo}
-          >
-            Projects
-          </button>
-          <button
-            className={
-              "m-1 mt-2 flex h-[2rem] rounded " +
-              `${isNavOpen ? "show" : "hidden"}`
-            }
-            onClick={languagesGoTo}
-          >
-            Languages
-          </button>
-          <button
-            className={
-              "m-1 mt-2 flex h-[2rem] rounded " +
-              `${isNavOpen ? "show" : "hidden"}`
-            }
-            onClick={WorkExperienceGoTo}
-          >
-            Work Experience
-          </button>
-          <button
-            className={
-              "m-1 mt-2 flex h-[2rem] rounded " +
-              `${isNavOpen ? "show" : "hidden"}`
-            }
-            onClick={contactMeGoTo}
-          >
-            Contact Me
-          </button>
-          {wantsThreeDimensional == true && (
-            <button
-              className={
-                "m-1 mt-2 flex h-[2rem] rounded " +
-                `${isNavOpen ? "show" : "hidden"}`
-              }
-              onClick={ThreeDMeGoTo}
-            >
-              3D
-            </button>
-          )}
-          <button
-            className={
-              "m-1 mt-2 flex h-[2rem] rounded " +
-              `${isNavOpen ? "show" : "hidden"}`
-            }
-            onClick={() => setPagedWanted("SEC")}
-          >
-            Switch to Security
-          </button>
-          <button
-            className={
-              "m-1 mt-2 flex h-[2rem] rounded " +
-              `${isNavOpen ? "show" : "hidden"}`
-            }
-            onClick={() => setPagedWanted("")}
-          >
-            Back to intro
-          </button>
-        </nav>
+        <Nav setPagedWanted={setPagedWanted} navList={navList} page={"DEV"} />
       </div>
       <div
         className={
