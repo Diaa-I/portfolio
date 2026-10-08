@@ -11,7 +11,7 @@ const Modal = forwardRef(function ({ prj_details, onCloseModal }, ref) {
   const link = prj_details["link"];
   let withVideoClass = "flex text-center flex-col items-center justify-center bg-[#EFEFF2] lg:w-[70vw] lg:h-[80vh] w-[100rem] rounded-xl overflow-x-hidden ";
   let withoutVideoClass = "flex text-center flex-col items-center justify-center bg-[#EFEFF2]  rounded-xl p-10 "
-  let classes = vidSrc == "" ? withoutVideoClass : withVideoClass
+  let classes = vidSrc ? withVideoClass : withoutVideoClass
   useImperativeHandle(ref, () => {
     return {
       open() {
@@ -20,13 +20,13 @@ const Modal = forwardRef(function ({ prj_details, onCloseModal }, ref) {
 
     };
   });
-
+ console.log(vidSrc)
   return createPortal(
     <>
       <div className="fixed inset-0 bg-black bg-opacity-80 z-40"> </div>
       <dialog ref={dialog} className={classes} onClose={onCloseModal}>
         <h2 className="text-[#333] text-2xl font-extrabold">{title}</h2>
-        {vidSrc != "" && <video preload="metadata" controls className="lg:w-[38rem] lg:h-[25rem] md:w-[40rem] w-[18rem] mt-8 mb-3 rounded-xl" autoPlay >
+        {vidSrc && <video preload="metadata" controls className="lg:w-[38rem] lg:h-[25rem] md:w-[40rem] w-[18rem] mt-8 mb-3 rounded-xl" autoPlay >
           <source src={vidSrc} type="video/webm" />
         </video>}
         <p className="text-center xl:w-[55rem] mb-2">{description}</p>

@@ -1,7 +1,7 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import {  useLayoutEffect, useState } from "react";
 import { supabase } from "../../supabase";
 
-export default function Languages({ Data, Categories, page }) {
+export default function Languages({ page }) {
   const [languages, setLanguages] = useState(null);
   const [categories, setCategories] = useState(null);
 

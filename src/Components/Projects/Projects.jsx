@@ -35,7 +35,7 @@ export default function Projects() {
       handleModalOpening();
     }
   }, [projectDisplayed]);
-  if (projectsData == null) return <p>Loading ...</p>;;
+  if (projectsData == null) return <p>Loading ...</p>;
   const selectedProject = projectsData.find(
     (prj) => prj.title == projectDisplayed,
   );
