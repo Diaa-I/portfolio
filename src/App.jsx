@@ -22,8 +22,8 @@ function App() {
           Backend-Focused Full-Stack Developer{" "}
           <span class="text-zinc-300 font-light mx-1">/</span> Ethical Hacker
         </p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl mx-auto mb-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl mx-auto mb-10">
           <div class="flex items-center space-x-4 p-4 rounded-xl bg-zinc-900/[0.03] border border-zinc-900/5 text-left">
             <div class="flex-shrink-0 w-16 h-12 flex items-center justify-center">
               <img
@@ -33,10 +33,10 @@ function App() {
               />
             </div>
             <div class="leading-snug">
-              <p class="text-xs font-bold text-zinc-800">
+              <p class="text-sm font-bold text-zinc-800 tracking-tight">
                 Graduate Professional Diploma in Cybersecurity
               </p>
-              <p class="text-[11px] font-mono text-zinc-400 mt-0.5">
+              <p class="text-[11px] font-mono text-zinc-400 mt-1">
                 American University of Beirut &bull; 2026
               </p>
             </div>
