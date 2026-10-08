@@ -20,7 +20,6 @@ const Modal = forwardRef(function ({ prj_details, onCloseModal }, ref) {
 
     };
   });
- console.log(vidSrc)
   return createPortal(
     <>
       <div className="fixed inset-0 bg-black bg-opacity-80 z-40"> </div>
