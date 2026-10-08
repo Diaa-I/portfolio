@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Card from "../Cards/ProjectCard";
 import Modal from "./ProjectModal";
-import ProjectsData from "../../../data/projects.data";
+import { supabase } from "../../supabase";
 
 export default function Projects() {
   const [projectDisplayed, setProjectDisplayed] = useState("");
+  const [projectsData, setProjectsData] = useState(null);
   const modal = useRef();
   function projectSelectedHandle(title) {
     setProjectDisplayed(title);
@@ -15,14 +16,28 @@ export default function Projects() {
   function handleModalOpening() {
     modal.current.open();
   }
+  useLayoutEffect(() => {
+    async function loadAllProjects() {
+      const { data: prjData, error: prjError } = await supabase
+        .from("projects")
+        .select("*")
+        .order("id", { ascending: true });
+      if (prjError) {
+        console.error(prjError);
+        return;
+      }
+      setProjectsData(prjData);
+    }
+    loadAllProjects();
+  }, []);
   useEffect(() => {
     if (projectDisplayed != "") {
       handleModalOpening();
     }
   }, [projectDisplayed]);
-
-  const selectedProject = ProjectsData.find(
-    (prj) => prj.title == projectDisplayed
+  if (projectsData == null) return <p>Loading ...</p>;;
+  const selectedProject = projectsData.find(
+    (prj) => prj.title == projectDisplayed,
   );
   return (
     <>
@@ -34,7 +49,7 @@ export default function Projects() {
         ></Modal>
       )}
       <div className="flex flex-row flex-wrap justify-center lg:w-[90vw] w-auto h-auto">
-        {ProjectsData.map((project) => {
+        {projectsData.map((project) => {
           return (
             <Card
               key={project.id}

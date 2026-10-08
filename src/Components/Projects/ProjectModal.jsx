@@ -1,6 +1,7 @@
 import { forwardRef, useImperativeHandle, useRef } from "react";
 import { createPortal } from "react-dom";
 
+
 const Modal = forwardRef(function ({ prj_details, onCloseModal }, ref) {
   const dialog = useRef();
   const title = prj_details["title"];
