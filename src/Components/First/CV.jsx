@@ -1,4 +1,3 @@
-import MeData from "../../../data/me.data";
 import cv from "../../assets/CV.pdf"
 
 export default function CV() {
