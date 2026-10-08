@@ -18,7 +18,7 @@ export default function WorkExperience() {
     }
     loadAllWorkExperience();
   }, []);
-  console.log(workExperienceData)
+
   if (workExperienceData == null) return <p>Loading ...</p>;;
 
   return (
