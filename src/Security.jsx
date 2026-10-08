@@ -1,4 +1,4 @@
-import Start from "./Components/First/Start";
+import CV from "./Components/First/CV";
 import Projects from "./Components/Projects/Projects";
 import Languages from "./Components/Languages/Languages";
 import WorkExperience from "./Components/WorkExperience/WorkExperience";
@@ -11,7 +11,6 @@ import Writeups from "./Components/Writeups/Writeups";
 import VulnerabilitiesDisclosures from "./Components/VulnerabilitiesDisclosures/VulnerabilitiesDisclosures";
 import Certificates from "./Components/Certificates/Certificates";
 import ResearchPapers from "./Components/ResearchPapers/ResearchPapers";
-import { LanguagesData,LanguagesCategories } from "../data/sec_languages.data";
 
 export default function Security({ setPagedWanted }) {
   // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
@@ -38,6 +37,7 @@ export default function Security({ setPagedWanted }) {
     // { name: "Certificates", action: CertificatesGoTo },
     // { name: "Research Papers", action: ResearchPMeGoTo },
     // { name: "Languages", action: languagesGoTo },
+    // { name: "Contact Me", action: contactMeGoTo },
   ];
   const controlsRef = useRef();
   const inputRef = useRef(null);
@@ -49,22 +49,14 @@ export default function Security({ setPagedWanted }) {
       className={"flex bg-[#0B0F19] text-[#F8FAFC] flex-col h-screen w-screen"}
     >
       <Nav setPagedWanted={setPagedWanted} navList={navList} page={"SEC"} />
-      {/* <Writeups />
-      <VulnerabilitiesDisclosures />
-      <Certificates />
-      <ResearchPapers />
-      <Languages
-        Data={LanguagesData}
-        Categories={LanguagesCategories}
-        page={"SEC"}
-      /> */}
+      
       <div className="flex flex-col w-screen h-screen items-center justify-center" id='Writeups'>
       <p className="font-mono md:text-[5rem]">Coming soon ...</p>
     </div>
       <div className={defaultCssClasses + " justify-center"} id="ContactMe">
         <hr></hr>
         <p className="p-5 lg:text-2xl text-xl ">
-          You can contact me via{" "}
+          You can contact me via
           <a href="https://www.linkedin.com/in/diaa-nasr/">
             <i className="devicon-linkedin-plain "></i>
           </a>
