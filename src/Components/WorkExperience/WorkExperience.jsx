@@ -5,7 +5,7 @@ export default function WorkExperience() {
     <div className="flex flex-col flex-wrap justify-center">
       {WorkExperienceData.map((data) => {
         return (
-          <div className={data.class}>
+          <div className="m-5 bg-[#EFEFF2] w-[50vw] h-[50vh] ">
             <h2 className="lg:text-3xl font-extrabold text-center my-1 text-2xl">{data.title}</h2>
             <h3 className="lg:text-1xl font-bold text-center">{data.company}</h3>
             <p className="lg:text-lg font-semibold text-center">{data.date}</p>
