@@ -27,7 +27,9 @@ export default function Languages({ Data, Categories, page }) {
         console.error(langError);
         return;
       }
-      setCategories(catData);
+      const categories_id_used  = new Set(langData.map((data)=>data.categoryID))
+      const categories_used = catData.filter((cat)=>categories_id_used.has(cat.id))
+      setCategories(categories_used);
       setLanguages(langData);
     }
     loadAllLanguages();
@@ -35,6 +37,7 @@ export default function Languages({ Data, Categories, page }) {
   if (categories == null || languages == null) {
     return <p>Loading ...</p>;
   }
+
   return (
     <div
       className={`2xl:grid ${page == "SEC" ? "2xl:grid-cols-2" : "2xl:grid-cols-3"} 2xl:p-10 2xl:m-10 text-center ${page == "SEC" ? "bg-[#0B0F19]" : "bg-[#FAF9F2]"}`}
