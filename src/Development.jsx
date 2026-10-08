@@ -1,4 +1,4 @@
-import Start from "./Components/First/Start";
+import CV from "./Components/First/CV";
 import Projects from "./Components/Projects/Projects";
 import Languages from "./Components/Languages/Languages";
 import WorkExperience from "./Components/WorkExperience/WorkExperience";
@@ -24,10 +24,10 @@ export default function Development({ setPagedWanted }) {
     document.getElementById(`contactMe`).scrollIntoView();
   const ThreeDMeGoTo = () => document.getElementById(`3D`).scrollIntoView();
   const navList = [
-    { name: "Me", action: meGoTo },
     { name: "Projects", action: projectsGoTo },
     { name: "Languages", action: languagesGoTo },
     { name: "Work Experience", action: WorkExperienceGoTo },
+    { name: "CV", action: meGoTo },
     { name: "Contact Me", action: contactMeGoTo },
     // { name: "3D", action: ThreeDMeGoTo },
   ];
@@ -40,15 +40,6 @@ export default function Development({ setPagedWanted }) {
     <>
       <div className="overflow-hidden">
         <Nav setPagedWanted={setPagedWanted} navList={navList} page={"DEV"} />
-      </div>
-      <div
-        className={
-          defaultCssClasses +
-          " lg:flex-row lg:h-auto lg:text-left my-0 flex-col py-12 lg:py-20"
-        }
-        id="Me"
-      >
-        <Start />
       </div>
       <div
         className={
@@ -103,7 +94,15 @@ export default function Development({ setPagedWanted }) {
           </div>
         </>
       )}
-
+      <div
+        className={
+          defaultCssClasses +
+          " lg:flex-row lg:h-auto lg:text-left my-0 flex-col py-12 lg:py-20"
+        }
+        id="Me"
+      >
+        <CV />
+      </div>
       <hr></hr>
       <div className={defaultCssClasses + " justify-center"} id="contactMe">
         <p className="p-5 lg:text-2xl text-xl ">
