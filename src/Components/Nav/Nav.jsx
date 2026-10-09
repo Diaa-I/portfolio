@@ -49,7 +49,7 @@ export default function Nav({ navList, page }) {
             "m-1 mt-2 flex h-[2rem] rounded " +
             `${isNavOpen ? "show" : "hidden"}`
           }
-          onClick={() => navigate(page == "SEC" ? "/portfolio/dev" : "/portfolio/sec")}
+          onClick={() => navigate(page == "SEC" ? "/dev" : "/sec")}
         >
           Switch to {page == "SEC" ? "Development" : "Security"}
         </button>
@@ -58,7 +58,7 @@ export default function Nav({ navList, page }) {
             "m-1 mt-2 flex h-[2rem] rounded " +
             `${isNavOpen ? "show" : "hidden"}`
           }
-          onClick={() => navigate("/portfolio/")}
+          onClick={() => navigate("/")}
         >
           Back to intro
         </button>

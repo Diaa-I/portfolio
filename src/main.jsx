@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router";
+import { HashRouter, Route, Routes } from "react-router";
 import Development from "./Development.jsx";
 import Security from "./Security.jsx";
 
@@ -10,11 +10,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
   <HashRouter>
     <Routes>
-      <Route path="/portfolio/">
-        <Route path="" element={<App />} />
-        <Route path="dev" element={<Development />} />
-        <Route path="sec" element={<Security />} />
-      </Route>
+      <Route path="/" element={<App />} />
+      <Route path="/dev" element={<Development />} />
+      <Route path="/sec" element={<Security />} />
     </Routes>
   </HashRouter>,
   // </React.StrictMode>
