@@ -8,11 +8,12 @@ import VulnerabilitiesDisclosures from "./Components/VulnerabilitiesDisclosures/
 import Certificates from "./Components/Certificates/Certificates";
 import ResearchPapers from "./Components/ResearchPapers/ResearchPapers";
 import SpiningLoader from "./Components/Loader/SpiningLoader";
+import ContactMe from "./Components/ContactMe/ContactMe";
 
 export default function Security({}) {
   const [hasloaded, setHasLoaded] = useState({
     // Projects: false,
-    // Languages: false,
+    Languages: false,
     Writeups: false,
     // Work_Experience: false,
   });
@@ -39,7 +40,7 @@ export default function Security({}) {
     // { name: "Vulnerability Disclosures", action: vulnGoTo },
     // { name: "Certificates", action: CertificatesGoTo },
     // { name: "Research Papers", action: ResearchPMeGoTo },
-    // { name: "Languages", action: languagesGoTo },
+    { name: "Languages", action: languagesGoTo },
     { name: "Contact Me", action: contactMeGoTo },
   ];
 
@@ -59,14 +60,8 @@ export default function Security({}) {
       <div className={defaultCssClasses} id="Languages">
         <Languages page="SEC" setHasLoaded={setHasLoaded} />
       </div>
-      <div className={defaultCssClasses + " justify-center"} id="ContactMe">
-        <hr></hr>
-        <p className="p-5 lg:text-2xl text-xl ">
-          You can contact me via{" "}
-          <a href="https://www.linkedin.com/in/diaa-nasr/">
-            <i className="devicon-linkedin-plain "></i>
-          </a>
-        </p>
+      <div className={defaultCssClasses} id="Languages">
+        <ContactMe page={"SEC"} />
       </div>
     </div>
   );

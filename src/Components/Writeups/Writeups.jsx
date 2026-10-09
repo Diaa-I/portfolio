@@ -25,7 +25,7 @@ export default function Writeups({ setHasLoaded }) {
   }, []);
 
   return (
-    <section className="bg-inherit px-5 py-16 text-white sm:px-8 lg:px-12 flex flex-col items-center w-full">
+    <section className="bg-inherit px-5 py-16 text-white sm:px-8 lg:px-12 flex flex-col items-center w-full" id="Writeups">
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
         <div className="w-full text-left  pb-6 mb-10">
           <h1 className="text-3xl font-bold tracking-tight sm:text-5xl text-white">

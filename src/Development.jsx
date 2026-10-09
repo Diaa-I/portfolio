@@ -8,6 +8,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState, useEffect } from "react";
 import Nav from "./Components/Nav/Nav";
 import SpiningLoader from "./Components/Loader/SpiningLoader";
+import ContactMe from "./Components/ContactMe/ContactMe";
 export default function Development({ setPagedWanted }) {
   // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
   //   viewportWidth > 800 ? true : false,
@@ -95,10 +96,7 @@ export default function Development({ setPagedWanted }) {
               </Canvas>
             </Suspense>
           </div>
-          <div
-            className={defaultCssClasses + " flex-col  p-2"}
-            id="3D-Credits"
-          >
+          <div className={defaultCssClasses + " flex-col  p-2"} id="3D-Credits">
             <ThreeDimensionalCredits />
           </div>
         </>
@@ -112,14 +110,8 @@ export default function Development({ setPagedWanted }) {
       >
         <CV />
       </div>
-      <hr></hr>
-      <div className={defaultCssClasses + " justify-center"} id="contactMe">
-        <p className="p-5 lg:text-2xl text-xl ">
-          You can contact me via{" "}
-          <a href="https://www.linkedin.com/in/diaa-nasr/">
-            <i className="devicon-linkedin-plain "></i>
-          </a>
-        </p>
+      <div className={defaultCssClasses} id="Languages">
+        <ContactMe page={"DEV"} />
       </div>
     </>
   );
