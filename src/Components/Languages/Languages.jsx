@@ -44,6 +44,12 @@ export default function Languages({ page, setHasLoaded }) {
 
   return (
     <div className="flex flex-col gap-6 w-full max-w-5xl mx-auto bg-inherit">
+      <div className="mx-auto max-w-7xl">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
+          Technologies Used
+          <span className="text-cyan-400">.</span>
+        </h1>
+      </div>
       {categories.map((category) => {
         return (
           <div

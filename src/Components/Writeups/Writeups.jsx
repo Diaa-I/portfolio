@@ -25,7 +25,7 @@ useLayoutEffect(() => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-inherit px-5 py-16 text-white sm:px-8 lg:px-12">
+    <section className="bg-inherit px-5 py-16 text-white sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
           CTF Writeups
