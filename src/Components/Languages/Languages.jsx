@@ -43,11 +43,13 @@ export default function Languages({ page, setHasLoaded }) {
   }
 
   return (
-    <div className="flex flex-col gap-6 w-full max-w-5xl mx-auto bg-inherit">
-      <div className="mx-auto max-w-7xl ">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
-          Technologies Used
-          <span className="text-cyan-400">.</span>
+    <div className="flex flex-col gap-6 w-full max-w-5xl mx-auto bg-inherit ">
+      <div className="mb-8 border-b border-[#C2CDC2] pb-4 text-center">
+        <h1
+          className={`text-3xl font-black tracking-tight sm:text-4xl font-mono ${page === "DEV" ? "text-[#121B13]" : "text-white"} `}
+        >
+          TECHNOLOGIES_USED
+          <span className="text-[#0284C7]">.</span>
         </h1>
       </div>
       {categories.map((category) => {

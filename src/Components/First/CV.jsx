@@ -3,6 +3,12 @@ import cv from "../../assets/CV.pdf";
 export default function CV() {
   return (
     <div className="flex flex-col items-center justify-center p-6 font-mono text-sm text-[#121B13] w-full">
+      <div className="mb-8 border-b border-[#C2CDC2] pb-4 text-center">
+        <h1 className="text-3xl font-black tracking-tight sm:text-4xl text-[#121B13] font-mono">
+          MY_CV
+          <span className="text-[#0284C7]">.</span>
+        </h1>
+      </div>
       <div className="w-full max-w-xl bg-white border-2 border-[#C2CDC2] rounded-xl shadow-md overflow-hidden flex flex-col">
         <div className="bg-[#EAEFEA] border-b border-[#C2CDC2] px-4 py-2.5 flex items-center justify-between font-bold text-xs select-none">
           <div className="flex items-center space-x-2">

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { supabase } from "../../supabase";
-import WriteupCard from "../Cards/WriteupsCard"; 
+import WriteupCard from "../Cards/WriteupsCard";
 
 export default function Writeups({ setHasLoaded }) {
   const [writeupsMetadata, setWriteupsMetadata] = useState([]);
@@ -25,15 +25,17 @@ export default function Writeups({ setHasLoaded }) {
   }, []);
 
   return (
-    <section className="bg-inherit px-5 py-16 text-white sm:px-8 lg:px-12 flex flex-col items-center w-full" id="Writeups">
-      <div className="w-full max-w-5xl mx-auto flex flex-col items-center">
-        <div className="w-full text-left  pb-6 mb-10">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-5xl text-white">
-            CTF Writeups
-            <span className="text-cyan-400">.</span>
+    <section
+      className="bg-inherit px-5 py-16 text-white sm:px-8 lg:px-12 flex flex-col items-center w-full"
+      id="Writeups"
+    >
+      <div className="w-full max-w-5xl mx-auto flex flex-col items-center ">
+        <div className="mb-8 border-b border-[#C2CDC2] pb-4 ">
+          <h1 className="text-3xl font-black tracking-tight sm:text-4xl text-white font-mono">
+            CTF_WRITEUPS
+            <span className="text-[#0284C7]">.</span>
           </h1>
         </div>
-
         {writeupsMetadata.length === 0 ? (
           <p className="py-16 text-center text-slate-500 font-mono text-sm">
             No writeups available yet.
@@ -45,11 +47,7 @@ export default function Writeups({ setHasLoaded }) {
                 key={metadata.id}
                 writeup={metadata}
                 onClick={() =>
-                  navigate(
-                    `/writeups/${encodeURIComponent(
-                      metadata.title,
-                    )}`,
-                  )
+                  navigate(`/writeups/${encodeURIComponent(metadata.title)}`)
                 }
               />
             ))}
