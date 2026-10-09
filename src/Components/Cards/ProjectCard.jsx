@@ -45,7 +45,7 @@ return (
     </div>
 
     <p className="text-xs font-bold text-[#0284C7] group-hover:underline flex items-center gap-1">
-      <span>view_source_code</span>
+      <span>view_more</span>
       <span className="group-hover:translate-x-0.5 transition-transform">›</span>
     </p>
   </div>
