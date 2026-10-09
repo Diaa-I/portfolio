@@ -65,9 +65,9 @@ export default function Development({ setPagedWanted }) {
       <div className={defaultCssClasses} id="workExperience">
         <WorkExperience setHasLoaded={setHasLoaded} />
       </div>
-      <hr></hr>
       {wantsThreeDimensional == true && (
         <>
+          <hr></hr>
           <input
             ref={inputRef}
             type="text"

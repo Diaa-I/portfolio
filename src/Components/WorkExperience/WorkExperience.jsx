@@ -15,7 +15,7 @@ export default function WorkExperience({ setHasLoaded }) {
         return;
       }
       setWorkExperienceData(wrkData);
-      setHasLoaded((oldData) => ({ ...oldData, "Work_Experience": true }));
+      setHasLoaded((oldData) => ({ ...oldData, Work_Experience: true }));
     }
     loadAllWorkExperience();
   }, []);
@@ -23,7 +23,13 @@ export default function WorkExperience({ setHasLoaded }) {
   if (workExperienceData == null) return <p>Loading ...</p>;
 
   return (
-    <div className="flex flex-col flex-wrap justify-center">
+    <div className="flex flex-col flex-wrap justify-center mt-10">
+      <div className="mx-auto max-w-7xl">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
+          Work Experience
+          <span className="text-cyan-400">.</span>
+        </h1>
+      </div>
       {workExperienceData.map((data) => {
         return (
           <div className="m-5 bg-[#EFEFF2]   ">

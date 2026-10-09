@@ -3,7 +3,7 @@ import Card from "../Cards/ProjectCard";
 import Modal from "./ProjectModal";
 import { supabase } from "../../supabase";
 
-export default function Projects({setHasLoaded}) {
+export default function Projects({ setHasLoaded }) {
   const [projectDisplayed, setProjectDisplayed] = useState("");
   const [projectsData, setProjectsData] = useState(null);
   const modal = useRef();
@@ -27,11 +27,9 @@ export default function Projects({setHasLoaded}) {
         return;
       }
       setProjectsData(prjData);
-      setHasLoaded((oldData) => ({ ...oldData, "Projects": true }));
-
+      setHasLoaded((oldData) => ({ ...oldData, Projects: true }));
     }
     loadAllProjects();
-
   }, []);
   useEffect(() => {
     if (projectDisplayed != "") {
@@ -44,6 +42,12 @@ export default function Projects({setHasLoaded}) {
   );
   return (
     <>
+      <div className="mx-auto max-w-7xl">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
+          My Projects
+          <span className="text-cyan-400">.</span>
+        </h1>
+      </div>
       {projectDisplayed != "" && (
         <Modal
           prj_details={selectedProject}

@@ -1,4 +1,4 @@
-import cv from "../../assets/CV.pdf"
+import cv from "../../assets/CV.pdf";
 
 export default function CV() {
   return (
