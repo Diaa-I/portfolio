@@ -41,7 +41,7 @@ export default function Projects({ setHasLoaded }) {
     (prj) => prj.title == projectDisplayed,
   );
  return (
-   <div className="flex flex-col mt-10 w-[90vw] mx-auto px-4 font-mono text-sm text-[#121B13]">
+   <div className="flex flex-col mt-10 w-[90vw] mx-auto px-4 font-mono text-sm text-[#121B13] bg-inherit">
     
     <div className="mb-8 border-b border-[#C2CDC2] pb-4 w-full">
       <h1 className="text-3xl font-black tracking-tight sm:text-4xl text-[#121B13]">
