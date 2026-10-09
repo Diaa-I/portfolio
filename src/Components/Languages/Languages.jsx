@@ -1,7 +1,7 @@
 import {  useLayoutEffect, useState } from "react";
 import { supabase } from "../../supabase";
 
-export default function Languages({ page }) {
+export default function Languages({ page, setHasLoaded }) {
   const [languages, setLanguages] = useState(null);
   const [categories, setCategories] = useState(null);
 
@@ -31,6 +31,8 @@ export default function Languages({ page }) {
       const categories_used = catData.filter((cat)=>categories_id_used.has(cat.id))
       setCategories(categories_used);
       setLanguages(langData);
+      setHasLoaded((oldData) => ({ ...oldData, "Languages": true }));
+
     }
     loadAllLanguages();
   }, []);

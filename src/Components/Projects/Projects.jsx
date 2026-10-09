@@ -3,7 +3,7 @@ import Card from "../Cards/ProjectCard";
 import Modal from "./ProjectModal";
 import { supabase } from "../../supabase";
 
-export default function Projects() {
+export default function Projects({setHasLoaded}) {
   const [projectDisplayed, setProjectDisplayed] = useState("");
   const [projectsData, setProjectsData] = useState(null);
   const modal = useRef();
@@ -27,8 +27,11 @@ export default function Projects() {
         return;
       }
       setProjectsData(prjData);
+      setHasLoaded((oldData) => ({ ...oldData, "Projects": true }));
+
     }
     loadAllProjects();
+
   }, []);
   useEffect(() => {
     if (projectDisplayed != "") {

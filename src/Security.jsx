@@ -11,11 +11,20 @@ import Writeups from "./Components/Writeups/Writeups";
 import VulnerabilitiesDisclosures from "./Components/VulnerabilitiesDisclosures/VulnerabilitiesDisclosures";
 import Certificates from "./Components/Certificates/Certificates";
 import ResearchPapers from "./Components/ResearchPapers/ResearchPapers";
+import SpiningLoader from "./Components/Loader/SpiningLoader";
 
-export default function Security({ setPagedWanted }) {
+export default function Security({ }) {
   // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
   //   viewportWidth > 800 ? true : false,
   // );
+
+  const [hasloaded, setHasLoaded] = useState({
+    // Projects: false,
+    Languages: false,
+    // Work_Experience: false,
+  });
+  const isStillLoading = Object.values(hasloaded).includes(false);
+
   const [wantsThreeDimensional, setWantsThreeDimensional] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const meGoTo = () => document.getElementById(`Me`).scrollIntoView();
@@ -29,13 +38,14 @@ export default function Security({ setPagedWanted }) {
     document.getElementById(`Certificates`).scrollIntoView();
   const contactMeGoTo = () =>
     document.getElementById(`ContactMe`).scrollIntoView();
-  const ResearchPMeGoTo = () => document.getElementById(`ResearchPapers`).scrollIntoView();
+  const ResearchPMeGoTo = () =>
+    document.getElementById(`ResearchPapers`).scrollIntoView();
   const navList = [
     // { name: "Me", action: meGoTo },
     // { name: "Writeups", action: writeupsGoTo },
-    // { name: "Vulnerability Disclosures", action: vulnGoTo },
+    // // { name: "Vulnerability Disclosures", action: vulnGoTo },
     // { name: "Certificates", action: CertificatesGoTo },
-    // { name: "Research Papers", action: ResearchPMeGoTo },
+    // // { name: "Research Papers", action: ResearchPMeGoTo },
     // { name: "Languages", action: languagesGoTo },
     // { name: "Contact Me", action: contactMeGoTo },
   ];
@@ -48,11 +58,20 @@ export default function Security({ setPagedWanted }) {
     <div
       className={"flex bg-[#0B0F19] text-[#F8FAFC] flex-col h-screen w-screen"}
     >
-      <Nav setPagedWanted={setPagedWanted} navList={navList} page={"SEC"} />
-      
-      <div className="flex flex-col w-screen h-screen items-center justify-center" id='Writeups'>
-      <p className="font-mono md:text-[5rem]">Coming soon ...</p>
-    </div>
+      {isStillLoading && <SpiningLoader />}
+
+      <Nav navList={navList} page={"SEC"} />
+      {/* <Writeups  /> */}
+      {/* <VulnerabilitiesDisclosures /> */}
+      {/* <Certificates /> */}
+      {/* <ResearchPapers /> */}
+      {/* <Languages page={"SEC"} setHasLoaded={setHasLoaded} /> */}
+      <div
+        className="flex flex-col w-screen h-screen items-center justify-center"
+        id="Writeups"
+      >
+        <p className="font-mono md:text-[5rem]">Coming soon ...</p>
+      </div>
       <div className={defaultCssClasses + " justify-center"} id="ContactMe">
         <hr></hr>
         <p className="p-5 lg:text-2xl text-xl ">

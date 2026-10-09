@@ -2,13 +2,10 @@ import Development from "./Development";
 import { useState } from "react";
 import Security from "./Security";
 import "./App.css";
+import { Link, useNavigate } from "react-router";
 function App() {
-  const [pageWanted, setPagedWanted] = useState("");
-  if (pageWanted == "SEC") {
-    return <Security setPagedWanted={setPagedWanted} />;
-  } else if (pageWanted == "DEV") {
-    return <Development setPagedWanted={setPagedWanted} />;
-  }
+
+  const navigate = useNavigate()
   return (
     <div class="min-h-screen bg-[#FDFBF7] flex flex-col justify-between font-sans selection:bg-zinc-200">
       <div class="flex flex-col items-center justify-center text-center pt-24 pb-16 px-4 flex-grow">
@@ -75,7 +72,7 @@ function App() {
       <div class="grid grid-cols-1 md:grid-cols-2 w-full border-t border-zinc-900/10">
         <div
           className="group relative bg-[#090D10] text-white p-10 md:p-14 flex flex-col justify-between items-start min-h-[280px] cursor-pointer transition-all duration-300 hover:bg-[#0E1419]"
-          onClick={() => setPagedWanted("SEC")}
+          onClick={()=>navigate("sec")}
         >
           <div>
             <div class="text-[10px] font-mono tracking-widest text-emerald-500 uppercase mb-6 flex items-center">
@@ -112,7 +109,7 @@ function App() {
 
         <div
           className="group relative bg-[#0A1612] text-white p-10 md:p-14 flex flex-col justify-between items-start min-h-[280px] cursor-pointer transition-all duration-300 hover:bg-[#0F221C] border-t md:border-t-0 md:border-l border-zinc-900/20"
-          onClick={() => setPagedWanted("DEV")}
+          onClick={()=>navigate("dev")}
         >
           <div>
             <div class="text-[10px] font-mono tracking-widest text-orange-500 uppercase mb-6 flex items-center">

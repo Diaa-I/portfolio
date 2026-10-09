@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
-export default function Nav({ setPagedWanted, navList, page }) {
+export default function Nav({ navList, page }) {
   const [isNavOpen, setIsNavOpen] = useState(true);
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const navigate = useNavigate()
   // Listen to the browser resizing and update the state variable
   useEffect(() => {
     const handleResize = () => setViewportWidth(window.innerWidth);
@@ -47,7 +49,7 @@ export default function Nav({ setPagedWanted, navList, page }) {
             "m-1 mt-2 flex h-[2rem] rounded " +
             `${isNavOpen ? "show" : "hidden"}`
           }
-          onClick={() => setPagedWanted(page == "SEC" ? "DEV" : "SEC")}
+          onClick={() => navigate(page == "SEC" ? "/portfolio/dev" : "/portfolio/sec")}
         >
           Switch to {page == "SEC" ? "Development" : "Security"}
         </button>
@@ -56,7 +58,7 @@ export default function Nav({ setPagedWanted, navList, page }) {
             "m-1 mt-2 flex h-[2rem] rounded " +
             `${isNavOpen ? "show" : "hidden"}`
           }
-          onClick={() => setPagedWanted("")}
+          onClick={() => navigate("/portfolio/")}
         >
           Back to intro
         </button>

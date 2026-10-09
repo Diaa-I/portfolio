@@ -1,9 +1,9 @@
-import {  useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import WorkExperienceData from "../../../data/work_experience.data";
 import { supabase } from "../../supabase";
 
-export default function WorkExperience() {
-  const [workExperienceData,setWorkExperienceData] = useState(null)
+export default function WorkExperience({ setHasLoaded }) {
+  const [workExperienceData, setWorkExperienceData] = useState(null);
   useLayoutEffect(() => {
     async function loadAllWorkExperience() {
       const { data: wrkData, error: wrkError } = await supabase
@@ -15,11 +15,12 @@ export default function WorkExperience() {
         return;
       }
       setWorkExperienceData(wrkData);
+      setHasLoaded((oldData) => ({ ...oldData, "Work_Experience": true }));
     }
     loadAllWorkExperience();
   }, []);
 
-  if (workExperienceData == null) return <p>Loading ...</p>;;
+  if (workExperienceData == null) return <p>Loading ...</p>;
 
   return (
     <div className="flex flex-col flex-wrap justify-center">

@@ -7,10 +7,16 @@ import ThreeDimensionalCredits from "./Components/3D/3DCredits";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState, useEffect } from "react";
 import Nav from "./Components/Nav/Nav";
+import SpiningLoader from "./Components/Loader/SpiningLoader";
 export default function Development({ setPagedWanted }) {
   // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
   //   viewportWidth > 800 ? true : false,
   // );
+  const [hasloaded, setHasLoaded] = useState({
+    Projects: false,
+    Languages: false,
+    Work_Experience: false,
+  });
   const [wantsThreeDimensional, setWantsThreeDimensional] = useState(false);
   const meGoTo = () => document.getElementById(`Me`).scrollIntoView();
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
@@ -36,10 +42,13 @@ export default function Development({ setPagedWanted }) {
   const defaultCssClasses =
     "flex md:items-center md:justify-center bg-[#FAF9F6] text-[#333333]";
 
+  const isStillLoading = Object.values(hasloaded).includes(false);
+
   return (
     <>
+      {isStillLoading && <SpiningLoader />}
       <div className="overflow-hidden">
-        <Nav setPagedWanted={setPagedWanted} navList={navList} page={"DEV"} />
+        <Nav navList={navList} page={"DEV"} />
       </div>
       <div
         className={
@@ -48,13 +57,13 @@ export default function Development({ setPagedWanted }) {
         }
         id="Projects"
       >
-        <Projects />
+        <Projects setHasLoaded={setHasLoaded} />
       </div>
       <div className={defaultCssClasses} id="Languages">
-        <Languages page="DEV" />
+        <Languages page="DEV" setHasLoaded={setHasLoaded} />
       </div>
       <div className={defaultCssClasses} id="workExperience">
-        <WorkExperience />
+        <WorkExperience setHasLoaded={setHasLoaded} />
       </div>
       <hr></hr>
       {wantsThreeDimensional == true && (
