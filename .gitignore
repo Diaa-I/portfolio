@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 ToDO
 .env
+public/writeups/get_markdown_files_images.py

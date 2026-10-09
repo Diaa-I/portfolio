@@ -21,6 +21,7 @@ export default function Security({ }) {
   const [hasloaded, setHasLoaded] = useState({
     // Projects: false,
     // Languages: false,
+    Writeups: false,
     // Work_Experience: false,
   });
   const isStillLoading = Object.values(hasloaded).includes(false);
@@ -42,18 +43,17 @@ export default function Security({ }) {
     document.getElementById(`ResearchPapers`).scrollIntoView();
   const navList = [
     // { name: "Me", action: meGoTo },
-    // { name: "Writeups", action: writeupsGoTo },
-    // // { name: "Vulnerability Disclosures", action: vulnGoTo },
+    { name: "Writeups", action: writeupsGoTo },
+    // { name: "Vulnerability Disclosures", action: vulnGoTo },
     // { name: "Certificates", action: CertificatesGoTo },
-    // // { name: "Research Papers", action: ResearchPMeGoTo },
+    // { name: "Research Papers", action: ResearchPMeGoTo },
     // { name: "Languages", action: languagesGoTo },
-    // { name: "Contact Me", action: contactMeGoTo },
+    { name: "Contact Me", action: contactMeGoTo },
   ];
   const controlsRef = useRef();
   const inputRef = useRef(null);
   const defaultCssClasses =
     "flex md:items-center md:justify-center bg-[#0B0F19] text-[#F8FAFC]";
-
   return (
     <div
       className={"flex bg-[#0B0F19] text-[#F8FAFC] flex-col h-screen w-screen"}
@@ -61,21 +61,18 @@ export default function Security({ }) {
       {isStillLoading && <SpiningLoader />}
 
       <Nav navList={navList} page={"SEC"} />
-      {/* <Writeups  /> */}
+      <Writeups setHasLoaded={setHasLoaded} />
       {/* <VulnerabilitiesDisclosures /> */}
       {/* <Certificates /> */}
       {/* <ResearchPapers /> */}
       {/* <Languages page={"SEC"} setHasLoaded={setHasLoaded} /> */}
-      <div
-        className="flex flex-col w-screen h-screen items-center justify-center"
-        id="Writeups"
-      >
+      {/* <div className="flex flex-col w-screen h-screen items-center justify-center bg-inherit">
         <p className="font-mono md:text-[5rem]">Coming soon ...</p>
-      </div>
+      </div> */}
       <div className={defaultCssClasses + " justify-center"} id="ContactMe">
         <hr></hr>
         <p className="p-5 lg:text-2xl text-xl ">
-          You can contact me via
+          You can contact me via {" "}
           <a href="https://www.linkedin.com/in/diaa-nasr/">
             <i className="devicon-linkedin-plain "></i>
           </a>
