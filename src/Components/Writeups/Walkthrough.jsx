@@ -73,7 +73,7 @@ export default function Walkthrough() {
     return (
       <main className="min-h-screen bg-[#080b10] p-8 text-slate-300">
         <p>{error}</p>
-        <Link to="/writeups" className="mt-4 inline-block text-cyan-400">
+        <Link to="/sec" className="mt-4 inline-block text-cyan-400">
           ← Back to writeups
         </Link>
       </main>
@@ -93,7 +93,6 @@ export default function Walkthrough() {
     });
   };
 
-
   return (
     <main className="min-h-screen bg-[#080b10] px-5 py-12 text-slate-200 sm:px-8">
       <article className="prose prose-invert mx-auto max-w-3xl">
@@ -107,9 +106,20 @@ export default function Walkthrough() {
 
         <h1>{writeup.title}</h1>
 
-        <p>{writeup.description}</p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          {writeup.tags?.map((tag) => (
+            <span
+              key={tag}
+              className="inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/[0.07] px-3 py-1 text-xs font-medium tracking-wide text-cyan-300 transition-colors hover:border-cyan-400/40 hover:bg-cyan-400/10"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
 
-        <ReactMarkdown remarkPlugins={[remarkGfm, [remarkFootnotes, { inline: true }]]}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm, [remarkFootnotes, { inline: true }]]}
+        >
           {parseObsidianImages(markdown)}
         </ReactMarkdown>
       </article>
