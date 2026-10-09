@@ -20,7 +20,7 @@ export default function Security({ }) {
 
   const [hasloaded, setHasLoaded] = useState({
     // Projects: false,
-    Languages: false,
+    // Languages: false,
     // Work_Experience: false,
   });
   const isStillLoading = Object.values(hasloaded).includes(false);
