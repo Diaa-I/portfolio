@@ -46,7 +46,7 @@ export default function Projects({ setHasLoaded }) {
     <div className="mb-8 border-b border-[#C2CDC2] pb-4 w-full">
       <h1 className="text-3xl font-black tracking-tight sm:text-4xl text-[#121B13]">
         PROJECTS
-        <span className="text-[#0284C7]">.sh</span>
+        <span className="text-[#0284C7]">.</span>
       </h1>
     </div>
 
