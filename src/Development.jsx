@@ -110,7 +110,7 @@ export default function Development({ setPagedWanted }) {
       >
         <CV />
       </div>
-      <div className={defaultCssClasses} id="Languages">
+      <div className={defaultCssClasses} id="ContactMe">
         <ContactMe page={"DEV"} />
       </div>
     </>

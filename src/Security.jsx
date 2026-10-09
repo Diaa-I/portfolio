@@ -60,7 +60,7 @@ export default function Security({}) {
       <div className={defaultCssClasses} id="Languages">
         <Languages page="SEC" setHasLoaded={setHasLoaded} />
       </div>
-      <div className={defaultCssClasses} id="Languages">
+      <div className={defaultCssClasses} id="ContactMe">
         <ContactMe page={"SEC"} />
       </div>
     </div>
