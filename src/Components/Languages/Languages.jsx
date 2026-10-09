@@ -43,32 +43,60 @@ export default function Languages({ page, setHasLoaded }) {
   }
 
   return (
-    <div
-      className={`2xl:grid ${page == "SEC" ? "2xl:grid-cols-2" : "2xl:grid-cols-3"}  text-center bg-inherit`}
-    >
+    <div className="flex flex-col gap-6 w-full max-w-5xl mx-auto bg-inherit">
       {categories.map((category) => {
         return (
           <div
-            className={` ${page == "SEC" ? " lg:w-[40rem]" : "lg:w-[30rem]"} `}
+            key={category.id}
+            className={`w-full p-6 rounded-2xl border transition-all duration-200 ${
+              page === "SEC"
+                ? "border-white/5 bg-white/[0.02] backdrop-blur-md shadow-lg"
+                : "border-slate-200/60 bg-white shadow-sm"
+            }`}
           >
-            <h2 className="mb-5 text-4xl font-bold">{category.title}</h2>
-            <div
-              id={category.title}
-              className={
-                "self-start flex flex-row flex-wrap place-content-center"
-              }
+            {/* Category Header */}
+            <h2
+              className={`mb-5 text-xl font-bold tracking-wide ${
+                page === "SEC" ? "text-white opacity-85" : "text-slate-800"
+              }`}
             >
+              {category.title}
+            </h2>
+
+            {/* Horizontal wrapping container */}
+            <div id={category.title} className="flex flex-row flex-wrap gap-3">
               {languages.map((data) => {
                 if (data.categoryID == category.id) {
                   return (
                     <div
-                      className={`lg:w-[12rem] lg:h-[10rem] lg:text-2xl border-2 w-[10rem] h-[8rem] text-xl place-content-center ${page == "SEC" ? " " : "border-[#333]/[0.5] m-0.5"}`}
+                      key={data.id || data.title}
+                      className={`flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-sm font-medium border transition-all ${
+                        page === "SEC"
+                          ? "border-white/10 bg-white/[0.03] text-slate-200 hover:border-white/20"
+                          : "border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:border-slate-300"
+                      }`}
                     >
-                      {data?.logo && <i className={data.logo + " text-5xl"}></i> }
-                      <p>{data.title}</p>
+                      {/* Logo rendering or placeholder logic */}
+                      {data?.logo ? (
+                        <i
+                          className={`${data.logo} text-base ${
+                            page === "SEC" ? "text-white/80" : "text-slate-600"
+                          }`}
+                        ></i>
+                      ) : (
+                        <span
+                          className={`font-mono text-xs font-bold tracking-tighter select-none ${
+                            page === "SEC" ? "text-cyan-400" : "text-blue-600"
+                          }`}
+                        >
+                          &gt;_
+                        </span>
+                      )}
+                      <p className="whitespace-nowrap">{data.title}</p>
                     </div>
                   );
                 }
+                return null;
               })}
             </div>
           </div>

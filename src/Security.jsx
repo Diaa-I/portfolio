@@ -1,11 +1,7 @@
 import CV from "./Components/First/CV";
-import Projects from "./Components/Projects/Projects";
 import Languages from "./Components/Languages/Languages";
-import WorkExperience from "./Components/WorkExperience/WorkExperience";
-import ThreeDimensional from "./Components/3D/3D";
-import ThreeDimensionalCredits from "./Components/3D/3DCredits";
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+
+import { useState } from "react";
 import Nav from "./Components/Nav/Nav";
 import Writeups from "./Components/Writeups/Writeups";
 import VulnerabilitiesDisclosures from "./Components/VulnerabilitiesDisclosures/VulnerabilitiesDisclosures";
@@ -13,11 +9,7 @@ import Certificates from "./Components/Certificates/Certificates";
 import ResearchPapers from "./Components/ResearchPapers/ResearchPapers";
 import SpiningLoader from "./Components/Loader/SpiningLoader";
 
-export default function Security({ }) {
-  // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
-  //   viewportWidth > 800 ? true : false,
-  // );
-
+export default function Security({}) {
   const [hasloaded, setHasLoaded] = useState({
     // Projects: false,
     // Languages: false,
@@ -50,10 +42,9 @@ export default function Security({ }) {
     // { name: "Languages", action: languagesGoTo },
     { name: "Contact Me", action: contactMeGoTo },
   ];
-  const controlsRef = useRef();
-  const inputRef = useRef(null);
+
   const defaultCssClasses =
-    "flex md:items-center md:justify-center bg-[#0B0F19] text-[#F8FAFC]";
+    "flex md:items-center md:justify-center bg-inherit text-[#F8FAFC]";
   return (
     <div
       className={"flex bg-[#0B0F19] text-[#F8FAFC] flex-col h-screen w-screen"}
@@ -65,14 +56,13 @@ export default function Security({ }) {
       {/* <VulnerabilitiesDisclosures /> */}
       {/* <Certificates /> */}
       {/* <ResearchPapers /> */}
-      {/* <Languages page={"SEC"} setHasLoaded={setHasLoaded} /> */}
-      {/* <div className="flex flex-col w-screen h-screen items-center justify-center bg-inherit">
-        <p className="font-mono md:text-[5rem]">Coming soon ...</p>
-      </div> */}
+      <div className={defaultCssClasses} id="Languages">
+        <Languages page="SEC" setHasLoaded={setHasLoaded} />
+      </div>
       <div className={defaultCssClasses + " justify-center"} id="ContactMe">
         <hr></hr>
         <p className="p-5 lg:text-2xl text-xl ">
-          You can contact me via {" "}
+          You can contact me via{" "}
           <a href="https://www.linkedin.com/in/diaa-nasr/">
             <i className="devicon-linkedin-plain "></i>
           </a>
