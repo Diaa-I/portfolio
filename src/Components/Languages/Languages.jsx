@@ -44,7 +44,7 @@ export default function Languages({ page, setHasLoaded }) {
 
   return (
     <div className="flex flex-col gap-6 w-full max-w-5xl mx-auto bg-inherit">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl ">
         <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
           Technologies Used
           <span className="text-cyan-400">.</span>
@@ -60,7 +60,6 @@ export default function Languages({ page, setHasLoaded }) {
                 : "border-slate-200/60 bg-white shadow-sm"
             }`}
           >
-            {/* Category Header */}
             <h2
               className={`mb-5 text-xl font-bold tracking-wide ${
                 page === "SEC" ? "text-white opacity-85" : "text-slate-800"
@@ -69,7 +68,6 @@ export default function Languages({ page, setHasLoaded }) {
               {category.title}
             </h2>
 
-            {/* Horizontal wrapping container */}
             <div id={category.title} className="flex flex-row flex-wrap gap-3">
               {languages.map((data) => {
                 if (data.categoryID == category.id) {
@@ -82,7 +80,6 @@ export default function Languages({ page, setHasLoaded }) {
                           : "border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100 hover:border-slate-300"
                       }`}
                     >
-                      {/* Logo rendering or placeholder logic */}
                       {data?.logo ? (
                         <i
                           className={`${data.logo} text-base ${

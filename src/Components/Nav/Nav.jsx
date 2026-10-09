@@ -20,49 +20,75 @@ export default function Nav({ navList, page }) {
       setIsNavOpen(true);
     }
   }, [viewportWidth]);
-  return (
-    <div className="">
-      <nav
-        className={`flex flex-col justify-center items-center md:flex-row top-0 md:place-content-evenly py-5 w-screen  md:font-semibold md:text-xl ${page == "SEC" ? "bg-[#0B0F19]" : "bg-[#FAF9F2]"} text-center sticky font-semibold  lg:h-auto sm:justify-start`}
-      >
+ return (
+  <div className="w-full sticky top-0 z-50">
+    <nav
+      className={`w-full font-mono text-sm border-b transition-colors duration-300 font-semibold px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between
+        ${page === "SEC" 
+          ? "bg-[#0B0F19] text-slate-200 border-slate-900" 
+          : "bg-[#EAEFEA] text-[#121B13] border-[#C2CDC2]"
+        }`}
+    >
+      <div className="flex w-full md:w-auto items-center justify-between md:hidden">
+        <span className="font-bold text-xs uppercase tracking-widest opacity-60">
+          {page === "SEC" ? "SEC_CONSOLE" : "DEV_WORKSPACE"}
+        </span>
         <button
+          type="button"
           onClick={() => setIsNavOpen(!isNavOpen)}
-          className={`md:hidden p-2 rounded ${page == "SEC" ? "bg-[#0B0F19]" : "bg-[#FAF9F2]"} `}
+          className={`px-3 py-1.5 rounded border font-bold text-xs transition-colors
+            ${page === "SEC" 
+              ? "bg-[#111827] border-slate-800 text-slate-300 hover:bg-slate-800" 
+              : "bg-white border-[#C2CDC2] text-[#121B13] hover:bg-[#EAEFEA]"
+            }`}
         >
-          {isNavOpen ? "✕ Close" : "☰ Menu"}
+          {isNavOpen ? "✕ CLOSE" : "☰ MENU"}
         </button>
-        {navList.map((NavItem) => {
+      </div>
+
+      <div 
+        className={`w-full md:w-auto flex-col md:flex-row md:flex items-center md:gap-8 mt-4 md:mt-0 gap-4
+          ${isNavOpen ? "flex" : "hidden md:flex"}`}
+      >
+        {navList.map((NavItem, index) => {
           return (
             <button
-              className={
-                "m-1 mt-2 flex h-[2rem] rounded " +
-                `${isNavOpen ? "show" : "hidden"}`
-              }
+              key={index}
               onClick={NavItem.action}
+              className={`w-full md:w-auto py-2 md:py-0 text-left md:text-center transition-colors hover:underline font-semibold
+                ${page === "SEC" ? "hover:text-cyan-400" : "hover:text-[#0284C7]"}`}
             >
               {NavItem.name}
             </button>
           );
         })}
+      </div>
+
+      <div 
+        className={`w-full md:w-auto flex-col md:flex-row md:flex items-center gap-5 mt-4 md:mt-0 border-t md:border-t-0 pt-4 md:pt-0 border-current/10
+          ${isNavOpen ? "flex" : "hidden md:flex"}`}
+      >
         <button
-          className={
-            "m-1 mt-2 flex h-[2rem] rounded " +
-            `${isNavOpen ? "show" : "hidden"}`
-          }
-          onClick={() => navigate(page == "SEC" ? "/dev" : "/sec")}
+          onClick={() => navigate(page === "SEC" ? "/dev" : "/sec")}
+          className={`w-full md:w-auto px-4 py-1.5 rounded font-bold text-xs transition-all border tracking-wider
+            ${page === "SEC" 
+              ? "bg-slate-900 border-slate-800 text-cyan-400 hover:bg-cyan-500 hover:text-slate-950" 
+              : "bg-white border-[#C2CDC2] text-[#0284C7] hover:bg-[#121B13] hover:text-white"
+            }`}
         >
-          Switch to {page == "SEC" ? "Development" : "Security"}
+          ➔ GO_TO_{page === "SEC" ? "DEVELOPMENT" : "SECURITY"}
         </button>
+
         <button
-          className={
-            "m-1 mt-2 flex h-[2rem] rounded " +
-            `${isNavOpen ? "show" : "hidden"}`
-          }
           onClick={() => navigate("/")}
+          className="w-full md:w-auto text-xs opacity-60 hover:opacity-100 transition-opacity py-2 md:py-0 text-left md:text-center font-bold"
         >
-          Back to intro
+          [exit_to_intro]
         </button>
-      </nav>
-    </div>
-  );
+      </div>
+
+    </nav>
+  </div>
+);
+
 }

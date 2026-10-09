@@ -17,15 +17,38 @@ export default function ProjectCard({
 
 
 
-  return (
-    <>
-      <div  {...divSettings} onClick={() => onClickFn(title)}>
-        <h2 className="font-extrabold text-[#333333] md:text-2xl text-xl">{title}</h2>
-        {/* The description here should be 1 sentence or two, as well as my role, when clicking it will display more information */}
-        <p className="text-[#333333] font-bold text-l">{role}</p>
-        <p className="w-[20rem] text-[#333333]">{description}</p>
-        <p className="text-blue-500 font-bold">Learn More</p>
+
+
+return (
+  <div  
+    {...divSettings} 
+    onClick={() => onClickFn(title)}
+    className="p-6 bg-white border border-[#C2CDC2] rounded-lg shadow-sm cursor-pointer group transition-all duration-200 hover:border-[#121B13]/40 flex flex-col justify-between"
+  >
+    <div>
+      <div className="flex items-start justify-between border-b border-[#EAEFEA] pb-2 mb-3">
+        <h2 className="text-xl font-black tracking-tight text-[#121B13] group-hover:text-[#0284C7] transition-colors">
+          {title}
+        </h2>
+        <span className="text-[10px] font-bold text-[#121B13]/40 bg-[#EAEFEA] px-2 py-0.5 rounded uppercase select-none">
+          PROJ
+        </span>
       </div>
-    </>
-  );
+      
+      <p className="text-xs font-bold text-[#0284C7] uppercase tracking-wider mb-2">
+        Role: {role}
+      </p>
+      
+      <p className="text-[#1F2E21] font-sans text-sm leading-relaxed mb-4">
+        {description}
+      </p>
+    </div>
+
+    <p className="text-xs font-bold text-[#0284C7] group-hover:underline flex items-center gap-1">
+      <span>view_source_code</span>
+      <span className="group-hover:translate-x-0.5 transition-transform">›</span>
+    </p>
+  </div>
+);
+
 }

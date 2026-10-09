@@ -40,7 +40,7 @@ export default function Development({ setPagedWanted }) {
   const controlsRef = useRef();
   const inputRef = useRef(null);
   const defaultCssClasses =
-    "flex md:items-center md:justify-center bg-[#FAF9F6] text-[#333333]";
+    "flex md:items-center md:justify-center bg-[#EAEFEA] text-[#333333]";
 
   const isStillLoading = Object.values(hasloaded).includes(false);
 

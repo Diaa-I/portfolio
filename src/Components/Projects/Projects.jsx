@@ -40,33 +40,38 @@ export default function Projects({ setHasLoaded }) {
   const selectedProject = projectsData.find(
     (prj) => prj.title == projectDisplayed,
   );
-  return (
-    <>
-      <div className="mx-auto max-w-7xl">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
-          My Projects
-          <span className="text-cyan-400">.</span>
-        </h1>
-      </div>
-      {projectDisplayed != "" && (
-        <Modal
-          prj_details={selectedProject}
-          ref={modal}
-          onCloseModal={handleModalClose}
-        ></Modal>
-      )}
-      <div className="flex flex-row flex-wrap justify-center lg:w-[90vw] w-auto h-auto">
-        {projectsData.map((project) => {
-          return (
-            <Card
-              key={project.id}
-              onClickFn={projectSelectedHandle}
-              onCloseModal={handleModalClose}
-              prj_details={project}
-            />
-          );
-        })}
-      </div>
-    </>
-  );
+ return (
+   <div className="flex flex-col mt-10 w-[90vw] mx-auto px-4 font-mono text-sm text-[#121B13]">
+    
+    <div className="mb-8 border-b border-[#C2CDC2] pb-4 w-full">
+      <h1 className="text-3xl font-black tracking-tight sm:text-4xl text-[#121B13]">
+        PROJECTS
+        <span className="text-[#0284C7]">.sh</span>
+      </h1>
+    </div>
+
+    {projectDisplayed !== "" && (
+      <Modal
+        prj_details={selectedProject}
+        ref={modal}
+        onCloseModal={handleModalClose}
+      />
+    )}
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full items-stretch">
+      {projectsData.map((project) => {
+        return (
+          <Card
+            key={project.id}
+            onClickFn={projectSelectedHandle}
+            onCloseModal={handleModalClose}
+            prj_details={project}
+          />
+        );
+      })}
+    </div>
+  </div>
+
+);
+
 }
