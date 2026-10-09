@@ -53,7 +53,7 @@ export default function Development({ setPagedWanted }) {
       <div
         className={
           defaultCssClasses +
-          " flex flex-col items-center bg-[#ECF7F8] w-full h-auto min-h-max py-20 gap-y-12"
+          " flex flex-col items-center  w-full h-auto min-h-max py-20 gap-y-12"
         }
         id="Projects"
       >
@@ -96,7 +96,7 @@ export default function Development({ setPagedWanted }) {
             </Suspense>
           </div>
           <div
-            className={defaultCssClasses + " flex-col bg-[#ECF7F8] p-2"}
+            className={defaultCssClasses + " flex-col  p-2"}
             id="3D-Credits"
           >
             <ThreeDimensionalCredits />
