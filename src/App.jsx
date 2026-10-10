@@ -4,17 +4,27 @@ import Security from "./Security";
 import "./App.css";
 import { Link, useNavigate } from "react-router";
 function App() {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div class="min-h-screen bg-[#FDFBF7] flex flex-col justify-between font-sans selection:bg-zinc-200">
       <div class="flex flex-col items-center justify-center text-center pt-24 pb-16 px-4 flex-grow">
         <span class="text-[10px] tracking-[0.25em] uppercase text-zinc-400 font-mono mb-4">
           Portfolio
         </span>
-        <h1 class="text-7xl md:text-8xl font-black tracking-tight text-zinc-900 leading-[0.85] max-w-4xl mx-auto mb-10">
-          Diaa Ibrahim Nasr
-        </h1>
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+          <h1 className="text-7xl md:text-8xl font-black tracking-tight text-zinc-900 leading-[0.85] max-w-4xl">
+            Diaa Ibrahim Nasr
+          </h1>
+          <img
+            src="/portfolio/leb-flag.png"
+            alt="Lebanese flag"
+            className="w-8 md:w-10 h-auto rounded-sm shrink-0"
+          />
+        </div>
+        <p className="text-xs font-mono text-zinc-400 mb-8 flex items-center justify-center gap-2">
+          <span>📍</span>
+          Based in the UAE
+        </p>
         <p class="text-base md:text-lg font-bold text-zinc-800 tracking-tight mb-8">
           Backend-Focused Full-Stack Developer{" "}
           <span class="text-zinc-300 font-light mx-1">/</span> Ethical Hacker
@@ -72,7 +82,7 @@ function App() {
       <div class="grid grid-cols-1 md:grid-cols-2 w-full border-t border-zinc-900/10">
         <div
           className="group relative bg-[#090D10] text-white p-10 md:p-14 flex flex-col justify-between items-start min-h-[280px] cursor-pointer transition-all duration-300 hover:bg-[#0E1419]"
-          onClick={()=>navigate("sec")}
+          onClick={() => navigate("sec")}
         >
           <div>
             <div class="text-[10px] font-mono tracking-widest text-emerald-500 uppercase mb-6 flex items-center">
@@ -109,7 +119,7 @@ function App() {
 
         <div
           className="group relative bg-[#0A1612] text-white p-10 md:p-14 flex flex-col justify-between items-start min-h-[280px] cursor-pointer transition-all duration-300 hover:bg-[#0F221C] border-t md:border-t-0 md:border-l border-zinc-900/20"
-          onClick={()=>navigate("dev")}
+          onClick={() => navigate("dev")}
         >
           <div>
             <div class="text-[10px] font-mono tracking-widest text-orange-500 uppercase mb-6 flex items-center">
