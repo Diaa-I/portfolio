@@ -8,9 +8,6 @@ function App() {
   return (
     <div class="min-h-screen bg-[#FDFBF7] flex flex-col justify-between font-sans selection:bg-zinc-200">
       <div class="flex flex-col items-center justify-center text-center pt-24 pb-16 px-4 flex-grow">
-        <span class="text-[10px] tracking-[0.25em] uppercase text-zinc-400 font-mono mb-4">
-          Portfolio
-        </span>
         <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
           <h1 className="text-7xl md:text-8xl font-black tracking-tight text-zinc-900 leading-[0.85] max-w-4xl">
             Diaa Ibrahim Nasr
