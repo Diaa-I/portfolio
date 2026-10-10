@@ -1,4 +1,4 @@
-# Theta
+A Jeopardy-style, OSCP-style "Boot to Root" CTF challenge.
 # Recon & Scanning
 # Making a custom user
 ![[Pasted image 20260816170717.png]]

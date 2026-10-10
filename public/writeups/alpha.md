@@ -1,3 +1,4 @@
+A Jeopardy-style, OSCP-style "Boot to Root" CTF challenge.
 ## Scanning
 #### Getting the IP Address
 ![[Pasted image 20260618232736.png]]
