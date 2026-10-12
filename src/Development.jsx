@@ -28,7 +28,7 @@ export default function Development({ setPagedWanted }) {
   const WorkExperienceGoTo = () =>
     document.getElementById(`workExperience`).scrollIntoView();
   const contactMeGoTo = () =>
-    document.getElementById(`contactMe`).scrollIntoView();
+    document.getElementById(`ContactMe`).scrollIntoView();
   const ThreeDMeGoTo = () => document.getElementById(`3D`).scrollIntoView();
   const navList = [
     { name: "Projects", action: projectsGoTo },
