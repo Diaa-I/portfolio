@@ -68,6 +68,7 @@ export default function Nav({ navList, page }) {
         className={`w-full md:w-auto flex-col md:flex-row md:flex items-center gap-5 mt-4 md:mt-0 border-t md:border-t-0 pt-4 md:pt-0 border-current/10
           ${isNavOpen ? "flex" : "hidden md:flex"}`}
       >
+        { page != "" &&
         <button
           onClick={() => navigate(page === "SEC" ? "/dev" : "/sec")}
           className={`w-full md:w-auto px-4 py-1.5 rounded font-bold text-xs transition-all border tracking-wider
@@ -78,7 +79,7 @@ export default function Nav({ navList, page }) {
         >
           ➔ GO_TO_{page === "SEC" ? "DEVELOPMENT" : "SECURITY"}
         </button>
-
+}
         <button
           onClick={() => navigate("/")}
           className="w-full md:w-auto text-xs opacity-60 hover:opacity-100 transition-opacity py-2 md:py-0 text-left md:text-center font-bold"
