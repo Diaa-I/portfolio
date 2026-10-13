@@ -76,7 +76,7 @@ function App() {
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 w-full border-t border-zinc-900/10">
+      <div class="grid grid-cols-1 md:grid-cols-3 w-full border-t border-zinc-900/10">
         <div
           className="group relative bg-[#090D10] text-white p-10 md:p-14 flex flex-col justify-between items-start min-h-[280px] cursor-pointer transition-all duration-300 hover:bg-[#0E1419]"
           onClick={() => navigate("sec")}
@@ -131,6 +131,42 @@ function App() {
             </h2>
             <p class="text-xs text-zinc-500 tracking-wide font-normal max-w-sm">
               Secure backend and full-stack applications
+            </p>
+          </div>
+          <div class="absolute bottom-10 right-10 md:bottom-14 md:right-14 w-8 h-8 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-500 group-hover:border-white group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+            <svg
+              xmlns="http://w3.org"
+              class="h-3.5 w-3.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="group relative bg-[#0A1612] text-white p-10 md:p-14 flex flex-col justify-between items-start min-h-[280px] cursor-pointer transition-all duration-300 hover:bg-[#0F221C] border-t md:border-t-0 md:border-l border-zinc-900/20"
+          onClick={() => navigate("threeD")}
+        >
+          <div>
+            <div class="text-[10px] font-mono tracking-widest text-orange-500 uppercase mb-6 flex items-center">
+              <span class="font-bold">03</span>
+              <span class="mx-2 text-zinc-600">/</span>
+              <span class="text-zinc-400 group-hover:text-white transition-colors">
+                Explore
+              </span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+              3D
+            </h2>
+            <p class="text-xs text-zinc-500 tracking-wide font-normal max-w-sm">
+              3D version of the portfolio (work in progress)
             </p>
           </div>
           <div class="absolute bottom-10 right-10 md:bottom-14 md:right-14 w-8 h-8 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-500 group-hover:border-white group-hover:text-white group-hover:translate-x-1 transition-all duration-300">

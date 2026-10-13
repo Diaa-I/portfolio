@@ -165,10 +165,12 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
   });
 
   const handleComputerScreenClick = (e) => {
-    e.stopPropagation()
+    e.stopPropagation();
     setIsOnComputer(true);
     inputRef.current.focus();
   };
+
+ 
 
   return (
     <>

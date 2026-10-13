@@ -2,25 +2,17 @@ import CV from "./Components/First/CV";
 import Projects from "./Components/Projects/Projects";
 import Languages from "./Components/Languages/Languages";
 import WorkExperience from "./Components/WorkExperience/WorkExperience";
-import ThreeDimensional from "./Components/3D/3D";
-import ThreeDimensionalCredits from "./Components/3D/3DCredits";
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState, useEffect } from "react";
+
 import Nav from "./Components/Nav/Nav";
 import SpiningLoader from "./Components/Loader/SpiningLoader";
 import ContactMe from "./Components/ContactMe/ContactMe";
 export default function Development({ setPagedWanted }) {
-  // const [wantsThreeDimensional, setWantsThreeDimensional] = useState(
-  //   viewportWidth > 800 ? true : false,
-  // );
   const [hasloaded, setHasLoaded] = useState({
     Projects: false,
     Languages: false,
     Work_Experience: false,
   });
-  const [wantsThreeDimensional, setWantsThreeDimensional] = useState(false);
   const meGoTo = () => document.getElementById(`Me`).scrollIntoView();
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
   const projectsGoTo = () =>
     document.getElementById(`Projects`).scrollIntoView();
   const languagesGoTo = () =>
@@ -29,17 +21,15 @@ export default function Development({ setPagedWanted }) {
     document.getElementById(`workExperience`).scrollIntoView();
   const contactMeGoTo = () =>
     document.getElementById(`ContactMe`).scrollIntoView();
-  const ThreeDMeGoTo = () => document.getElementById(`3D`).scrollIntoView();
+ 
   const navList = [
     { name: "Projects", action: projectsGoTo },
     { name: "Languages", action: languagesGoTo },
     { name: "Work Experience", action: WorkExperienceGoTo },
     { name: "CV", action: meGoTo },
     { name: "Contact Me", action: contactMeGoTo },
-    // { name: "3D", action: ThreeDMeGoTo },
   ];
-  const controlsRef = useRef();
-  const inputRef = useRef(null);
+
   const defaultCssClasses =
     "flex md:items-center md:justify-center bg-[#EAEFEA] text-[#333333]";
 
@@ -66,41 +56,7 @@ export default function Development({ setPagedWanted }) {
       <div className={defaultCssClasses} id="workExperience">
         <WorkExperience setHasLoaded={setHasLoaded} />
       </div>
-      {wantsThreeDimensional == true && (
-        <>
-          <hr></hr>
-          <input
-            ref={inputRef}
-            type="text"
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              fontSize: "16px",
-              opacity: 0,
-              overflow: "hidden",
-            }}
-          />
-          <div className={defaultCssClasses + " w-[100vw] h-[100vh]"} id="3D">
-            <Suspense fallback={<div>3D Loading, please wait...</div>}>
-              <Canvas
-                dpr={[1, 1.5]}
-                className="w-[100vw] h-[100vh]"
-                tabIndex={-1}
-                onClick={() => controlsRef.current.handleCanvasClick()}
-              >
-                <ThreeDimensional
-                  controlsRef={controlsRef}
-                  inputRef={inputRef}
-                />
-              </Canvas>
-            </Suspense>
-          </div>
-          <div className={defaultCssClasses + " flex-col  p-2"} id="3D-Credits">
-            <ThreeDimensionalCredits />
-          </div>
-        </>
-      )}
+      
       <div
         className={
           defaultCssClasses +
