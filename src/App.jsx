@@ -150,26 +150,26 @@ function App() {
             </svg>
           </div>
         </div>
-        <div
-          className="group relative bg-[#0A1612] text-white p-10 md:p-14 flex flex-col justify-between items-start min-h-[280px] cursor-pointer transition-all duration-300 hover:bg-[#0F221C] border-t md:border-t-0 md:border-l border-zinc-900/20"
+                <div
+          className="group relative bg-[#05111A] text-white p-10 md:p-14 flex flex-col justify-between items-start min-h-[280px] cursor-pointer transition-all duration-300 hover:bg-[#091B29] border-t md:border-t-0 md:border-l border-zinc-900/20"
           onClick={() => navigate("threeD")}
         >
           <div>
-            <div class="text-[10px] font-mono tracking-widest text-orange-500 uppercase mb-6 flex items-center">
+            <div class="text-[10px] font-mono tracking-widest text-cyan-400 uppercase mb-6 flex items-center">
               <span class="font-bold">03</span>
-              <span class="mx-2 text-zinc-600">/</span>
-              <span class="text-zinc-400 group-hover:text-white transition-colors">
+              <span class="mx-2 text-cyan-800">/</span>
+              <span class="text-cyan-500 group-hover:text-white transition-colors">
                 Explore
               </span>
             </div>
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2">
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-2 text-cyan-50 group-hover:text-cyan-400 transition-colors">
               3D
             </h2>
-            <p class="text-xs text-zinc-500 tracking-wide font-normal max-w-sm">
-              3D version of the portfolio (work in progress)
+            <p class="text-xs text-cyan-200/50 tracking-wide font-normal max-w-sm">
+              Interactive 3D demo of the portfolio
             </p>
           </div>
-          <div class="absolute bottom-10 right-10 md:bottom-14 md:right-14 w-8 h-8 rounded-full border border-zinc-800 flex items-center justify-center text-zinc-500 group-hover:border-white group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
+          <div class="absolute bottom-10 right-10 md:bottom-14 md:right-14 w-8 h-8 rounded-full border border-cyan-900/50 flex items-center justify-center text-cyan-500 group-hover:border-cyan-400 group-hover:text-white group-hover:translate-x-1 transition-all duration-300">
             <svg
               xmlns="http://w3.org"
               class="h-3.5 w-3.5"
@@ -186,6 +186,7 @@ function App() {
             </svg>
           </div>
         </div>
+
       </div>
     </div>
   );
