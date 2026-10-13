@@ -50,7 +50,7 @@ export default function Nav({ navList, page }) {
         className={`w-full md:w-auto flex-col md:flex-row md:flex items-center md:gap-8 mt-4 md:mt-0 gap-4
           ${isNavOpen ? "flex" : "hidden md:flex"}`}
       >
-        {navList.map((NavItem, index) => {
+        {navList.length > 0 && navList.map((NavItem, index) => {
           return (
             <button
               key={index}

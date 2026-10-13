@@ -2,9 +2,12 @@ import ThreeDimensional from "./Components/3D/3D";
 import ThreeDimensionalCredits from "./Components/3D/3DCredits";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState, useEffect } from "react";
+import Nav from "./Components/Nav/Nav";
+import ContactMe from "./Components/ContactMe/ContactMe";
 export default function ThreeD({}) {
   const controlsRef = useRef();
   const inputRef = useRef(null);
+
   // Check if the user has the phone to sideways if not inform him that they have to tilt to be sideways to view this content.
   const [isLandscape, setIsLandscape] = useState(
     window.innerWidth > window.innerHeight,
@@ -28,8 +31,31 @@ export default function ThreeD({}) {
       </div>
     );
   }
+
+  const TDGoTo = () => document.getElementById(`3D`).scrollIntoView();
+  const TDCreditsGoTo = () =>
+    document.getElementById(`3D-Credits`).scrollIntoView();
+  const ContactMeGoTo = () =>
+    document.getElementById(`ContactMe`).scrollIntoView();
+  const navList = [
+    {
+      name: "3D",
+      action: TDGoTo,
+    },
+    {
+      name: "Credits",
+      action: TDCreditsGoTo,
+    },
+    {
+      name: "Contact Me",
+      action: ContactMeGoTo,
+    },
+  ];
   return (
     <>
+      <div className="overflow-hidden">
+        <Nav navList={navList} page={""} />
+      </div>
       <hr></hr>
       <input
         ref={inputRef}
@@ -65,6 +91,14 @@ export default function ThreeD({}) {
       </div>
       <div className={" flex-col  p-2"} id="3D-Credits">
         <ThreeDimensionalCredits />
+      </div>
+      <div
+        className={
+          "flex md:items-center md:justify-center bg-[#EAEFEA] text-[#333333]"
+        }
+        id="ContactMe"
+      >
+        <ContactMe page={"DEV"} />
       </div>
     </>
   );
