@@ -6,7 +6,8 @@ import WorkExperience from "./Components/WorkExperience/WorkExperience";
 import Nav from "./Components/Nav/Nav";
 import SpiningLoader from "./Components/Loader/SpiningLoader";
 import ContactMe from "./Components/ContactMe/ContactMe";
-export default function Development({ setPagedWanted }) {
+import { useState } from "react";
+export default function Development({  }) {
   const [hasloaded, setHasLoaded] = useState({
     Projects: false,
     Languages: false,
@@ -15,7 +16,7 @@ export default function Development({ setPagedWanted }) {
   const meGoTo = () => document.getElementById(`Me`).scrollIntoView();
   const projectsGoTo = () =>
     document.getElementById(`Projects`).scrollIntoView();
-  const languagesGoTo = () =>
+  const languagesGoTo = () => 
     document.getElementById(`Languages`).scrollIntoView();
   const WorkExperienceGoTo = () =>
     document.getElementById(`workExperience`).scrollIntoView();
