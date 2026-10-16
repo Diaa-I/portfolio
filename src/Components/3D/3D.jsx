@@ -20,7 +20,7 @@ import {
   Loader,
 } from "@react-three/drei";
 
-import PentesterTHM from "../../assets/Pentester.png";
+import AUBDiploma from "../../assets/AUB-diploma.png";
 import Bachelors from "../../assets/download.png";
 import Lead from "../../assets/Diaa_nasr_lead.jpg";
 import SeniorDemo from "/DORA_Demo.webm";
@@ -66,7 +66,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
   const [isOnComputer, setIsOnComputer] = useState(false);
   const [firstTimeInput, setFirstTimeInput] = useState(true);
   const [resultText, setResultText] = useState("Waiting for input");
-  const PentesterTHMImg = useLoader(TextureLoader, PentesterTHM);
+  const AUBDiplomaImg = useLoader(TextureLoader, AUBDiploma);
   const BachelorsImg = useLoader(TextureLoader, Bachelors);
   const LeadImg = useLoader(TextureLoader, Lead);
   const [floorColorMap, floorRoughnessMap, floorNormalMap] = useLoader(
@@ -262,7 +262,7 @@ export default function ThreeDimensional({ controlsRef, inputRef }) {
       {/* Pentester THM Certificate */}
       <mesh position={[-3.4, 2.7, -4.8]} name="thm">
         <planeGeometry args={[2, 1, 1]} />
-        <meshBasicMaterial map={PentesterTHMImg} />
+        <meshBasicMaterial map={AUBDiplomaImg} />
       </mesh>
       {/* GDSC Lead Certificate */}
       <mesh position={[-0.1, 2.7, -4.8]} name="gdsc">
