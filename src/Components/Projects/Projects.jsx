@@ -2,8 +2,9 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Card from "../Cards/ProjectCard";
 import Modal from "./ProjectModal";
 import { supabase } from "../../supabase";
+import ProjectsData from "../../../data/projects.data"
 
-export default function Projects({ setHasLoaded }) {
+export default function Projects({ setHasLoaded, isSupabaseUsed }) {
   const [projectDisplayed, setProjectDisplayed] = useState("");
   const [projectsData, setProjectsData] = useState(null);
   const modal = useRef();
@@ -18,15 +19,22 @@ export default function Projects({ setHasLoaded }) {
   }
   useLayoutEffect(() => {
     async function loadAllProjects() {
-      const { data: prjData, error: prjError } = await supabase
-        .from("projects")
-        .select("*")
-        .order("id", { ascending: true });
-      if (prjError) {
-        console.error(prjError);
-        return;
+      if (isSupabaseUsed) {
+        console.log("inside")
+        const { data: prjData, error: prjError } = await supabase
+          .from("projects")
+          .select("*")
+          .order("id", { ascending: true });
+        if (prjError) {
+          console.error(prjError);
+          return;
+        }
+        setProjectsData(prjData);
       }
-      setProjectsData(prjData);
+      else{
+        setProjectsData(ProjectsData);
+      }
+      
       setHasLoaded((oldData) => ({ ...oldData, Projects: true }));
     }
     loadAllProjects();

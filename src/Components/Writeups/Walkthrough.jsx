@@ -5,7 +5,7 @@ import remarkGfm from "remark-gfm";
 import { supabase } from "../../supabase";
 import remarkFootnotes from "remark-footnotes";
 
-export default function Walkthrough() {
+export default function Walkthrough({isSupabaseUsed}) {
   const { title } = useParams();
 
   const [writeup, setWriteup] = useState(null);

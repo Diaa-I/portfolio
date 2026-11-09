@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
@@ -8,19 +8,41 @@ import Security from "./Security.jsx";
 import Writeups from "./Components/Writeups/Writeups.jsx";
 import Walkthrough from "./Components/Writeups/Walkthrough.jsx";
 import ThreeD from "./ThreeD.jsx";
+import { supabase } from "./supabase";
+
+function MainApp() {
+  // By Default use Supabase unless it is offline
+  const [isSupabaseUsed, setIsSupabaseUsed] = useState(false);
+  useLayoutEffect(() => {
+    async function checkIsSupabaseUp() {
+      const { data: prjData, error: prjError } = await supabase
+        .from("projects")
+        .select("*")
+        .order("id", { ascending: true });
+      if (prjError) {
+        setIsSupabaseUsed(false)
+      }
+    }
+    checkIsSupabaseUp();
+  }, []);
+  console.log(isSupabaseUsed)
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<App  />} />
+        <Route path="/dev" element={<Development isSupabaseUsed={isSupabaseUsed} />} />
+        <Route path="/threeD" element={<ThreeD  />} />
+        <Route path="/sec" element={<Security isSupabaseUsed={isSupabaseUsed} />}>
+          {/* <Route path="/writeups" element={<Writeups />} /> */}
+        </Route>
+        <Route path="/sec/writeups/:title" element={<Walkthrough isSupabaseUsed={isSupabaseUsed} />} />
+      </Routes>
+    </HashRouter>
+  );
+}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-  <HashRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/dev" element={<Development />} />
-      <Route path="/threeD" element={<ThreeD />} />
-      <Route path="/sec" element={<Security />}>
-        {/* <Route path="/writeups" element={<Writeups />} /> */}
-      </Route>
-        <Route path="/sec/writeups/:title" element={<Walkthrough />} />
-    </Routes>
-  </HashRouter>,
+  <MainApp />
   // </React.StrictMode>
-);
+,);

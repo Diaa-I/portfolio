@@ -10,7 +10,7 @@ import ResearchPapers from "./Components/ResearchPapers/ResearchPapers";
 import SpiningLoader from "./Components/Loader/SpiningLoader";
 import ContactMe from "./Components/ContactMe/ContactMe";
 
-export default function Security({}) {
+export default function Security({ isSupabaseUsed }) {
   const [hasloaded, setHasLoaded] = useState({
     // Projects: false,
     Languages: false,
@@ -53,12 +53,12 @@ export default function Security({}) {
       {isStillLoading && <SpiningLoader />}
 
       <Nav navList={navList} page={"SEC"} />
-      <Writeups setHasLoaded={setHasLoaded} />
+      <Writeups setHasLoaded={setHasLoaded} isSupabaseUsed={isSupabaseUsed} />
       {/* <VulnerabilitiesDisclosures /> */}
       {/* <Certificates /> */}
       {/* <ResearchPapers /> */}
       <div className={defaultCssClasses} id="Languages">
-        <Languages page="SEC" setHasLoaded={setHasLoaded} />
+        <Languages page="SEC" setHasLoaded={setHasLoaded} isSupabaseUsed={isSupabaseUsed} />
       </div>
       <div className={defaultCssClasses} id="ContactMe">
         <ContactMe page={"SEC"} />

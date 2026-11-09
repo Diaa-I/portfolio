@@ -1,39 +1,55 @@
 import { useLayoutEffect, useState } from "react";
 import { supabase } from "../../supabase";
+import {
+  DevLanguagesData,
+  DevLanguagesCategories,
+  SecLanguagesData,
+  SecLanguagesCategories,
+} from "../../../data/langauges.data.js";
 
-export default function Languages({ page, setHasLoaded }) {
+export default function Languages({ page, setHasLoaded, isSupabaseUsed }) {
   const [languages, setLanguages] = useState(null);
   const [categories, setCategories] = useState(null);
 
   useLayoutEffect(() => {
     async function loadAllLanguages() {
       let to_select = page == "DEV" ? "dev_languages" : "sec_languages";
+      if (isSupabaseUsed) {
+        const { data: catData, error: catError } = await supabase
+          .from("categories")
+          .select("*")
+          .order("id", { ascending: true });
 
-      const { data: catData, error: catError } = await supabase
-        .from("categories")
-        .select("*")
-        .order("id", { ascending: true });
+        if (catError) {
+          console.error(catError);
+          return;
+        }
+        const { data: langData, error: langError } = await supabase
+          .from(to_select)
+          .select("*")
+          .order("id", { ascending: true });
+        if (langError) {
+          console.error(langError);
+          return;
+        }
+        const categories_id_used = new Set(
+          langData.map((data) => data.categoryID),
+        );
+        const categories_used = catData.filter((cat) =>
+          categories_id_used.has(cat.id),
+        );
+        setCategories(categories_used);
+        setLanguages(langData);
+      } else {
+        if (page == "DEV") {
+          setLanguages(DevLanguagesData);
+          setCategories(DevLanguagesCategories);
+        } else if (page == "SEC") {
+          setLanguages(SecLanguagesData);
+          setCategories(SecLanguagesCategories);
+        }
+      }
 
-      if (catError) {
-        console.error(catError);
-        return;
-      }
-      const { data: langData, error: langError } = await supabase
-        .from(to_select)
-        .select("*")
-        .order("id", { ascending: true });
-      if (langError) {
-        console.error(langError);
-        return;
-      }
-      const categories_id_used = new Set(
-        langData.map((data) => data.categoryID),
-      );
-      const categories_used = catData.filter((cat) =>
-        categories_id_used.has(cat.id),
-      );
-      setCategories(categories_used);
-      setLanguages(langData);
       setHasLoaded((oldData) => ({ ...oldData, Languages: true }));
     }
     loadAllLanguages();

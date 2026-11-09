@@ -7,7 +7,7 @@ import Nav from "./Components/Nav/Nav";
 import SpiningLoader from "./Components/Loader/SpiningLoader";
 import ContactMe from "./Components/ContactMe/ContactMe";
 import { useState } from "react";
-export default function Development({  }) {
+export default function Development({ isSupabaseUsed }) {
   const [hasloaded, setHasLoaded] = useState({
     Projects: false,
     Languages: false,
@@ -49,13 +49,13 @@ export default function Development({  }) {
         }
         id="Projects"
       >
-        <Projects setHasLoaded={setHasLoaded} />
+        <Projects setHasLoaded={setHasLoaded} isSupabaseUsed={isSupabaseUsed} />
       </div>
       <div className={defaultCssClasses} id="Languages">
-        <Languages page="DEV" setHasLoaded={setHasLoaded} />
+        <Languages page="DEV" setHasLoaded={setHasLoaded} isSupabaseUsed={isSupabaseUsed} />
       </div>
       <div className={defaultCssClasses} id="workExperience">
-        <WorkExperience setHasLoaded={setHasLoaded} />
+        <WorkExperience setHasLoaded={setHasLoaded} isSupabaseUsed={isSupabaseUsed} />
       </div>
       
       <div
@@ -68,7 +68,7 @@ export default function Development({  }) {
         <CV />
       </div>
       <div className={defaultCssClasses} id="ContactMe">
-        <ContactMe page={"DEV"} />
+        <ContactMe page={"DEV"}  />
       </div>
     </>
   );

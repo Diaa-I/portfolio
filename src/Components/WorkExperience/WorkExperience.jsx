@@ -2,10 +2,11 @@ import { useLayoutEffect, useState } from "react";
 import WorkExperienceData from "../../../data/work_experience.data";
 import { supabase } from "../../supabase";
 
-export default function WorkExperience({ setHasLoaded }) {
+export default function WorkExperience({ setHasLoaded, isSupabaseUsed }) {
   const [workExperienceData, setWorkExperienceData] = useState(null);
   useLayoutEffect(() => {
     async function loadAllWorkExperience() {
+      if(isSupabaseUsed){
       const { data: wrkData, error: wrkError } = await supabase
         .from("work_experience")
         .select("*")
@@ -15,7 +16,11 @@ export default function WorkExperience({ setHasLoaded }) {
         return;
       }
       setWorkExperienceData(wrkData);
-      setHasLoaded((oldData) => ({ ...oldData, Work_Experience: true }));
+    }
+    else{
+      setWorkExperienceData(WorkExperienceData)
+    }
+    setHasLoaded((oldData) => ({ ...oldData, Work_Experience: true }));
     }
     loadAllWorkExperience();
   }, []);
