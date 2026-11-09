@@ -2,23 +2,28 @@ import { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { supabase } from "../../supabase";
 import WriteupCard from "../Cards/WriteupsCard";
+import WriteupsData from "../../../data/writeups.data.js"
 
-export default function Writeups({ setHasLoaded }) {
+export default function Writeups({ setHasLoaded, isSupabaseUsed }) {
   const [writeupsMetadata, setWriteupsMetadata] = useState([]);
   const navigate = useNavigate();
 
   useLayoutEffect(() => {
     async function loadAllWriteups() {
-      const { data: writeupData, error: writeupError } = await supabase
-        .from("writeups")
-        .select("*")
-        .order("id", { ascending: true });
-      if (writeupError) {
-        console.error(writeupError);
-        return;
+      if (isSupabaseUsed) {
+        const { data: writeupData, error: writeupError } = await supabase
+          .from("writeups")
+          .select("*")
+          .order("id", { ascending: true });
+        if (writeupError) {
+          console.error(writeupError);
+          return;
+        }
+        setWriteupsMetadata(writeupData);
       }
-      setWriteupsMetadata(writeupData);
-
+      else{
+        setWriteupsMetadata(WriteupsData)
+      }
       setHasLoaded((oldData) => ({ ...oldData, Writeups: true }));
     }
     loadAllWriteups();

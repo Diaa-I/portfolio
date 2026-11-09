@@ -12,6 +12,7 @@ import { supabase } from "./supabase";
 
 function MainApp() {
   const [isSupabaseUsed, setIsSupabaseUsed] = useState(true);
+  // Check if supabase is up and working, if not default to local data
   useLayoutEffect(() => {
     async function checkIsSupabaseUp() {
       const { data: prjData, error: prjError } = await supabase

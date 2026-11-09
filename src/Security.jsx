@@ -19,21 +19,19 @@ export default function Security({ isSupabaseUsed }) {
   });
   const isStillLoading = Object.values(hasloaded).includes(false);
 
-  const [wantsThreeDimensional, setWantsThreeDimensional] = useState(false);
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-  const meGoTo = () => document.getElementById(`Me`).scrollIntoView();
-  const vulnGoTo = () =>
-    document.getElementById(`VulnerabilityDisclosures`).scrollIntoView();
+  // const meGoTo = () => document.getElementById(`Me`).scrollIntoView();
+  // const vulnGoTo = () =>
+  //   document.getElementById(`VulnerabilityDisclosures`).scrollIntoView();
   const writeupsGoTo = () =>
     document.getElementById(`Writeups`).scrollIntoView();
   const languagesGoTo = () =>
     document.getElementById(`Languages`).scrollIntoView();
-  const CertificatesGoTo = () =>
-    document.getElementById(`Certificates`).scrollIntoView();
+  // const CertificatesGoTo = () =>
+  //   document.getElementById(`Certificates`).scrollIntoView();
   const contactMeGoTo = () =>
     document.getElementById(`ContactMe`).scrollIntoView();
-  const ResearchPMeGoTo = () =>
-    document.getElementById(`ResearchPapers`).scrollIntoView();
+  // const ResearchPMeGoTo = () =>
+  //   document.getElementById(`ResearchPapers`).scrollIntoView();
   const navList = [
     // { name: "Me", action: meGoTo },
     { name: "Writeups", action: writeupsGoTo },
