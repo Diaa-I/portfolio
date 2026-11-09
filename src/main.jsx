@@ -11,7 +11,7 @@ import ThreeD from "./ThreeD.jsx";
 import { supabase } from "./supabase";
 
 function MainApp() {
-  const [isSupabaseUsed, setIsSupabaseUsed] = useState(false);
+  const [isSupabaseUsed, setIsSupabaseUsed] = useState(true);
   // Check if supabase is up and working, if not default to local data
   useLayoutEffect(() => {
     async function checkIsSupabaseUp() {
@@ -20,22 +20,30 @@ function MainApp() {
         .select("*")
         .order("id", { ascending: true });
       if (prjError) {
-        setIsSupabaseUsed(false)
+        setIsSupabaseUsed(false);
       }
     }
     checkIsSupabaseUp();
-  }, []);
-  console.log(isSupabaseUsed)
+  });
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<App  />} />
-        <Route path="/dev" element={<Development isSupabaseUsed={isSupabaseUsed} />} />
-        <Route path="/threeD" element={<ThreeD  />} />
-        <Route path="/sec" element={<Security isSupabaseUsed={isSupabaseUsed} />}>
+        <Route path="/" element={<App />} />
+        <Route
+          path="/dev"
+          element={<Development isSupabaseUsed={isSupabaseUsed} />}
+        />
+        <Route path="/threeD" element={<ThreeD />} />
+        <Route
+          path="/sec"
+          element={<Security isSupabaseUsed={isSupabaseUsed} />}
+        >
           {/* <Route path="/writeups" element={<Writeups />} /> */}
         </Route>
-        <Route path="/sec/writeups/:title" element={<Walkthrough isSupabaseUsed={isSupabaseUsed} />} />
+        <Route
+          path="/sec/writeups/:title"
+          element={<Walkthrough isSupabaseUsed={isSupabaseUsed} />}
+        />
       </Routes>
     </HashRouter>
   );
@@ -43,6 +51,6 @@ function MainApp() {
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-  <MainApp />
+  <MainApp />,
   // </React.StrictMode>
-,);
+);
