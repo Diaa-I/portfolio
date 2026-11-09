@@ -20,7 +20,6 @@ export default function Projects({ setHasLoaded, isSupabaseUsed }) {
   useLayoutEffect(() => {
     async function loadAllProjects() {
       if (isSupabaseUsed) {
-        console.log("inside")
         const { data: prjData, error: prjError } = await supabase
           .from("projects")
           .select("*")

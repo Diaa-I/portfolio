@@ -14,7 +14,6 @@ import LanguagesData from "../../../data/languages.data";
 
 function CameraRig({ position }) {
   let [x, y, z] = position;
-  console.log(x, y, z);
   useFrame((state) => {
     state.camera.position.lerp({ x, y, z }, 0.1);
     state.camera.lookAt(0, 0, 0);
@@ -67,7 +66,6 @@ export default function AnimationLibrary() {
     changeCameraPosition([0, 0, 15]);
   }
 
-  console.log("Camera has changed location Libary", cameraPosition);
 
   return (
     <>

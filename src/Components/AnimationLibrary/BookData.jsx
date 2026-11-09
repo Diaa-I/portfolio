@@ -9,17 +9,14 @@ function Video({ position, src, name }) {
   useEffect(() => {
     video.play();
     // setVideo()
-    console.log(videoRef.current);
     if (videoRef.current) {
       videoRef.current.update();
-      console.log(videoRef.current.name)
     }
   }, [video, videoRef.current])
   function VideoTextureFn({ args, encoding, attach }) {
     // attach="map" args={[video]} encoding={sRGBEncoding} ref={videoRef}
     return <videoTexture args={[args]} encoding={encoding} ref={videoRef} attach={attach} name={name} controls />
   }
-  // console.log(video);
   return (
     // rotation={[0, Math.PI / 2, 0]}
     <mesh position={position} scale={[10, 5, 1]}>
