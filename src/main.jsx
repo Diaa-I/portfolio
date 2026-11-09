@@ -11,7 +11,7 @@ import ThreeD from "./ThreeD.jsx";
 import { supabase } from "./supabase";
 
 function MainApp() {
-  const [isSupabaseUsed, setIsSupabaseUsed] = useState(true);
+  const [isSupabaseUsed, setIsSupabaseUsed] = useState(false);
   // Check if supabase is up and working, if not default to local data
   useLayoutEffect(() => {
     async function checkIsSupabaseUp() {
