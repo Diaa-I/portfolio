@@ -24,7 +24,7 @@ function MainApp() {
       }
     }
     checkIsSupabaseUp();
-  });
+  },[]);
   return (
     <HashRouter>
       <Routes>
