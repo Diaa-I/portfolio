@@ -11,8 +11,7 @@ import ThreeD from "./ThreeD.jsx";
 import { supabase } from "./supabase";
 
 function MainApp() {
-  // By Default use Supabase unless it is offline
-  const [isSupabaseUsed, setIsSupabaseUsed] = useState(false);
+  const [isSupabaseUsed, setIsSupabaseUsed] = useState(true);
   useLayoutEffect(() => {
     async function checkIsSupabaseUp() {
       const { data: prjData, error: prjError } = await supabase
